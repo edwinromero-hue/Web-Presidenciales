@@ -113,8 +113,8 @@ export default async function handler(request: Request): Promise<Response> {
     });
   }
 
-  const token = process.env.GATE_TOKEN || '';
-  const secret = process.env.GATE_SECRET || '';
+  const token = (process.env.GATE_TOKEN || '').trim();
+  const secret = (process.env.GATE_SECRET || '').trim();
 
   if (!token || !secret) {
     return new Response('Missing env vars GATE_TOKEN / GATE_SECRET', { status: 500 });

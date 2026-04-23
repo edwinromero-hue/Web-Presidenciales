@@ -13,9 +13,9 @@
  */
 
 export const config = {
-  // Excluye sólo el endpoint de login. Todo lo demás pasa por el gate.
-  // Los assets estáticos se sirven después de pasar la auth.
-  matcher: ['/((?!api/gate|_vercel).*)'],
+  // Excluye el endpoint de login y el favicon (el browser lo pide siempre).
+  // Todo lo demás pasa por el gate.
+  matcher: ['/((?!api/gate|_vercel|favicon\\.ico|robots\\.txt).*)'],
 };
 
 const COOKIE_NAME = 'ae_gate';
@@ -106,8 +106,8 @@ body{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);display:grid;pla
 }
 
 export default async function middleware(request: Request): Promise<Response | undefined> {
-  const token = process.env.GATE_TOKEN || '';
-  const secret = process.env.GATE_SECRET || '';
+  const token = (process.env.GATE_TOKEN || '').trim();
+  const secret = (process.env.GATE_SECRET || '').trim();
 
   if (!token || !secret) {
     return new Response(
