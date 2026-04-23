@@ -1,0 +1,20 @@
+/*
+Theme Name: Actores Electorales 2026
+Theme URI: https://actoreselectorales.com
+Author: CNE Colombia
+Author URI: https://www.cne.gov.co
+Description: Tema institucional para elecciones presidenciales Colombia 2026 — Plataforma oficial de Actores Electorales. Narrativa scrolly (GSAP + ScrollTrigger), paleta tricolor (azul #1e3a8a, amarillo #ffc627, rojo #e11d48), accesibilidad AA y tipografías Manrope + Archivo.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+Text Domain: actores-electorales-2026
+Domain Path: /languages
+Tags: institucional, one-page, scrolly, gsap, tricolor, elecciones, accesible
+License: Proprietary
+License URI: https://actoreselectorales.com/licencia
+
+Nota: los estilos visuales reales viven en /assets/css/styles.css y se cargan
+vía wp_enqueue_style() desde /inc/enqueue.php. Este archivo solo existe para
+que WordPress reconozca el tema y muestre sus metadatos en Apariencia → Temas.
+*/

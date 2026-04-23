@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <title>Actores Electorales 2026 — Plataforma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e3a8a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="hdr-wrap" role="banner">
+    <div class="hdr-inner">
+      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+      </a>
+      <nav class="hdr-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="plataforma.html" class="active" aria-current="page">Plataforma</a>
+        <a href="entrenamiento.html">Entrenamiento</a>
+        <a href="regiones.html">Regiones</a>
+        <a href="canales.html">Canales de atención</a>
+        <a href="prensa.html">Sala de prensa</a>
+        <a href="eventos.html">Eventos</a>
+      </nav>
+      <div class="hdr-cta">
+        <a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">●</span> Ingresar</a>
+      </div>
+      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="flag-rule" aria-hidden="true">
+      <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+    </div>
+    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="plataforma.html" class="active">Plataforma</a>
+      <a href="entrenamiento.html">Entrenamiento</a>
+      <a href="regiones.html">Regiones</a>
+      <a href="canales.html">Canales de atención</a>
+      <a href="prensa.html">Sala de prensa</a>
+      <a href="eventos.html">Eventos</a>
+      <div class="mnav-cta">
+        <a class="btn red" href="plataforma.html">Ingresar a la Plataforma</a>
+        <a class="btn outline" href="canales.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Progress Rail -->
+  <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
+
+  <main id="mainContent">
+
+    <!-- ═══ 1. PAGE HERO ═══ -->
+    <section class="ph">
+      <div class="ph-deco" data-parallax="0.15" aria-hidden="true"></div>
+      <div class="ph-deco-2" aria-hidden="true"></div>
+      <div class="wrap">
+        <nav class="crumb" aria-label="Breadcrumb" data-enter><a href="index.html">Inicio</a> / <span aria-current="page">Plataforma</span></nav>
+        <div class="ae-split" style="align-items:center">
+          <!-- Left column -->
+          <div data-enter="left">
+            <div class="eyebrow" style="margin-bottom:16px">Plataforma oficial</div>
+            <h1>LA HERRAMIENTA DIGITAL DE LA DEMOCRACIA COLOMBIANA.</h1>
+            <p class="kicker">Accede al sistema de acreditación, monitoreo en tiempo real y gestión de testigos electorales para las presidenciales 2026.</p>
+            <div class="ae-cta-row-lg">
+              <a href="#comitium" class="btn red">Conoce COMITIUM →</a>
+              <a href="#pilares" class="btn outline">Ver pilares</a>
+            </div>
+          </div>
+          <!-- Right column: login card -->
+          <div data-enter="right" data-delay="1">
+            <form aria-labelledby="ingresoTitulo" onsubmit="return false" style="background:var(--ae-paper);border:1px solid var(--ae-line);border-radius:16px;padding:32px;box-shadow:0 20px 50px rgba(15,23,42,0.08);margin:0">
+              <div id="ingresoTitulo" style="font-size:18px;font-weight:800;margin-bottom:24px;color:var(--ae-ink)">Ingreso a la plataforma</div>
+              <label for="loginTipo" style="display:block;font-size:13px;font-weight:700;color:var(--ae-ink-2);margin-bottom:6px">Tipo de usuario</label>
+              <select id="loginTipo" name="tipo" style="width:100%;padding:12px 14px;border:1px solid var(--ae-line);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:16px;background:var(--ae-paper-2);color:var(--ae-ink);cursor:pointer" disabled>
+                <option>Testigo electoral</option>
+                <option>Jurado de votación</option>
+                <option>Observador internacional</option>
+                <option>Coordinador regional</option>
+              </select>
+              <label for="loginCedula" style="display:block;font-size:13px;font-weight:700;color:var(--ae-ink-2);margin-bottom:6px">Cédula de ciudadanía</label>
+              <input id="loginCedula" name="cedula" type="text" autocomplete="username" placeholder="Ej: 1.020.xxx.xxx" disabled style="width:100%;padding:12px 14px;border:1px solid var(--ae-line);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:16px;background:var(--ae-paper-2)">
+              <label for="loginPass" style="display:block;font-size:13px;font-weight:700;color:var(--ae-ink-2);margin-bottom:6px">Contraseña</label>
+              <input id="loginPass" name="password" type="password" autocomplete="current-password" placeholder="••••••••" disabled style="width:100%;padding:12px 14px;border:1px solid var(--ae-line);border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:24px;background:var(--ae-paper-2)">
+              <button type="button" class="btn red" aria-disabled="true" style="width:100%;justify-content:center;pointer-events:none;opacity:0.85">Ingresar</button>
+              <!-- Tricolor bar -->
+              <div aria-hidden="true" style="display:flex;height:4px;border-radius:999px;overflow:hidden;margin-top:20px">
+                <div style="flex:1;background:#ffc627"></div>
+                <div style="flex:1;background:#1e3a8a"></div>
+                <div style="flex:1;background:#e11d48"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 2. INNOVATION SPLIT: Misión & Visión ═══ -->
+    <section class="pad" style="background:var(--ae-paper-2)">
+      <div class="wrap">
+        <div style="text-align:center;margin-bottom:48px" data-enter>
+          <div class="eyebrow" style="justify-content:center">Innovación electoral</div>
+          <h2 class="ae-h2">Hacia dónde vamos</h2>
+        </div>
+        <div class="g2" style="gap:28px">
+          <div class="fcard" data-enter data-delay="1">
+            <div class="ic" style="font-size:22px">🎯</div>
+            <h4>Misión</h4>
+            <p>Proveer una plataforma tecnológica robusta, segura y accesible que permita la acreditación, capacitación y coordinación de todos los actores electorales de Colombia, garantizando la transparencia y legitimidad del proceso democrático 2026.</p>
+          </div>
+          <div class="fcard" data-enter data-delay="2">
+            <div class="ic" style="font-size:22px">🔭</div>
+            <h4>Visión</h4>
+            <p>Ser referente internacional en gestión electoral digital, consolidando un ecosistema donde la tecnología de punta, la participación ciudadana y la transparencia institucional converjan para fortalecer la democracia colombiana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 3. BIG STATEMENT ═══ -->
+    <section class="pad" style="background:#1e3a8a">
+      <div class="wrap" style="text-align:center;max-width:1100px;margin-left:auto;margin-right:auto">
+        <h2 data-word-reveal style="color:#fff;font-size:clamp(36px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-0.03em">TECNOLOGÍA DE PUNTA AL SERVICIO DE UNA DEMOCRACIA PARTICIPATIVA.</h2>
+      </div>
+    </section>
+
+    <!-- ═══ 4. IMPACT NUMBERS ═══ -->
+    <section class="pad" style="background:var(--ae-ink);color:#fff;position:relative;overflow:hidden">
+      <div class="hex-deco" data-parallax="0.2" aria-hidden="true" style="top:40px;left:60px;width:120px;height:120px;background:rgba(255,198,39,0.15)"></div>
+      <div class="hex-deco" data-parallax="-0.15" aria-hidden="true" style="bottom:80px;right:80px;width:180px;height:180px;background:rgba(225,29,72,0.15)"></div>
+      <div class="wrap ae-z2">
+        <div style="text-align:center;margin-bottom:56px" data-enter>
+          <h2 style="font-size:clamp(32px,4.5vw,56px);font-weight:800;letter-spacing:-0.025em;color:#fff">El tamaño del compromiso.</h2>
+        </div>
+        <div class="g4" style="gap:40px;text-align:center">
+          <div data-enter data-delay="1">
+            <div class="bignum" style="color:#ffc627" data-countup="127000" data-suffix="K+">0</div>
+            <div style="font-size:14px;font-weight:700;margin-top:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.7)">Testigos acreditados</div>
+          </div>
+          <div data-enter data-delay="2">
+            <div class="bignum" style="color:#ffc627;font-size:clamp(60px,10vw,160px)" data-countup="6000000" data-suffix="M+">0</div>
+            <div style="font-size:14px;font-weight:700;margin-top:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.7)">Sufragantes atendidos</div>
+          </div>
+          <div data-enter data-delay="3">
+            <div class="bignum" style="color:#ffc627;font-size:clamp(60px,10vw,160px)" data-countup="2798">0</div>
+            <div style="font-size:14px;font-weight:700;margin-top:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.7)">Mesas monitoreadas</div>
+          </div>
+          <div data-enter data-delay="4">
+            <div class="bignum" style="color:#ffc627;font-size:clamp(60px,10vw,160px)" data-countup="100" data-suffix="%">0</div>
+            <div style="font-size:14px;font-weight:700;margin-top:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.7)">Cobertura digital</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 5. COMITIUM ═══ -->
+    <section id="comitium" class="pad" style="background:linear-gradient(135deg,#1e3a8a 0%,#2b4aa3 50%,#4c6fc8 100%);color:#fff;overflow:hidden;position:relative">
+      <div class="hex-deco" data-parallax="0.12" aria-hidden="true" style="top:-40px;right:-60px;width:300px;height:300px;background:rgba(255,198,39,0.12)"></div>
+      <div class="wrap ae-z2">
+        <div style="text-align:center;margin-bottom:56px" data-enter>
+          <div class="ae-kicker-y">La app que lo cambia todo</div>
+          <div style="font-size:clamp(64px,12vw,180px);font-weight:800;line-height:0.9;letter-spacing:-0.04em;color:#fff">COMITIUM.</div>
+          <p style="font-size:18px;color:rgba(255,255,255,0.85);max-width:680px;margin:24px auto 0;line-height:1.55">El aplicativo móvil oficial del CNE que permite a los testigos electorales monitorear en tiempo real cada mesa de votación, reportar incidencias y garantizar la transparencia del proceso.</p>
+        </div>
+        <div class="ae-split" style="align-items:center">
+          <!-- Left: phone mockup -->
+          <div data-enter="left" style="display:flex;justify-content:center">
+            <div style="width:280px;border-radius:36px;overflow:hidden;border:6px solid rgba(255,255,255,0.15);box-shadow:0 40px 80px rgba(0,0,0,0.35);background:#000">
+              <img src="assets/img/13.jpeg" alt="App COMITIUM - monitoreo electoral en tiempo real" loading="lazy" decoding="async" style="width:100%;display:block">
+            </div>
+          </div>
+          <!-- Right: features -->
+          <div data-enter="right">
+            <h3 style="font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-0.02em;margin-bottom:32px;color:#fff">Funcionalidades clave</h3>
+            <div style="display:flex;flex-direction:column;gap:24px">
+              <div class="ae-stack-h">
+                <div style="min-width:40px;height:40px;border-radius:10px;background:rgba(255,198,39,0.2);display:grid;place-items:center;font-weight:800;color:#ffc627;font-size:16px">1</div>
+                <div>
+                  <div style="font-weight:700;font-size:16px;margin-bottom:4px">Monitoreo en tiempo real</div>
+                  <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5">Vigilancia en vivo de la apertura, votación y escrutinio desde cualquier dispositivo.</div>
+                </div>
+              </div>
+              <div class="ae-stack-h">
+                <div style="min-width:40px;height:40px;border-radius:10px;background:rgba(255,198,39,0.2);display:grid;place-items:center;font-weight:800;color:#ffc627;font-size:16px">2</div>
+                <div>
+                  <div style="font-weight:700;font-size:16px;margin-bottom:4px">Reporte de incidencias</div>
+                  <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5">Formulario integrado con geolocalización y evidencia fotográfica para alertas inmediatas.</div>
+                </div>
+              </div>
+              <div class="ae-stack-h">
+                <div style="min-width:40px;height:40px;border-radius:10px;background:rgba(255,198,39,0.2);display:grid;place-items:center;font-weight:800;color:#ffc627;font-size:16px">3</div>
+                <div>
+                  <div style="font-weight:700;font-size:16px;margin-bottom:4px">Verificación biométrica</div>
+                  <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5">Autenticación segura con huella y reconocimiento facial para cada testigo acreditado.</div>
+                </div>
+              </div>
+              <div class="ae-stack-h">
+                <div style="min-width:40px;height:40px;border-radius:10px;background:rgba(255,198,39,0.2);display:grid;place-items:center;font-weight:800;color:#ffc627;font-size:16px">4</div>
+                <div>
+                  <div style="font-weight:700;font-size:16px;margin-bottom:4px">Dashboard centralizado</div>
+                  <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5">Panel de control con estadísticas en vivo, mapas de calor y reportes consolidados por región.</div>
+                </div>
+              </div>
+            </div>
+            <div class="ae-cta-row-lg">
+              <a href="#" class="btn yellow" style="pointer-events:none">App Store</a>
+              <a href="#" class="btn" style="background:#fff;color:var(--ae-ink);pointer-events:none">Google Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 6. PILARES ═══ -->
+    <section id="pilares" class="pad" style="background:var(--ae-paper-2)">
+      <div class="wrap">
+        <div style="text-align:center;margin-bottom:48px" data-enter>
+          <div class="eyebrow" style="justify-content:center">Ejes estratégicos</div>
+          <h2 class="ae-h2">Pilares de la plataforma</h2>
+        </div>
+        <div class="g2" style="gap:24px">
+          <div class="fcard" data-enter data-delay="1" style="border-left:4px solid #1e3a8a">
+            <div class="ic" style="font-size:22px">🔐</div>
+            <h4>Acreditación digital</h4>
+            <p>Proceso 100% en línea para postulación, verificación y aprobación de testigos electorales. Sin filas, sin papel, con trazabilidad completa de cada solicitud.</p>
+          </div>
+          <div class="fcard" data-enter data-delay="2" style="border-left:4px solid #ffc627">
+            <div class="ic" style="font-size:22px;background:rgba(255,198,39,0.15);color:#b8860b">📡</div>
+            <h4>Monitoreo en tiempo real</h4>
+            <p>COMITIUM permite la vigilancia simultánea de miles de mesas de votación con datos actualizados segundo a segundo y alertas automáticas ante irregularidades.</p>
+          </div>
+          <div class="fcard" data-enter data-delay="3" style="border-left:4px solid #e11d48">
+            <div class="ic" style="font-size:22px;background:rgba(225,29,72,0.1);color:#be123c">🎓</div>
+            <h4>Formación certificada</h4>
+            <p>6 módulos de capacitación oficial con evaluación y certificación para testigos, jurados y coordinadores. Contenido actualizado para las presidenciales 2026.</p>
+          </div>
+          <div class="fcard" data-enter data-delay="4" style="border-left:4px solid #2fb3d9">
+            <div class="ic" style="font-size:22px;background:rgba(47,179,217,0.12);color:#0e7490">🌐</div>
+            <h4>Cobertura nacional</h4>
+            <p>Presencia en los 1.103 municipios de Colombia y 67 consulados en el exterior, garantizando que ningún rincón del país quede sin vigilancia electoral.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="ae-brand-row">
+            <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
+            <span class="ae-brand-mono">ACTORES <span style="color:#f43f5e">| 2026</span></span>
+          </div>
+          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
+        </div>
+        <div>
+          <h5>Plataforma</h5>
+          <a href="index.html">Inicio</a>
+          <a href="quienes-somos.html">Quiénes somos</a>
+          <a href="plataforma.html">Plataforma</a>
+          <a href="entrenamiento.html">Entrenamiento</a>
+        </div>
+        <div>
+          <h5>Información</h5>
+          <a href="regiones.html">Regiones</a>
+          <a href="canales.html">Canales de atención</a>
+          <a href="prensa.html">Sala de prensa</a>
+          <a href="eventos.html">Eventos</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
+          <a href="tel:+576017702692">(601) 770 2692</a>
+          <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Consejo Nacional Electoral · Aliados tecnológicos</span>
+        <span>Aviso de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-top" aria-label="Volver arriba">↑</button>
+
+  <script src="js/shell.js"></script>
+  <script src="js/scrolly.js"></script>
+</body>
+</html>

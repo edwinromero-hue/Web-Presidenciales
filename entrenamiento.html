@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <title>Actores Electorales 2026 — Entrenamiento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e3a8a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <style>
+    /* ===== ENTRENAMIENTO PAGE STYLES ===== */
+    .ph-2col { display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; }
+    @media(max-width:880px){ .ph-2col{ grid-template-columns:1fr; } }
+
+    .cert-card { background:#fff; border:1px solid var(--ae-line); border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(15,23,42,0.08); position:relative; }
+    .cert-card .tri-dots { display:flex; gap:5px; margin-bottom:18px; }
+    .cert-card .tri-dots span { width:10px; height:10px; border-radius:999px; }
+    .cert-card .cert-label { font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--ae-muted); margin-bottom:12px; }
+    .cert-card h4 { font-size:20px; font-weight:800; margin-bottom:24px; }
+    .cert-ring { width:140px; height:140px; border-radius:50%; display:grid; place-items:center; margin:0 auto; position:relative; }
+    .cert-ring-inner { text-align:center; }
+    .cert-ring-inner .pct { font-size:36px; font-weight:800; color:var(--ae-blue); line-height:1; }
+    .cert-ring-inner .sub { font-size:11px; color:var(--ae-muted); margin-top:4px; font-weight:600; }
+    .badge-new { position:absolute; top:-10px; right:-10px; background:var(--ae-red); color:#fff; font-size:10px; font-weight:800; letter-spacing:.1em; padding:5px 12px; border-radius:999px; text-transform:uppercase; }
+
+    /* Module accordion */
+    .mod-header { display:flex; align-items:center; gap:16px; flex:1; min-width:0; }
+    .mod-num { width:40px; height:40px; border-radius:10px; display:grid; place-items:center; font-size:14px; font-weight:800; flex-shrink:0; background:var(--ae-paper-3); color:var(--ae-ink-2); border:1.5px solid var(--ae-line); }
+    .mod-num.done { background:var(--ae-blue); color:#fff; border-color:var(--ae-blue); }
+    .mod-info { flex:1; min-width:0; }
+    .mod-info h4 { font-size:15px; font-weight:700; margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .mod-meta { display:flex; gap:14px; font-size:12px; color:var(--ae-muted); font-weight:600; flex-wrap:wrap; }
+    .mod-progress { height:4px; background:var(--ae-paper-3); border-radius:999px; margin-top:8px; overflow:hidden; }
+    .mod-progress-fill { height:100%; border-radius:999px; background:var(--ae-blue); transition:width 800ms var(--ease); }
+    .faq-btn { flex-wrap:wrap; }
+    .faq-group .faq-item + .faq-item { margin-top:10px; }
+
+    /* Video cards */
+    .vid-card { background:#1a2744; border-radius:16px; overflow:hidden; transition:all 200ms var(--ease); cursor:pointer; }
+    .vid-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.3); }
+    .vid-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; }
+    .vid-thumb img { width:100%; height:100%; object-fit:cover; }
+    .vid-play { position:absolute; inset:0; display:grid; place-items:center; background:rgba(15,23,42,0.35); transition:background 200ms; }
+    .vid-card:hover .vid-play { background:rgba(15,23,42,0.15); }
+    .vid-play-btn { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,0.95); display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,0.3); }
+    .vid-play-btn::after { content:''; display:block; width:0; height:0; border-style:solid; border-width:10px 0 10px 18px; border-color:transparent transparent transparent var(--ae-blue); margin-left:3px; }
+    .vid-duration { position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.75); color:#fff; font-size:11px; font-weight:700; padding:3px 8px; border-radius:4px; }
+    .vid-body { padding:18px 20px; }
+    .vid-body h4 { font-size:16px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .vid-body p { font-size:13px; color:#94a3b8; line-height:1.5; margin:0; }
+
+    /* Download cards */
+    .dl-card { display:flex; align-items:center; gap:16px; }
+    .dl-card .ic { flex-shrink:0; }
+    .dl-card .dl-info { flex:1; min-width:0; }
+    .dl-card .dl-info h4 { margin-bottom:4px; }
+    .dl-card .dl-size { font-size:12px; color:var(--ae-muted); font-weight:600; }
+  </style>
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="hdr-wrap" role="banner">
+    <div class="hdr-inner">
+      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+      </a>
+      <nav class="hdr-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="plataforma.html">Plataforma</a>
+        <a href="entrenamiento.html" class="active" aria-current="page">Entrenamiento</a>
+        <a href="regiones.html">Regiones</a>
+        <a href="canales.html">Canales de atención</a>
+        <a href="prensa.html">Sala de prensa</a>
+        <a href="eventos.html">Eventos</a>
+      </nav>
+      <div class="hdr-cta">
+        <a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">●</span> Ingresar</a>
+      </div>
+      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="flag-rule" aria-hidden="true">
+      <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+    </div>
+    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="plataforma.html">Plataforma</a>
+      <a href="entrenamiento.html" class="active">Entrenamiento</a>
+      <a href="regiones.html">Regiones</a>
+      <a href="canales.html">Canales de atención</a>
+      <a href="prensa.html">Sala de prensa</a>
+      <a href="eventos.html">Eventos</a>
+      <div class="mnav-cta">
+        <a class="btn red" href="plataforma.html">Ingresar a la Plataforma</a>
+        <a class="btn outline" href="canales.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Progress Rail -->
+  <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
+
+  <main id="mainContent">
+
+    <!-- ═══ 1. PAGE HERO ═══ -->
+    <section class="ph">
+      <div class="ph-deco" aria-hidden="true"></div>
+      <div class="ph-deco-2" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="ph-2col">
+          <div data-enter>
+            <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Entrenamiento</span></nav>
+            <div class="eyebrow" style="margin-bottom:16px">Plataforma de capacitación</div>
+            <h1>FORMACIÓN PARA <span style="color:var(--ae-blue)">DEFENDER</span> LA DEMOCRACIA.</h1>
+            <p class="kicker">Capacitación oficial del CNE para testigos electorales, jurados y actores clave del proceso electoral 2026. 6 módulos certificables, a tu ritmo, desde cualquier dispositivo.</p>
+            <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+              <a href="#modulos" class="btn yellow">Comenzar capacitación →</a>
+              <a href="#docs" class="btn outline">Descargar materiales</a>
+            </div>
+          </div>
+          <div data-enter="right" style="position:relative">
+            <div class="cert-card">
+              <div class="tri-dots" aria-hidden="true">
+                <span style="background:#ffc627"></span>
+                <span style="background:#1e3a8a"></span>
+                <span style="background:#e11d48"></span>
+              </div>
+              <div class="cert-label">Certificado en progreso</div>
+              <h4>Testigo Electoral Certificado</h4>
+              <div class="cert-ring" style="background:conic-gradient(var(--ae-blue) 0% 56%, var(--ae-paper-3) 56% 100%)">
+                <div style="width:110px;height:110px;border-radius:50%;background:#fff;display:grid;place-items:center">
+                  <div class="cert-ring-inner">
+                    <div class="pct">56%</div>
+                    <div class="sub">3 de 6 módulos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="badge-new">NUEVO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 2. BIG STATEMENT ═══ -->
+    <section class="pad" style="background:#1e3a8a;overflow:hidden;position:relative">
+      <div class="wrap" style="text-align:center;max-width:1100px;margin:0 auto">
+        <h2 data-word-reveal style="color:#fff;font-size:clamp(36px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-0.03em">FORMACIÓN ESTRATÉGICA PARA DEFENDER LA DEMOCRACIA.</h2>
+      </div>
+    </section>
+
+    <!-- ═══ 3. COUNT-UP STATS ═══ -->
+    <section class="pad" style="background:#ffc627;position:relative;overflow:hidden" aria-labelledby="statsTrainingHeading">
+      <div class="hex-deco" data-parallax="0.2" aria-hidden="true" style="top:40px;left:60px;width:120px;height:120px;background:#e11d48"></div>
+      <div class="hex-deco" data-parallax="-0.15" aria-hidden="true" style="bottom:80px;right:80px;width:180px;height:180px;background:#1e3a8a"></div>
+      <div class="wrap ae-z2">
+        <h2 id="statsTrainingHeading" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Cifras de capacitación</h2>
+        <div class="g4" style="gap:40px;text-align:center">
+          <div data-enter>
+            <div class="bignum" style="color:#0f172a" data-countup="127592">0</div>
+            <div class="ae-stat-label">Testigos acreditados</div>
+          </div>
+          <div data-enter data-delay="1">
+            <div class="bignum" style="color:#0f172a;font-size:clamp(60px,10vw,160px)" data-countup="1103">0</div>
+            <div class="ae-stat-label">Municipios</div>
+          </div>
+          <div data-enter data-delay="2">
+            <div class="bignum" style="color:#0f172a;font-size:clamp(60px,10vw,160px)" data-countup="67">0</div>
+            <div class="ae-stat-label">Consulados</div>
+          </div>
+          <div data-enter data-delay="3">
+            <div class="bignum" style="color:#0f172a;font-size:clamp(60px,10vw,160px)" data-countup="6">0</div>
+            <div class="ae-stat-label">Módulos certificables</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 4. MÓDULOS ═══ -->
+    <section class="pad" id="modulos">
+      <div class="wrap">
+        <div data-enter style="margin-bottom:40px">
+          <div class="eyebrow">Plan de formación</div>
+          <h2 class="ae-h2">Módulos de capacitación</h2>
+        </div>
+
+        <div class="faq-group">
+
+          <!-- Módulo 1 -->
+          <div class="faq-item" data-enter>
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num done" aria-label="Completado">&#10003;</div>
+                <div class="mod-info">
+                  <h4>Introducción al rol del testigo electoral</h4>
+                  <div class="mod-meta">
+                    <span>5 lecciones</span>
+                    <span>22 min</span>
+                    <span style="color:var(--ae-blue);font-weight:700">100%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:100%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Conoce las funciones, derechos y deberes del testigo electoral en el proceso democrático colombiano. Aprende el marco normativo y las responsabilidades ante la mesa de votación.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Repasar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver certificado</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 2 -->
+          <div class="faq-item" data-enter data-delay="1">
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num done" aria-label="Completado">&#10003;</div>
+                <div class="mod-info">
+                  <h4>Instalación de mesa e inicio de jornada</h4>
+                  <div class="mod-meta">
+                    <span>7 lecciones</span>
+                    <span>35 min</span>
+                    <span style="color:var(--ae-blue);font-weight:700">100%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:100%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Domina el protocolo de instalación de la mesa de votación: verificación de materiales, acta de apertura y procedimientos iniciales que garantizan la transparencia desde el primer minuto.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Repasar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver certificado</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 3 -->
+          <div class="faq-item" data-enter data-delay="2">
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num">3</div>
+                <div class="mod-info">
+                  <h4>Desarrollo de votación y cierre</h4>
+                  <div class="mod-meta">
+                    <span>8 lecciones</span>
+                    <span>40 min</span>
+                    <span style="color:var(--ae-blue);font-weight:700">80%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:80%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Aprende a supervisar el desarrollo de la jornada electoral: control del flujo de votantes, manejo de incidencias y procedimiento de cierre de la mesa de votación.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Continuar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver progreso</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 4 -->
+          <div class="faq-item" data-enter data-delay="3">
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num">4</div>
+                <div class="mod-info">
+                  <h4>Apertura de urnas y nivelación de mesa</h4>
+                  <div class="mod-meta">
+                    <span>6 lecciones</span>
+                    <span>30 min</span>
+                    <span style="color:var(--ae-blue);font-weight:700">40%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:40%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Conoce el proceso de apertura de urnas, conteo inicial de tarjetones y nivelación de la mesa. Verifica que los números coincidan antes de iniciar el escrutinio oficial.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Continuar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver progreso</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 5 -->
+          <div class="faq-item" data-enter>
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num">5</div>
+                <div class="mod-info">
+                  <h4>Escrutinio de mesa</h4>
+                  <div class="mod-meta">
+                    <span>9 lecciones</span>
+                    <span>45 min</span>
+                    <span style="color:var(--ae-muted)">0%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:0%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Domina el procedimiento de escrutinio: clasificación de votos, manejo de votos nulos y en blanco, diligenciamiento de formularios E-14 y actas de escrutinio.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Iniciar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver temario</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 6 -->
+          <div class="faq-item" data-enter data-delay="1">
+            <button class="faq-btn" aria-expanded="false">
+              <div class="mod-header">
+                <div class="mod-num">6</div>
+                <div class="mod-info">
+                  <h4>Reclamaciones, cierre y traslado de pliegos</h4>
+                  <div class="mod-meta">
+                    <span>7 lecciones</span>
+                    <span>38 min</span>
+                    <span style="color:var(--ae-muted)">0%</span>
+                  </div>
+                  <div class="mod-progress"><div class="mod-progress-fill" style="width:0%"></div></div>
+                </div>
+              </div>
+              <span class="faq-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Aprende a gestionar reclamaciones de los testigos electorales, el cierre formal de la mesa y el traslado seguro de pliegos y material electoral a la sede de escrutinio.</p>
+              <div class="ae-cta-row">
+                <a href="#" class="btn ae-btn-sm">Iniciar módulo →</a>
+                <a href="#" class="btn outline ae-btn-sm">Ver temario</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 5. VIDEO TUTORIALES ═══ -->
+    <section class="pad" style="background:#0f172a">
+      <div class="wrap">
+        <div data-enter style="margin-bottom:40px">
+          <div class="eyebrow" style="color:#ffc627"><span style="background:#ffc627"></span>Video tutoriales</div>
+          <h2 style="font-size:clamp(32px,4.5vw,56px);font-weight:800;letter-spacing:-0.025em;margin-top:12px;color:#fff">Aprende con videos paso a paso</h2>
+        </div>
+        <div class="g3">
+          <div class="vid-card" data-enter>
+            <div class="vid-thumb">
+              <img src="assets/img/10.jpeg" alt="Cómo instalar la mesa de votación" loading="lazy" decoding="async">
+              <div class="vid-play"><div class="vid-play-btn"></div></div>
+              <div class="vid-duration">12:34</div>
+            </div>
+            <div class="vid-body">
+              <h4>Cómo instalar la mesa de votación</h4>
+              <p>Guía visual paso a paso para la correcta instalación de la mesa el día de las elecciones.</p>
+            </div>
+          </div>
+          <div class="vid-card" data-enter data-delay="1">
+            <div class="vid-thumb">
+              <img src="assets/img/14.jpeg" alt="Escrutinio y diligenciamiento del E-14" loading="lazy" decoding="async">
+              <div class="vid-play"><div class="vid-play-btn"></div></div>
+              <div class="vid-duration">18:22</div>
+            </div>
+            <div class="vid-body">
+              <h4>Escrutinio y diligenciamiento del E-14</h4>
+              <p>Aprende a clasificar votos y completar correctamente el formulario E-14 de resultados.</p>
+            </div>
+          </div>
+          <div class="vid-card" data-enter data-delay="2">
+            <div class="vid-thumb">
+              <img src="assets/img/17.jpg" alt="Manejo de reclamaciones en mesa" loading="lazy" decoding="async">
+              <div class="vid-play"><div class="vid-play-btn"></div></div>
+              <div class="vid-duration">09:47</div>
+            </div>
+            <div class="vid-body">
+              <h4>Manejo de reclamaciones en mesa</h4>
+              <p>Procedimiento oficial para recibir, documentar y resolver reclamaciones de los actores electorales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 6. DESCARGAS ═══ -->
+    <section class="pad" id="docs" style="background:#f8fafc">
+      <div class="wrap">
+        <div data-enter style="margin-bottom:40px">
+          <div class="eyebrow">Recursos descargables</div>
+          <h2 class="ae-h2">Material de apoyo</h2>
+        </div>
+        <div class="g3">
+          <div class="fcard dl-card" data-enter style="position:relative">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Guía del testigo electoral</h4>
+              <div class="dl-size">PDF — 2.4 MB</div>
+            </div>
+            <span class="badge-new" style="position:absolute;top:12px;right:12px">NUEVO</span>
+          </div>
+          <div class="fcard dl-card" data-enter data-delay="1">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Protocolo de instalación de mesa</h4>
+              <div class="dl-size">PDF — 1.8 MB</div>
+            </div>
+          </div>
+          <div class="fcard dl-card" data-enter data-delay="2">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Formulario E-14 — Ejemplo diligenciado</h4>
+              <div class="dl-size">PDF — 3.1 MB</div>
+            </div>
+          </div>
+          <div class="fcard dl-card" data-enter data-delay="1">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Manual de escrutinio de mesa</h4>
+              <div class="dl-size">PDF — 2.0 MB</div>
+            </div>
+          </div>
+          <div class="fcard dl-card" data-enter data-delay="2">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Formato de reclamaciones</h4>
+              <div class="dl-size">PDF — 890 KB</div>
+            </div>
+          </div>
+          <div class="fcard dl-card" data-enter data-delay="3">
+            <div class="ic">
+              <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2z" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v5h5M9 13h6M9 17h4" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dl-info">
+              <h4>Checklist día de elecciones</h4>
+              <div class="dl-size">PDF — 540 KB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="ae-brand-row">
+            <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
+            <span class="ae-brand-mono">ACTORES <span style="color:#f43f5e">| 2026</span></span>
+          </div>
+          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
+        </div>
+        <div>
+          <h5>Plataforma</h5>
+          <a href="index.html">Inicio</a>
+          <a href="quienes-somos.html">Quiénes somos</a>
+          <a href="plataforma.html">Plataforma</a>
+          <a href="entrenamiento.html">Entrenamiento</a>
+        </div>
+        <div>
+          <h5>Información</h5>
+          <a href="regiones.html">Regiones</a>
+          <a href="canales.html">Canales de atención</a>
+          <a href="prensa.html">Sala de prensa</a>
+          <a href="eventos.html">Eventos</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
+          <a href="tel:+576017702692">(601) 770 2692</a>
+          <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Consejo Nacional Electoral &middot; Aliados tecnológicos</span>
+        <span>Aviso de privacidad &middot; Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-top" aria-label="Volver arriba">↑</button>
+
+  <script src="js/shell.js"></script>
+  <script src="js/scrolly.js"></script>
+</body>
+</html>
