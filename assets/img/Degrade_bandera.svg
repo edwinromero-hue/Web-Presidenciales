@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 4919.49 2453.4">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_444);
+        mix-blend-mode: color;
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_444" data-name="Degradado sin nombre 444" x1="40390.4" y1="19505.99" x2="40390.4" y2="-5144.21" gradientTransform="translate(-1560.25 1941.4) scale(.1 -.1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd703" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffd703" stop-opacity=".03"/>
+      <stop offset=".02" stop-color="#ffd703" stop-opacity=".26"/>
+      <stop offset=".04" stop-color="#ffd703" stop-opacity=".46"/>
+      <stop offset=".05" stop-color="#ffd703" stop-opacity=".62"/>
+      <stop offset=".07" stop-color="#ffd703" stop-opacity=".76"/>
+      <stop offset=".08" stop-color="#ffd703" stop-opacity=".87"/>
+      <stop offset=".1" stop-color="#ffd703" stop-opacity=".94"/>
+      <stop offset=".12" stop-color="#ffd703" stop-opacity=".99"/>
+      <stop offset=".14" stop-color="#ffd703"/>
+      <stop offset=".19" stop-color="#fbc40e"/>
+      <stop offset=".24" stop-color="#f9b815"/>
+      <stop offset=".3" stop-color="#f9b518"/>
+      <stop offset=".32" stop-color="#e3a922"/>
+      <stop offset=".37" stop-color="#b18e3b"/>
+      <stop offset=".42" stop-color="#877850"/>
+      <stop offset=".46" stop-color="#646562"/>
+      <stop offset=".51" stop-color="#49576f"/>
+      <stop offset=".56" stop-color="#364d79"/>
+      <stop offset=".61" stop-color="#2a477f"/>
+      <stop offset=".66" stop-color="#274581"/>
+      <stop offset=".99" stop-color="#e53434" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-1">
+    <g id="Capa_2" data-name="Capa 2">
+      <g id="fondo">
+        <rect class="cls-2" width="4919.49" height="2453.4"/>
+      </g>
+    </g>
+  </g>
+</svg>

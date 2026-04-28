@@ -33,3 +33,7 @@ npm-debug.log*
 .claude/wp-progress.md
 .claude/a11y-progress.md
 .vercel
+.env*.local
+
+# Carpetas raw de Google Drive (los assets ya están renombrados en assets/img y assets/fonts)
+assets/drive-download-*/

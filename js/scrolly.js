@@ -1,6 +1,6 @@
 /* Scrolly.js — GSAP ScrollTrigger scrollytelling. Mobile-aware: pin solo en ≥1000px. */
 
-(function() {
+(function () {
   'use strict';
 
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -23,7 +23,7 @@
 
   // ── Sticky Scene — solo desktop; móvil recibe progress=1 inmediato (estado final) ──
   function initStickyScenes() {
-    document.querySelectorAll('.scene[data-steps]').forEach(function(scene) {
+    document.querySelectorAll('.scene[data-steps]').forEach(function (scene) {
       var steps = parseInt(scene.getAttribute('data-steps')) || 3;
       var vhPerStep = parseFloat(scene.getAttribute('data-vh-per-step')) || 65;
 
@@ -52,10 +52,10 @@
           end: 'bottom bottom',
           scrub: true,
           invalidateOnRefresh: true,
-          onUpdate: function(self) { callback(self.progress, scene); }
+          onUpdate: function (self) { callback(self.progress, scene); }
         });
       } else {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
           var r = scene.getBoundingClientRect();
           var vh = window.innerHeight;
           var total = r.height - vh;
@@ -68,8 +68,8 @@
 
   // ── Count-up ──
   function initCountUp() {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         obs.unobserve(e.target);
         var target = parseFloat(e.target.getAttribute('data-countup')) || 0;
@@ -86,7 +86,7 @@
           var obj = { v: 0 };
           gsap.to(obj, {
             v: target, duration: duration / 1000, ease: 'power2.out',
-            onUpdate: function() {
+            onUpdate: function () {
               e.target.textContent = (locale ? Math.floor(obj.v).toLocaleString('es-CO') : Math.floor(obj.v)) + suffix;
             }
           });
@@ -103,7 +103,7 @@
       });
     }, { threshold: 0.3 });
 
-    document.querySelectorAll('[data-countup]').forEach(function(el) { obs.observe(el); });
+    document.querySelectorAll('[data-countup]').forEach(function (el) { obs.observe(el); });
   }
 
   // ── Word Reveal ──
@@ -111,13 +111,13 @@
     function reveal(el) {
       var words = el.querySelectorAll('.word-reveal-word');
       var stagger = parseInt(el.getAttribute('data-word-stagger')) || 45;
-      words.forEach(function(w, i) {
-        setTimeout(function() { w.classList.add('revealed'); }, i * stagger);
+      words.forEach(function (w, i) {
+        setTimeout(function () { w.classList.add('revealed'); }, i * stagger);
       });
     }
 
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         obs.unobserve(e.target);
         reveal(e.target);
@@ -125,11 +125,11 @@
     }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
 
     var elements = [];
-    document.querySelectorAll('[data-word-reveal]').forEach(function(el) {
+    document.querySelectorAll('[data-word-reveal]').forEach(function (el) {
       var text = el.textContent.trim();
       el.setAttribute('aria-label', text);
       el.innerHTML = '';
-      text.split(' ').forEach(function(word) {
+      text.split(' ').forEach(function (word) {
         var outer = document.createElement('span');
         outer.className = 'word-reveal-word';
         var inner = document.createElement('span');
@@ -140,7 +140,7 @@
         el.appendChild(outer);
       });
       if (REDUCED) {
-        el.querySelectorAll('.word-reveal-word').forEach(function(w) { w.classList.add('revealed'); });
+        el.querySelectorAll('.word-reveal-word').forEach(function (w) { w.classList.add('revealed'); });
       } else {
         obs.observe(el);
         elements.push(el);
@@ -149,8 +149,8 @@
 
     // Safety net: si el observer no dispara en 800ms para un elemento ya visible,
     // revelamos las palabras para evitar que la sección quede vacía.
-    setTimeout(function() {
-      elements.forEach(function(el) {
+    setTimeout(function () {
+      elements.forEach(function (el) {
         if (el.querySelector('.word-reveal-word.revealed')) return;
         var r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && r.bottom > 0) {
@@ -164,7 +164,7 @@
   // ── Horizontal Section — SOLO desktop. Móvil usa scroll-snap nativo (CSS). ──
   function initHorizontalSections() {
     if (!hasGSAP || REDUCED || !isDesktop) return;
-    document.querySelectorAll('.hz-section').forEach(function(section) {
+    document.querySelectorAll('.hz-section').forEach(function (section) {
       var track = section.querySelector('.hz-track');
       if (!track) return;
       var panels = track.children;
@@ -173,12 +173,12 @@
       var scrollDist = totalWidth - window.innerWidth;
 
       gsap.to(track, {
-        x: function() { return -scrollDist; },
+        x: function () { return -scrollDist; },
         ease: 'none',
         scrollTrigger: {
           trigger: section,
           start: 'top top',
-          end: function() { return '+=' + scrollDist; },
+          end: function () { return '+=' + scrollDist; },
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,
@@ -192,18 +192,18 @@
   function initParallax() {
     if (!hasGSAP || REDUCED) return;
     var mult = isDesktop ? 1 : 0.6;
-    document.querySelectorAll('[data-parallax]').forEach(function(el) {
+    document.querySelectorAll('[data-parallax]').forEach(function (el) {
       var speed = (parseFloat(el.getAttribute('data-parallax')) || 0.3) * mult;
       var xSpeed = (parseFloat(el.getAttribute('data-parallax-x')) || 0) * mult;
       var rotate = (parseFloat(el.getAttribute('data-parallax-rotate')) || 0) * mult;
       var scaleAmt = (parseFloat(el.getAttribute('data-parallax-scale')) || 0) * mult;
       var trigger = el.closest('[data-parallax-trigger]') || el;
       var tween = {
-        y: function() { return speed * 100 + '%'; },
+        y: function () { return speed * 100 + '%'; },
         ease: 'none',
         scrollTrigger: { trigger: trigger, start: 'top bottom', end: 'bottom top', scrub: true }
       };
-      if (xSpeed) tween.x = function() { return xSpeed * 100 + '%'; };
+      if (xSpeed) tween.x = function () { return xSpeed * 100 + '%'; };
       if (rotate) tween.rotation = rotate;
       if (scaleAmt) tween.scale = 1 + scaleAmt;
       gsap.to(el, tween);
@@ -212,16 +212,16 @@
 
   // ── FAQ accordion ──
   function initFAQ() {
-    document.querySelectorAll('.faq-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
+    document.querySelectorAll('.faq-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
         var item = btn.closest('.faq-item');
         var answer = item.querySelector('.faq-answer');
         var wasOpen = answer.classList.contains('open');
 
         var group = btn.closest('.faq-group');
         if (group) {
-          group.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
-          group.querySelectorAll('.faq-btn').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+          group.querySelectorAll('.faq-answer').forEach(function (a) { a.classList.remove('open'); });
+          group.querySelectorAll('.faq-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
         }
 
         if (!wasOpen) {
@@ -233,7 +233,7 @@
   }
 
   // ── Init ──
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     initStickyScenes();
     initCountUp();
     initWordReveal();
