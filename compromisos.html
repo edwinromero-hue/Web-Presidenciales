@@ -11,26 +11,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
-  <header class="hdr-wrap" role="banner">
-    <div class="hdr-inner">
-      <a class="hdr-logo" href="index.html"><img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img"></a>
-      <nav class="hdr-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a><a href="quienes-somos.html" class="active">Quiénes somos</a><a href="plataforma.html">Plataforma</a><a href="entrenamiento.html">Entrenamiento</a><a href="regiones.html">Regiones</a><a href="canales.html">Canales de atención</a><a href="prensa.html">Sala de prensa</a><a href="eventos.html">Eventos</a>
-      </nav>
-      <div class="hdr-cta"><a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">●</span> Ingresar</a></div>
-      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav"><span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span></button>
-    </div>
-    <div class="flag-rule" aria-hidden="true"><div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div></div>
-    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
-      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
-      <a href="index.html">Inicio</a><a href="quienes-somos.html" class="active">Quiénes somos</a><a href="plataforma.html">Plataforma</a><a href="entrenamiento.html">Entrenamiento</a><a href="regiones.html">Regiones</a><a href="canales.html">Canales de atención</a><a href="prensa.html">Sala de prensa</a><a href="eventos.html">Eventos</a>
+<body data-page="quienes-somos">
+  <!-- @partial:header -->
+<a href="#mainContent" class="skip-link">Saltar al contenido</a>
+
+<header class="hdr-wrap" role="banner">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+      <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+    </a>
+    <nav class="hdr-nav" aria-label="Navegación principal">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+      <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+      <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+      <a href="regiones.html" data-nav="regiones">Regiones</a>
+      <a href="canales.html" data-nav="canales">Canales de atención</a>
+      <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+      <a href="eventos.html" data-nav="eventos">Eventos</a>
     </nav>
-  </header>
+    <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+      <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="flag-rule" aria-hidden="true">
+    <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+  </div>
+  <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+    <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+    <a href="index.html" data-nav="inicio">Inicio</a>
+    <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+    <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+    <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+    <a href="regiones.html" data-nav="regiones">Regiones</a>
+    <a href="canales.html" data-nav="canales">Canales de atención</a>
+    <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+    <a href="eventos.html" data-nav="eventos">Eventos</a>
+  </nav>
+</header>
+<!-- @end-partial:header -->
 
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
 
@@ -99,7 +121,47 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <div class="wrap"><div class="footer-bottom"><span>© 2026 Consejo Nacional Electoral</span><span>Aviso de privacidad</span></div></div>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="ae-brand-row">
+            <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
+            <span class="ae-brand-mono">ACTORES <span style="color:#f43f5e">| 2026</span></span>
+          </div>
+          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
+        </div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Plataforma</button></h5>
+          <div class="footer-col-body">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes somos</a>
+            <a href="plataforma.html">Plataforma</a>
+            <a href="entrenamiento.html">Entrenamiento</a>
+          </div>
+        </div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Información</button></h5>
+          <div class="footer-col-body">
+            <a href="regiones.html">Regiones</a>
+            <a href="canales.html">Canales de atención</a>
+            <a href="prensa.html">Sala de prensa</a>
+            <a href="eventos.html">Eventos</a>
+          </div>
+        </div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Contacto</button></h5>
+          <div class="footer-col-body">
+            <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
+            <a href="tel:+576017702692">(601) 770 2692</a>
+            <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Consejo Nacional Electoral · Aliados tecnológicos</span>
+        <span>Aviso de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
   </footer>
   <button type="button" class="back-top" aria-label="Volver arriba">↑</button>
   <script src="js/shell.js"></script>

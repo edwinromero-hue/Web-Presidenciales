@@ -5,6 +5,7 @@
   <title>Actores Electorales 2026 — Inicio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1e3a8a">
+  <meta name="description" content="Plataforma oficial de Actores Electorales del CNE para las elecciones presidenciales Colombia 2026. Postula testigos, capacita actores y sigue la jornada en vivo.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,54 +15,48 @@
 
   <link rel="preload" as="image" href="assets/img/5.jpeg" fetchpriority="high">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
+<body data-page="inicio">
+  <!-- @partial:header -->
+<a href="#mainContent" class="skip-link">Saltar al contenido</a>
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr-wrap" role="banner">
-    <div class="hdr-inner">
-      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
-        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
-      </a>
-      <nav class="hdr-nav" aria-label="Navegación principal">
-        <a href="index.html" class="active" aria-current="page">Inicio</a>
-        <a href="quienes-somos.html">Quiénes somos</a>
-        <a href="plataforma.html">Plataforma</a>
-        <a href="entrenamiento.html">Entrenamiento</a>
-        <a href="regiones.html">Regiones</a>
-        <a href="canales.html">Canales de atención</a>
-        <a href="prensa.html">Sala de prensa</a>
-        <a href="eventos.html">Eventos</a>
-      </nav>
-      <div class="hdr-cta">
-        <a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">●</span> Ingresar</a>
-      </div>
-      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
-        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-    </div>
-    <div class="flag-rule" aria-hidden="true">
-      <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
-    </div>
-    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
-      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
-      <a href="index.html" class="active">Inicio</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="plataforma.html">Plataforma</a>
-      <a href="entrenamiento.html">Entrenamiento</a>
-      <a href="regiones.html">Regiones</a>
-      <a href="canales.html">Canales de atención</a>
-      <a href="prensa.html">Sala de prensa</a>
-      <a href="eventos.html">Eventos</a>
-      <div class="mnav-cta">
-        <a class="btn red" href="plataforma.html">Ingresar a la Plataforma</a>
-        <a class="btn outline" href="canales.html">Contacto</a>
-      </div>
+<header class="hdr-wrap" role="banner">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+      <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+    </a>
+    <nav class="hdr-nav" aria-label="Navegación principal">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+      <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+      <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+      <a href="regiones.html" data-nav="regiones">Regiones</a>
+      <a href="canales.html" data-nav="canales">Canales de atención</a>
+      <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+      <a href="eventos.html" data-nav="eventos">Eventos</a>
     </nav>
-  </header>
+    <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+      <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="flag-rule" aria-hidden="true">
+    <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+  </div>
+  <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+    <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+    <a href="index.html" data-nav="inicio">Inicio</a>
+    <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+    <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+    <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+    <a href="regiones.html" data-nav="regiones">Regiones</a>
+    <a href="canales.html" data-nav="canales">Canales de atención</a>
+    <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+    <a href="eventos.html" data-nav="eventos">Eventos</a>
+  </nav>
+</header>
+<!-- @end-partial:header -->
 
   <!-- Progress Rail -->
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
@@ -75,7 +70,7 @@
 
           <!-- ── Banner 1: Postulación (paper) ── -->
           <article class="ae-banner-slide is-active" data-banner="0" data-theme="paper">
-            <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" aria-hidden="true">
+            <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
             <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
             <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
 
@@ -105,17 +100,17 @@
                 <span class="ae-banner-shape shape-hex-yellow-bg" aria-hidden="true"></span>
                 <span class="ae-banner-shape shape-tri-blue" aria-hidden="true"></span>
                 <div class="ae-banner-hex">
-                  <img src="assets/img/14.jpeg" alt="Testigos electorales acreditándose en jornada del CNE">
+                  <img src="assets/img/14.jpeg" alt="Testigos electorales acreditándose en jornada del CNE" decoding="async">
                 </div>
-                <img class="ae-banner-deco shape-vec-04" src="assets/img/vector_04.svg" aria-hidden="true">
+                <img class="ae-banner-deco shape-vec-04" src="assets/img/vector_04.svg" alt="" aria-hidden="true" decoding="async">
               </div>
             </div>
           </article>
 
           <!-- ── Banner 2: Countdown (soft) ── -->
           <article class="ae-banner-slide" data-banner="1" data-theme="soft">
-            <img class="ae-banner-mesh" src="assets/img/Malla_Amarillo.svg" aria-hidden="true">
-            <img class="ae-banner-deco shape-zigzag-l" src="assets/img/vector_02.svg" aria-hidden="true">
+            <img class="ae-banner-mesh" src="assets/img/Malla_Amarillo.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <img class="ae-banner-deco shape-zigzag-l" src="assets/img/vector_02.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="ae-banner-shape shape-dot-cluster shape-bl" aria-hidden="true"></span>
 
             <div class="ae-banner-grid">
@@ -145,18 +140,18 @@
                 <span class="ae-banner-tag-floating" aria-hidden="true">Un solo equipo, Colombia unida en democracia</span>
                 <span class="ae-banner-shape shape-hex-blue-bg" aria-hidden="true"></span>
                 <div class="ae-banner-hex">
-                  <img src="assets/img/2.jpeg" alt="Familia colombiana celebrando en jornada electoral">
+                  <img src="assets/img/2.jpeg" alt="Familia colombiana celebrando en jornada electoral" loading="lazy" decoding="async">
                 </div>
-                <img class="ae-banner-deco shape-vec-01" src="assets/img/vector_01.svg" aria-hidden="true">
+                <img class="ae-banner-deco shape-vec-01" src="assets/img/vector_01.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
               </div>
             </div>
           </article>
 
           <!-- ── Banner 3: Capacitación (paper-2) ── -->
           <article class="ae-banner-slide" data-banner="2" data-theme="paper-2">
-            <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" aria-hidden="true">
+            <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="ae-banner-shape shape-hex-red shape-tr" aria-hidden="true"></span>
-            <img class="ae-banner-deco shape-vec-02" src="assets/img/vector_02.svg" aria-hidden="true">
+            <img class="ae-banner-deco shape-vec-02" src="assets/img/vector_02.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
             <div class="ae-banner-grid">
               <div class="ae-banner-content">
@@ -184,18 +179,18 @@
               <div class="ae-banner-visual">
                 <span class="ae-banner-shape shape-hex-yellow-bg shape-shifted" aria-hidden="true"></span>
                 <div class="ae-banner-hex">
-                  <img src="assets/img/10.jpeg" alt="Sesión de capacitación de testigos electorales">
+                  <img src="assets/img/10.jpeg" alt="Sesión de capacitación de testigos electorales" loading="lazy" decoding="async">
                 </div>
-                <img class="ae-banner-deco shape-vec-03" src="assets/img/vector_03.svg" aria-hidden="true">
+                <img class="ae-banner-deco shape-vec-03" src="assets/img/vector_03.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
               </div>
             </div>
           </article>
 
           <!-- ── Banner 4: Transmisión en vivo (yellow) ── -->
           <article class="ae-banner-slide" data-banner="3" data-theme="yellow">
-            <img class="ae-banner-mesh" src="assets/img/Malla_Amarillo.svg" aria-hidden="true">
+            <img class="ae-banner-mesh" src="assets/img/Malla_Amarillo.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="ae-banner-shape shape-dot-cluster shape-tl" aria-hidden="true"></span>
-            <img class="ae-banner-deco shape-zigzag-b" src="assets/img/vector_02.svg" aria-hidden="true">
+            <img class="ae-banner-deco shape-zigzag-b" src="assets/img/vector_02.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
             <div class="ae-banner-grid">
               <div class="ae-banner-content">
@@ -218,13 +213,13 @@
                 </div>
                 <p class="ae-banner-live">Sigue la transmisión en vivo en nuestros canales oficiales</p>
                 <div class="ae-banner-social" aria-label="Canales sociales">
-                  <a href="https://x.com/CNE_COLOMBIA" target="_blank" rel="noopener" aria-label="X / Twitter">
+                  <a href="https://x.com/CNE_COLOMBIA" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.643Z"/></svg>
                   </a>
-                  <a href="https://instagram.com/cne_colombia" target="_blank" rel="noopener" aria-label="Instagram">
+                  <a href="https://instagram.com/cne_colombia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
                   </a>
-                  <a href="https://facebook.com/CNE_COLOMBIA" target="_blank" rel="noopener" aria-label="Facebook">
+                  <a href="https://facebook.com/CNE_COLOMBIA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 1-2 2-2h2V1h-3c-3 0-5 2-5 5v3H7v4h3v10h4V13h3l1-4h-4Z"/></svg>
                   </a>
                 </div>
@@ -244,9 +239,9 @@
               <div class="ae-banner-visual">
                 <span class="ae-banner-shape shape-hex-white-bg" aria-hidden="true"></span>
                 <div class="ae-banner-hex">
-                  <img src="assets/img/3.jpeg" alt="Mujeres caribeñas en jornada electoral">
+                  <img src="assets/img/3.jpeg" alt="Mujeres caribeñas en jornada electoral" loading="lazy" decoding="async">
                 </div>
-                <img class="ae-banner-deco shape-vec-01-r" src="assets/img/vector_01.svg" aria-hidden="true">
+                <img class="ae-banner-deco shape-vec-01-r" src="assets/img/vector_01.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
               </div>
             </div>
           </article>
@@ -354,12 +349,12 @@
 
     <!-- ═══ SECCIÓN 3: Video ═══ -->
     <section class="pad ae-video-section" data-parallax-trigger aria-label="Video — Sigue la transmisión en vivo">
-      <img class="ae-video-mesh" src="assets/img/Malla_03.svg" aria-hidden="true">
+      <img class="ae-video-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <span class="ae-video-shape shape-hex-yellow-sm" aria-hidden="true"></span>
       <span class="ae-video-shape shape-hex-red-sm" aria-hidden="true"></span>
       <span class="ae-video-shape shape-dot-cluster" aria-hidden="true"></span>
-      <img class="ae-video-deco vec-tl" src="assets/img/vector_01.svg" aria-hidden="true">
-      <img class="ae-video-deco vec-br" src="assets/img/vector_04.svg" aria-hidden="true">
+      <img class="ae-video-deco vec-tl" src="assets/img/vector_01.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="ae-video-deco vec-br" src="assets/img/vector_04.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
       <div class="wrap ae-z2">
         <header class="ae-video-head" data-enter>
@@ -373,7 +368,7 @@
           <span class="ae-video-shape shape-tri-blue-bg" aria-hidden="true"></span>
 
           <div class="ae-video-player" data-video-id="Z3fhibVvWcc">
-            <img class="ae-video-poster" src="assets/img/13.jpeg" alt="Video institucional Actores Electorales 2026">
+            <img class="ae-video-poster" src="assets/img/13.jpeg" alt="Video institucional Actores Electorales 2026" loading="lazy" decoding="async">
             <div class="ae-video-scrim" aria-hidden="true"></div>
             <button type="button" class="ae-video-play" aria-label="Reproducir video institucional del CNE">
               <span class="ae-video-play-ring" aria-hidden="true"></span>
@@ -461,7 +456,6 @@
 
   <!-- Sticky bottom CTA (móvil) -->
   <div class="sticky-cta" role="region" aria-label="Acciones rápidas">
-    <a class="btn red" href="plataforma.html">Ingresar</a>
     <a class="btn outline" href="canales.html">Contacto</a>
   </div>
 

@@ -241,8 +241,23 @@
   // con semántica de "un solo abierto por .faq-group". Aquí no duplicamos listeners.
   // Canales usa variante `.ae-faq-btn` con onclick inline propio.
 
+  // ── Header active state — marca .active + aria-current="page"
+  // sobre los <a data-nav="X"> que coinciden con <body data-page="X">.
+  // Mantiene la single-source-of-truth del partial sin que cada página
+  // tenga que duplicar marcado por estado activo.
+  function initHeaderActive() {
+    var page = document.body && document.body.dataset && document.body.dataset.page;
+    if (!page) return;
+    var links = document.querySelectorAll('[data-nav="' + CSS.escape(page) + '"]');
+    links.forEach(function(a) {
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
+    });
+  }
+
   // ── Init all ──
   document.addEventListener('DOMContentLoaded', function() {
+    initHeaderActive();
     initShell();
     initEnterObserver();
     initSmoothAnchors();

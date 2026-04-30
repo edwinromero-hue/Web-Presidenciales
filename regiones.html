@@ -5,218 +5,477 @@
   <title>Actores Electorales 2026 — Regiones</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1e3a8a">
+  <meta name="description" content="Buscador territorial de sedes regionales de Actores Electorales 2026: 32 departamentos, consulados y municipios de Colombia.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
+<body data-page="regiones">
+  <!-- @partial:header -->
+<a href="#mainContent" class="skip-link">Saltar al contenido</a>
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr-wrap" role="banner">
-    <div class="hdr-inner">
-      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
-        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
-      </a>
-      <nav class="hdr-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes somos</a>
-        <a href="plataforma.html">Plataforma</a>
-        <a href="entrenamiento.html">Entrenamiento</a>
-        <a href="regiones.html" class="active" aria-current="page">Regiones</a>
-        <a href="canales.html">Canales de atención</a>
-        <a href="prensa.html">Sala de prensa</a>
-        <a href="eventos.html">Eventos</a>
-      </nav>
-      <div class="hdr-cta">
-        <a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">&#9679;</span> Ingresar</a>
-      </div>
-      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
-        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-    </div>
-    <div class="flag-rule" aria-hidden="true">
-      <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
-    </div>
-    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
-      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
-      <a href="index.html">Inicio</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="plataforma.html">Plataforma</a>
-      <a href="entrenamiento.html">Entrenamiento</a>
-      <a href="regiones.html" class="active">Regiones</a>
-      <a href="canales.html">Canales de atención</a>
-      <a href="prensa.html">Sala de prensa</a>
-      <a href="eventos.html">Eventos</a>
-      <div class="mnav-cta">
-        <a class="btn red" href="plataforma.html">Ingresar a la Plataforma</a>
-        <a class="btn outline" href="canales.html">Contacto</a>
-      </div>
+<header class="hdr-wrap" role="banner">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+      <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+    </a>
+    <nav class="hdr-nav" aria-label="Navegación principal">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+      <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+      <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+      <a href="regiones.html" data-nav="regiones">Regiones</a>
+      <a href="canales.html" data-nav="canales">Canales de atención</a>
+      <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+      <a href="eventos.html" data-nav="eventos">Eventos</a>
     </nav>
-  </header>
+    <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+      <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="flag-rule" aria-hidden="true">
+    <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+  </div>
+  <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+    <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+    <a href="index.html" data-nav="inicio">Inicio</a>
+    <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+    <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+    <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+    <a href="regiones.html" data-nav="regiones">Regiones</a>
+    <a href="canales.html" data-nav="canales">Canales de atención</a>
+    <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+    <a href="eventos.html" data-nav="eventos">Eventos</a>
+  </nav>
+</header>
+<!-- @end-partial:header -->
 
   <!-- Progress Rail -->
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
 
   <main id="mainContent">
 
-    <!-- ═══ SECTION 1: Hero ═══ -->
-    <section class="ph" style="position:relative;overflow:hidden">
-      <div class="wrap ae-z2">
-        <nav aria-label="Breadcrumb" style="font-size:13px;color:#475569;margin-bottom:24px">
-          <a href="index.html" style="color:#475569;text-decoration:none">Inicio</a>
-          <span aria-hidden="true" style="margin:0 8px">/</span>
-          <span aria-current="page" style="color:#1e3a8a;font-weight:600">Regiones</span>
+    <!-- ═══ SECTION 1: Banner compacto ═══ -->
+    <section class="ae-banner-compact" aria-label="Regiones">
+      <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
+      <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
+      <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
+      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true" decoding="async">
+
+      <div class="wrap ae-banner-compact-inner">
+        <nav aria-label="Breadcrumb" class="ae-banner-compact-crumb">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Regiones</span>
         </nav>
-        <div class="eyebrow">Territorio</div>
-        <h1 style="font-size:clamp(40px,6vw,80px);font-weight:800;line-height:0.95;letter-spacing:-0.03em;margin-top:16px">Conoce lo que pasa<br>en las regiones.</h1>
-        <p style="font-size:18px;color:#334155;max-width:640px;line-height:1.55;margin-top:20px">Presencia en cada rincon del territorio nacional y en los consulados del mundo. Así garantizamos la transparencia electoral.</p>
-      </div>
-      <div class="ph-deco" data-parallax="0.15" aria-hidden="true" style="position:absolute;top:10%;right:5%;width:200px;height:200px;background:rgba(255,198,39,0.15);border-radius:50%"></div>
-    </section>
-
-    <!-- ═══ SECTION 2: Big Statement ═══ -->
-    <section class="pad" style="background:var(--ae-blue-soft)">
-      <div class="wrap" style="max-width:1100px;text-align:center">
-        <h2 style="font-size:clamp(36px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-0.03em" data-word-reveal>COLOMBIA ENTERA VIGILANDO SU DEMOCRACIA, MUNICIPIO POR MUNICIPIO.</h2>
+        <div class="eyebrow ae-banner-compact-eyebrow">
+          <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+          Cobertura nacional
+        </div>
+        <h1 class="ae-banner-compact-title">Encuentra tu <em>región</em></h1>
       </div>
     </section>
 
-    <!-- ═══ SECTION 3: Count-up ═══ -->
-    <section class="pad" style="background:#ffc627;position:relative;overflow:hidden" aria-labelledby="statsRegionHeading">
+    <!-- ═══ SECTION 2: Locator (panel + mapa) ═══ -->
+    <section class="ae-locator pad" aria-label="Buscador territorial">
       <div class="wrap">
-        <h2 id="statsRegionHeading" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Cobertura territorial</h2>
-        <div class="g2" style="max-width:700px;margin:0 auto;text-align:center;gap:48px">
-          <div>
-            <div class="bignum" style="color:#0f172a" data-countup="1103">0</div>
-            <div class="ae-stat-label">Municipios</div>
-          </div>
-          <div>
-            <div class="bignum" style="color:#0f172a" data-countup="67">0</div>
-            <div class="ae-stat-label">Consulados</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ═══ SECTION 4: Interactive Map ═══ -->
-    <section class="pad" style="background:#f8fafc;position:relative;overflow:hidden">
-      <style>
-        @keyframes pulse-ring {
-          0% { transform:scale(1); opacity:0.6; }
-          100% { transform:scale(2.2); opacity:0; }
-        }
-        .map-dot { position:absolute; width:14px; height:14px; background:#15803d; border-radius:50%; cursor:pointer; border:none; padding:0; z-index:3; transition:all 200ms ease; }
-        .map-dot::before { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid #15803d; animation:pulse-ring 1.8s ease-out infinite; }
-        .map-dot:hover { background:#1e3a8a; transform:scale(1.3); }
-        .map-container { position:relative; max-width:600px; margin:0 auto; aspect-ratio:3/4; }
-        .region-tab.active-tab { background:#1e3a8a!important; color:#fff!important; }
-      </style>
+        <div class="ae-locator-shell">
 
-      <div class="wrap">
-        <div style="text-align:center;margin-bottom:40px">
-          <div class="eyebrow" style="justify-content:center">Mapa interactivo</div>
-          <h2 class="ae-h2">Explora las regiones</h2>
-        </div>
+          <!-- ── PANEL IZQ: buscador + lista ── -->
+          <aside class="ae-locator-panel" aria-label="Búsqueda y resultados">
+            <button type="button" class="ae-locator-cta" id="aeFindNearest">
+              <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+              Buscar mi región
+            </button>
 
-        <!-- Tabs -->
-        <div role="group" aria-label="Nivel de detalle del mapa" style="display:flex;gap:12px;justify-content:center;margin-bottom:40px;flex-wrap:wrap">
-          <button type="button" class="btn region-tab" aria-pressed="true" style="background:#1e3a8a;color:#fff">Colombia</button>
-          <button type="button" class="btn outline region-tab" aria-pressed="false">Municipios</button>
-          <button type="button" class="btn outline region-tab" aria-pressed="false">Consulados</button>
-        </div>
+            <div class="ae-locator-search">
+              <svg viewBox="0 0 24 24" class="ae-locator-search-icon" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="search" id="aeLocatorSearch" placeholder="Buscar por departamento" aria-label="Buscar departamento">
+              <button type="button" class="ae-locator-search-btn" aria-label="Ejecutar búsqueda">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+              </button>
+            </div>
 
-        <!-- Map -->
-        <div class="map-container">
-          <!-- Colombia SVG silhouette -->
-          <svg aria-hidden="true" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-            <path d="M180 20 C160 30,140 50,130 70 C120 90,100 110,90 140 C80 170,70 190,75 220 C80 250,85 270,95 290 C105 310,110 330,120 350 C130 370,145 390,160 400 C175 410,190 420,210 425 C230 430,250 420,265 410 C280 400,290 380,300 360 C310 340,320 310,325 280 C330 250,330 220,325 190 C320 160,310 130,295 110 C280 90,260 70,240 50 C220 30,200 20,180 20Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
-          </svg>
+            <div class="ae-locator-list" role="region" aria-live="polite">
+              <!-- Pane: Colombia (departamentos) -->
+              <ol class="ae-locator-pane is-active" id="paneColombia" data-pane="colombia">
+                <li><a href="#" class="ae-locator-item is-active" data-pin="amazonas" data-lat="-4.2150" data-lng="-69.9406" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/hYajdoNyYTu5dicZA" data-email="apoyo.amazonas@actoreselectorales.com">
+                  <h3>AMAZONAS</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Leticia</p>
+                  <p class="ae-locator-sede">Hotel Amazon Bed &amp; Breakfast</p>
+                  <p class="ae-locator-detail">Cll 12 #9-30, Leticia, Amazonas</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="antioquia" data-lat="6.2442" data-lng="-75.5812" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/AyvBaUDJmHXyadnXA" data-email="apoyo.antioquia@actoreselectorales.com">
+                  <h3>ANTIOQUIA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Medellín</p>
+                  <p class="ae-locator-sede">Coworking Inspira — sede Laureles</p>
+                  <p class="ae-locator-detail">Tv 39B #73-23, interior 201</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="arauca" data-lat="7.0844" data-lng="-70.7591" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nwHgYD5rzsVKDzds7" data-email="apoyo.arauca@actoreselectorales.com">
+                  <h3>ARAUCA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Arauca</p>
+                  <p class="ae-locator-sede">Olab Ocre Coworking Arauca</p>
+                  <p class="ae-locator-detail">Cra 26 #20-05, Arauca, Arauca</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="atlantico" data-lat="10.9685" data-lng="-74.7813" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KXXSXSzzTag1Cr479" data-email="apoyo.atlantico@actoreselectorales.com">
+                  <h3>ATLÁNTICO</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Barranquilla</p>
+                  <p class="ae-locator-sede">Cowork Para Todos</p>
+                  <p class="ae-locator-detail">Cra 53 #72-136, Barranquilla, Atlántico</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="bolivar" data-lat="10.3910" data-lng="-75.4794" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CKehyHFsg6zH2YxR6" data-email="apoyo.bolivar@actoreselectorales.com">
+                  <h3>BOLÍVAR</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cartagena de Indias</p>
+                  <p class="ae-locator-sede">Tu Work</p>
+                  <p class="ae-locator-detail">Calle 6A #3-32, Bocagrande</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="boyaca" data-lat="5.5353" data-lng="-73.3678" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/cetAyGmHzXf8gUUA8" data-email="apoyo.boyaca@actoreselectorales.com">
+                  <h3>BOYACÁ</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Tunja</p>
+                  <p class="ae-locator-sede">El Camello Coworking</p>
+                  <p class="ae-locator-detail">Tv 9A #29-19, Tunja, Boyacá</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="caldas" data-lat="5.0689" data-lng="-75.5174" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oyC2ogzJhpyMUeun6" data-email="apoyo.caldas@actoreselectorales.com">
+                  <h3>CALDAS</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Manizales</p>
+                  <p class="ae-locator-sede">Thinka Coworking</p>
+                  <p class="ae-locator-detail">Cra 23 #64B-33, Manizales, Caldas</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="caqueta" data-lat="1.6144" data-lng="-75.6062" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oT7cXMTrpX6Ssc857" data-email="apoyo.caqueta@actoreselectorales.com">
+                  <h3>CAQUETÁ</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Florencia</p>
+                  <p class="ae-locator-sede">Hotel Caquetá Real</p>
+                  <p class="ae-locator-detail">Cll 18 #9-49, Florencia, Caquetá</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="casanare" data-lat="5.3378" data-lng="-72.3959" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/tdeN7bT6SmWiqMJS9" data-email="apoyo.casanare@actoreselectorales.com">
+                  <h3>CASANARE</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Yopal</p>
+                  <p class="ae-locator-sede">Work Station</p>
+                  <p class="ae-locator-detail">Cra 20 #8-77, Yopal, Casanare</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="cauca" data-lat="2.4448" data-lng="-76.6147" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/mmHSdbDzjQCEuBcd9" data-email="apoyo.cauca@actoreselectorales.com">
+                  <h3>CAUCA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Popayán</p>
+                  <p class="ae-locator-sede">Borém</p>
+                  <p class="ae-locator-detail">Cll 2 #2-12, Popayán, Cauca</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="cesar" data-lat="10.4744" data-lng="-73.2438" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/HSyhrmbnFu62Sbpb6" data-email="apoyo.cesar@actoreselectorales.com">
+                  <h3>CESAR</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Valledupar</p>
+                  <p class="ae-locator-sede">Coworking Oficinas Statera</p>
+                  <p class="ae-locator-detail">Cra 13 #14-31, Valledupar, Cesar</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="choco" data-lat="5.6919" data-lng="-76.6583" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KJvH8fRF22j4DiB78" data-email="apoyo.choco@actoreselectorales.com">
+                  <h3>CHOCÓ</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Quibdó</p>
+                  <p class="ae-locator-sede">MIA Hotel Chocó</p>
+                  <p class="ae-locator-detail">Centro Comercial El Caraño</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="cordoba" data-lat="8.7479" data-lng="-75.8814" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nPwZ4Utnh9b4AF5t6" data-email="apoyo.cordoba@actoreselectorales.com">
+                  <h3>CÓRDOBA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Montería</p>
+                  <p class="ae-locator-sede">Edificio Centro de Negocios Alamedas</p>
+                  <p class="ae-locator-detail">Cra 8 #34-45</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="guainia" data-lat="3.8703" data-lng="-67.9167" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/61UELWsTW8CoDCqaA" data-email="apoyo.guainia@actoreselectorales.com">
+                  <h3>GUAINÍA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Inírida</p>
+                  <p class="ae-locator-sede">Fuente del Guainía</p>
+                  <p class="ae-locator-detail">Vía Aeropuerto K 1-2, Inírida, Guainía</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="guaviare" data-lat="2.5736" data-lng="-72.6411" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/MJjyaDMbFqvMRHeA6" data-email="apoyo.guaviare@actoreselectorales.com">
+                  <h3>GUAVIARE</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> San José del Guaviare</p>
+                  <p class="ae-locator-sede">Salón de Eventos Paz Guaviare</p>
+                  <p class="ae-locator-detail">Salón de Eventos Paz Guaviare</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="huila" data-lat="2.9273" data-lng="-75.2819" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/72oQPgz5kpDBakym8" data-email="apoyo.hulia@actoreselectorales.com">
+                  <h3>HUILA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Neiva</p>
+                  <p class="ae-locator-sede">Conecta Work Center</p>
+                  <p class="ae-locator-detail">Cra 4 #12-59, Neiva, Huila</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="guajira" data-lat="11.5444" data-lng="-72.9072" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/ebkdSEFgUw7Yf5B8A" data-email="apoyo.laguajira@actoreselectorales.com">
+                  <h3>LA GUAJIRA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Riohacha</p>
+                  <p class="ae-locator-sede">Spot Coworking</p>
+                  <p class="ae-locator-detail">Cll 2 #7-54, Riohacha, La Guajira</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="magdalena" data-lat="11.2408" data-lng="-74.1990" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/gquR2KfVfuA7oo2n9" data-email="apoyo.magdalena@actoreselectorales.com">
+                  <h3>MAGDALENA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Santa Marta</p>
+                  <p class="ae-locator-sede">Nomaland Coworking</p>
+                  <p class="ae-locator-detail">Cll 18 #8C-07, Centro</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="meta" data-lat="4.1420" data-lng="-73.6266" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/3goXKNqp4JVgKK6A9" data-email="apoyo.meta@actoreselectorales.com">
+                  <h3>META</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Villavicencio</p>
+                  <p class="ae-locator-sede">Innovación Coworking</p>
+                  <p class="ae-locator-detail">Cra 22 #1-20 sur, Villavicencio, Meta</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="narino" data-lat="1.2273" data-lng="-77.2879" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/tempo+CoWorking/@1.2273169,-77.2878919,17z" data-email="apoyo.narino@actoreselectorales.com">
+                  <h3>NARIÑO</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Pasto</p>
+                  <p class="ae-locator-sede">Tempo CoWorking</p>
+                  <p class="ae-locator-detail">Cra 37 #19B-35</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="norte-santander" data-lat="7.8842" data-lng="-72.4996" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Cata+coworking/@7.8841556,-72.4996302,17z" data-email="apoyo.nortedesantander@actoreselectorales.com">
+                  <h3>NORTE DE SANTANDER</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cúcuta</p>
+                  <p class="ae-locator-sede">Cata CoWorking</p>
+                  <p class="ae-locator-detail">Cll 14A #2C-100</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="putumayo" data-lat="1.1473" data-lng="-76.6485" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/pvTbkWrNCJfP9Mob7" data-email="apoyo.putumayo@actoreselectorales.com">
+                  <h3>PUTUMAYO</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Mocoa</p>
+                  <p class="ae-locator-sede">Maloca Café</p>
+                  <p class="ae-locator-detail">Cll 7 #5-10, Mocoa, Putumayo</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="quindio" data-lat="4.5339" data-lng="-75.6811" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/NxhWE7qxJRADKwNq6" data-email="apoyo.quindio@actoreselectorales.com">
+                  <h3>QUINDÍO</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Armenia</p>
+                  <p class="ae-locator-sede">Fundador Coworking y Papelería</p>
+                  <p class="ae-locator-detail">Cra 13A #1A-35, Armenia, Quindío</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="risaralda" data-lat="4.8133" data-lng="-75.6961" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rBmxCZJkW5nCDKTX9" data-email="apoyo.risaralda@actoreselectorales.com">
+                  <h3>RISARALDA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Pereira</p>
+                  <p class="ae-locator-sede">Social &amp; Co — Coworking</p>
+                  <p class="ae-locator-detail">Centro Comercial Pereira</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="sanandres" data-lat="12.5847" data-lng="-81.7006" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CpRpdkTNWtm4MxmW8" data-email="apoyo.sanandresyprovidencia@actoreselectorales.com">
+                  <h3>SAN ANDRÉS Y PROVIDENCIA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> San Andrés</p>
+                  <p class="ae-locator-sede">Centro Comercial New Point, Local 119</p>
+                  <p class="ae-locator-detail">Cra 4 #2-37, San Andrés</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="santander" data-lat="7.1193" data-lng="-73.1227" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/uX95pb4ZMYNAdm3r6" data-email="apoyo.santander@actoreselectorales.com">
+                  <h3>SANTANDER</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Bucaramanga</p>
+                  <p class="ae-locator-sede">ColorWorking</p>
+                  <p class="ae-locator-detail">Cra 36 #48-20</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="sucre" data-lat="9.3047" data-lng="-75.3978" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oCTWBxrRXNLpE8t36" data-email="apoyo.sucre@actoreselectorales.com">
+                  <h3>SUCRE</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Sincelejo</p>
+                  <p class="ae-locator-sede">Las Carolinas SAS</p>
+                  <p class="ae-locator-detail">Cll 14 #19A-17, B. Ford, Sincelejo, Sucre</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="tolima" data-lat="4.4389" data-lng="-75.2322" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/sBYiRyRFog2YR7R69" data-email="apoyo.tolima@actoreselectorales.com">
+                  <h3>TOLIMA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Ibagué</p>
+                  <p class="ae-locator-sede">Cowork Piedra Pintada</p>
+                  <p class="ae-locator-detail">Calle 47 #4-61, Barrio Piedra Pintada</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="valle" data-lat="3.4516" data-lng="-76.5320" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rH97ZjbCCPDGG2eh7" data-email="apoyo.valledelcauca@actoreselectorales.com">
+                  <h3>VALLE DEL CAUCA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cali</p>
+                  <p class="ae-locator-sede">Épico Workspace</p>
+                  <p class="ae-locator-detail">Cll 3 #4-19, Cali, Valle del Cauca</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="vaupes" data-lat="1.2538" data-lng="-70.2342" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/JLmTx1jd2GzaEWXq8" data-email="apoyo.vaupes@actoreselectorales.com">
+                  <h3>VAUPÉS</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Mitú</p>
+                  <p class="ae-locator-sede">Estadero Los Paisas</p>
+                  <p class="ae-locator-detail">Calle 19 #3-86, Barrio Palmeras</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+                <li><a href="#" class="ae-locator-item" data-pin="vichada" data-lat="6.1842" data-lng="-67.4846" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Hotel+Voragine/@6.1841949,-67.4845831,17z" data-email="apoyo.vichada@actoreselectorales.com">
+                  <h3>VICHADA</h3>
+                  <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Puerto Carreño</p>
+                  <p class="ae-locator-sede">Hotel La Vorágine</p>
+                  <p class="ae-locator-detail">Carrera 7 #15-293</p>
+                  <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
+                  <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a></li>
+              </ol>
 
-          <!-- City dots -->
-          <button class="map-dot" data-city="Bogota" style="top:52%;left:48%" aria-label="Bogota"></button>
-          <button class="map-dot" data-city="Medellin" style="top:38%;left:35%" aria-label="Medellin"></button>
-          <button class="map-dot" data-city="Cali" style="top:58%;left:30%" aria-label="Cali"></button>
-          <button class="map-dot" data-city="Barranquilla" style="top:18%;left:38%" aria-label="Barranquilla"></button>
-          <button class="map-dot" data-city="Cartagena" style="top:22%;left:32%" aria-label="Cartagena"></button>
-          <button class="map-dot" data-city="Bucaramanga" style="top:38%;left:50%" aria-label="Bucaramanga"></button>
-          <button class="map-dot" data-city="Cucuta" style="top:32%;left:55%" aria-label="Cucuta"></button>
-          <button class="map-dot" data-city="Pereira" style="top:48%;left:33%" aria-label="Pereira"></button>
-          <button class="map-dot" data-city="Manizales" style="top:46%;left:34%" aria-label="Manizales"></button>
-          <button class="map-dot" data-city="Santa Marta" style="top:15%;left:42%" aria-label="Santa Marta"></button>
-          <button class="map-dot" data-city="Villavicencio" style="top:56%;left:55%" aria-label="Villavicencio"></button>
-          <button class="map-dot" data-city="Pasto" style="top:72%;left:30%" aria-label="Pasto"></button>
-          <button class="map-dot" data-city="Ibague" style="top:50%;left:38%" aria-label="Ibague"></button>
-          <button class="map-dot" data-city="Neiva" style="top:58%;left:38%" aria-label="Neiva"></button>
-        </div>
 
-        <!-- Selected city label -->
-        <div style="text-align:center;margin-top:32px">
-          <div style="display:inline-block;background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:16px 32px;box-shadow:0 4px 16px rgba(0,0,0,0.06)">
-            <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#475569;margin-bottom:4px">Ciudad seleccionada</div>
-            <div id="cityLabel" aria-live="polite" aria-atomic="true" style="font-size:24px;font-weight:800;color:#1e3a8a">Bogota</div>
-          </div>
-        </div>
-      </div>
-    </section>
+            </div>
+          </aside>
 
-    <!-- ═══ SECTION 5: Region Detail ═══ -->
-    <section class="pad" style="background:#fff">
-      <div class="wrap">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
-          <!-- Left: Detail card -->
-          <div data-enter="left">
-            <div class="eyebrow">Ficha territorial</div>
-            <h2 style="font-size:clamp(32px,4.5vw,48px);font-weight:800;letter-spacing:-0.025em;margin-top:12px;margin-bottom:32px">Bogota D.C.</h2>
+          <!--
+            ╔═══════════════════════════════════════════════════════════════╗
+            ║ PANEL DER: MAPA                                               ║
+            ║                                                               ║
+            ║ Para conectar un mapa real (Leaflet / Google / Mapbox / WP    ║
+            ║ Store Locator / etc.) basta con:                              ║
+            ║                                                               ║
+            ║   1) Cambiar `data-map-provider` a 'leaflet' | 'google' |     ║
+            ║      'mapbox' (los adaptadores viven en js/regiones.js).      ║
+            ║   2) Si el proveedor lo necesita, setear `data-map-key`       ║
+            ║      con tu API key (en WordPress: leerla desde un setting    ║
+            ║      vía `get_option()` y echar al atributo).                 ║
+            ║   3) El proveedor renderizará dentro de `<div data-map-mount>`║
+            ║      ocultando automáticamente el SVG fallback.               ║
+            ║                                                               ║
+            ║ Las plazas (lat/lng) se leen del DOM (`data-lat`/`data-lng`   ║
+            ║ en cada `.ae-locator-item`), así que en WordPress basta con   ║
+            ║ renderizar la lista vía un loop PHP — el JS ya las consume.  ║
+            ╚═══════════════════════════════════════════════════════════════╝
+          -->
+          <div class="ae-locator-mapwrap"
+               aria-label="Mapa interactivo"
+               data-map-provider="google-iframe"
+               data-default-center="4.5709,-74.2973"
+               data-default-zoom="6"
+               data-map-tiles="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+               data-map-key="">
+            <button type="button" class="ae-locator-gps" aria-label="Activar GPS">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg>
+              Activar GPS
+            </button>
 
-            <div style="display:flex;flex-direction:column;gap:20px">
-              <div class="ae-head-row">
-                <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#475569">Puntos de votacion</span>
-                <span style="font-weight:800;color:#0f172a;font-size:18px">1.248</span>
+            <!-- Mount point: aquí monta el proveedor de mapa real -->
+            <div class="ae-locator-mapmount" data-map-mount aria-hidden="true"></div>
+
+            <div class="ae-locator-mapcanvas" id="aeMap">
+              <!-- Lattice de fondo (estilo mapa) -->
+              <svg class="ae-locator-grid" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                  <pattern id="ae-grid-pat" width="6" height="6" patternUnits="userSpaceOnUse">
+                    <path d="M 6 0 L 0 0 0 6" fill="none" stroke="rgba(15,23,42,0.06)" stroke-width="0.2"/>
+                  </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#ae-grid-pat)"/>
+              </svg>
+
+              <!-- Silueta Colombia (tabs colombia + municipios) -->
+              <svg class="ae-locator-svg ae-locator-svg-co" aria-hidden="true" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="aeLocCoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#dbeafe"/>
+                    <stop offset="100%" stop-color="#fef3c7"/>
+                  </linearGradient>
+                </defs>
+                <path d="M180 20 C160 30,140 50,130 70 C120 90,100 110,90 140 C80 170,70 190,75 220 C80 250,85 270,95 290 C105 310,110 330,120 350 C130 370,145 390,160 400 C175 410,190 420,210 425 C230 430,250 420,265 410 C280 400,290 380,300 360 C310 340,320 310,325 280 C330 250,330 220,325 190 C320 160,310 130,295 110 C280 90,260 70,240 50 C220 30,200 20,180 20Z" fill="url(#aeLocCoGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+              </svg>
+
+              <!-- Mapa mundial estilizado (tab consulados) -->
+              <svg class="ae-locator-svg ae-locator-svg-world" aria-hidden="true" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet">
+                <ellipse cx="200" cy="110" rx="190" ry="100" fill="#dbeafe" opacity="0.4"/>
+                <!-- Continentes muy abstractos -->
+                <path d="M40 90 Q70 70 110 80 Q140 90 130 120 Q120 150 90 145 Q60 140 40 120 Z" fill="#cbd5e1"/>
+                <path d="M150 70 Q190 60 220 75 Q260 90 250 120 Q240 145 200 145 Q160 140 150 110 Z" fill="#cbd5e1"/>
+                <path d="M250 50 Q290 45 320 70 Q345 95 335 130 Q320 160 285 165 Q255 165 250 135 Z" fill="#cbd5e1"/>
+                <path d="M120 150 Q140 145 155 165 Q170 185 155 205 Q135 210 120 195 Q110 175 120 150 Z" fill="#cbd5e1"/>
+              </svg>
+
+              <!-- ─── PINS — Colombia (departamentos) ─── -->
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="bogota" data-lat="4.7110" data-lng="-74.0721" data-zoom="11"           style="top:54%;left:48%"   aria-label="Bogotá D.C."><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="antioquia" data-lat="6.2442" data-lng="-75.5812" data-zoom="8"        style="top:42%;left:36%"   aria-label="Antioquia"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="valle" data-lat="3.4516" data-lng="-76.5320" data-zoom="8"            style="top:60%;left:30%"   aria-label="Valle del Cauca"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="atlantico" data-lat="10.9685" data-lng="-74.7813" data-zoom="9"        style="top:18%;left:38%"   aria-label="Atlántico"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="bolivar" data-lat="10.3910" data-lng="-75.4794" data-zoom="8"          style="top:24%;left:32%"   aria-label="Bolívar"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="santander" data-lat="7.1254" data-lng="-73.1198" data-zoom="8"        style="top:38%;left:50%"   aria-label="Santander"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="cundinamarca" data-lat="4.6097" data-lng="-74.0817" data-zoom="8"     style="top:52%;left:44%"   aria-label="Cundinamarca"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="norte-santander" data-lat="7.8939" data-lng="-72.5078" data-zoom="8"  style="top:32%;left:55%"   aria-label="Norte de Santander"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="boyaca" data-lat="5.5446" data-lng="-73.3568" data-zoom="8"           style="top:44%;left:48%"   aria-label="Boyacá"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-colombia" data-pin="caldas" data-lat="5.0703" data-lng="-75.5138" data-zoom="8"           style="top:48%;left:36%"   aria-label="Caldas"><span></span></button>
+
+              <!-- ─── PINS — Municipios ─── -->
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="bogota" data-lat="4.7110" data-lng="-74.0721" data-zoom="11"      style="top:54%;left:48%" aria-label="Bogotá"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="medellin" data-lat="6.2442" data-lng="-75.5812" data-zoom="11"    style="top:40%;left:35%" aria-label="Medellín"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="cali" data-lat="3.4516" data-lng="-76.5320" data-zoom="11"        style="top:60%;left:30%" aria-label="Cali"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="barranquilla" data-lat="10.9685" data-lng="-74.7813" data-zoom="11" style="top:18%;left:38%" aria-label="Barranquilla"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="cartagena" data-lat="10.3910" data-lng="-75.4794" data-zoom="11"   style="top:22%;left:32%" aria-label="Cartagena"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="bucaramanga" data-lat="7.1254" data-lng="-73.1198" data-zoom="11" style="top:38%;left:50%" aria-label="Bucaramanga"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="pereira" data-lat="4.8133" data-lng="-75.6961" data-zoom="11"     style="top:50%;left:33%" aria-label="Pereira"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="manizales" data-lat="5.0703" data-lng="-75.5138" data-zoom="11"   style="top:48%;left:36%" aria-label="Manizales"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="santa-marta" data-lat="11.2408" data-lng="-74.1990" data-zoom="11" style="top:15%;left:42%" aria-label="Santa Marta"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="cucuta" data-lat="7.8939" data-lng="-72.5078" data-zoom="11"      style="top:32%;left:55%" aria-label="Cúcuta"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-municipios" data-pin="ibague" data-lat="4.4389" data-lng="-75.2322" data-zoom="11"      style="top:52%;left:40%" aria-label="Ibagué"><span></span></button>
+
+              <!-- ─── PINS — Consulados (sobre mapa-mundo) ─── -->
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="madrid" data-lat="40.4168" data-lng="-3.7038" data-zoom="11"   style="top:30%;left:48%" aria-label="Madrid"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="miami" data-lat="25.7617" data-lng="-80.1918" data-zoom="11"    style="top:46%;left:24%" aria-label="Miami"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="ny" data-lat="40.7128" data-lng="-74.0060" data-zoom="11"       style="top:36%;left:26%" aria-label="Nueva York"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="bsas" data-lat="-34.6037" data-lng="-58.3816" data-zoom="11"     style="top:78%;left:30%" aria-label="Buenos Aires"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="mexico" data-lat="19.4326" data-lng="-99.1332" data-zoom="11"   style="top:48%;left:18%" aria-label="Ciudad de México"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="caracas" data-lat="10.4806" data-lng="-66.9036" data-zoom="11"  style="top:60%;left:26%" aria-label="Caracas"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="toronto" data-lat="43.6532" data-lng="-79.3832" data-zoom="11"  style="top:28%;left:26%" aria-label="Toronto"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="quito" data-lat="-0.1807" data-lng="-78.4678" data-zoom="11"    style="top:64%;left:22%" aria-label="Quito"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="lima" data-lat="-12.0464" data-lng="-77.0428" data-zoom="11"     style="top:68%;left:22%" aria-label="Lima"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="paris" data-lat="48.8566" data-lng="2.3522" data-zoom="11"    style="top:28%;left:50%" aria-label="París"><span></span></button>
+              <button type="button" class="ae-loc-pin pin-consulados" data-pin="londres" data-lat="51.5074" data-lng="-0.1278" data-zoom="11"  style="top:24%;left:48%" aria-label="Londres"><span></span></button>
+
+              <!-- Tooltip flotante -->
+              <div class="ae-locator-tip" id="aeMapTip" hidden>
+                <span class="ae-locator-tip-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong>—</strong>
               </div>
-              <div class="ae-head-row">
-                <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#475569">Direccion</span>
-                <span style="font-weight:600;color:#0f172a;font-size:15px">Cra 7 # 26-90 Of. 301</span>
-              </div>
-              <div class="ae-head-row">
-                <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#475569">Correo</span>
-                <a href="mailto:bogota@actoreselectorales.com" style="font-weight:600;color:#1e3a8a;font-size:15px;text-decoration:none">bogota@actoreselectorales.com</a>
-              </div>
-              <div class="ae-head-row">
-                <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#475569">Mesa de ayuda</span>
-                <span style="font-weight:600;color:#0f172a;font-size:15px">(601) 770 2692</span>
-              </div>
-              <div class="ae-head-row">
-                <span style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#475569">Eventos programados</span>
-                <span style="font-weight:800;color:#be123c;font-size:18px">3</span>
-              </div>
             </div>
 
-            <div style="margin-top:32px">
-              <a href="eventos.html" class="btn red">Ver eventos en esta región</a>
-            </div>
+            <button type="button" class="ae-locator-myloc" aria-label="Mi ubicación">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>
+            </button>
           </div>
 
-          <!-- Right: Image grid -->
-          <div data-enter="right" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
-            <div style="grid-column:1/3;grid-row:1/3;border-radius:12px;overflow:hidden">
-              <img src="assets/img/5.jpeg" alt="Región Bogota" loading="lazy" decoding="async" class="ae-img-cover">
-            </div>
-            <div style="border-radius:12px;overflow:hidden">
-              <img src="assets/img/7.jpeg" alt="Capacitación regional" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1">
-            </div>
-            <div style="border-radius:12px;overflow:hidden">
-              <img src="assets/img/9.jpeg" alt="Testigos electorales" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1">
-            </div>
-            <div style="border-radius:12px;overflow:hidden;grid-column:1/3">
-              <img src="assets/img/11.jpeg" alt="Proceso electoral" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/1">
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -234,30 +493,36 @@
           </div>
           <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
         </div>
-        <div>
-          <h5>Plataforma</h5>
-          <a href="index.html">Inicio</a>
-          <a href="quienes-somos.html">Quiénes somos</a>
-          <a href="plataforma.html">Plataforma</a>
-          <a href="entrenamiento.html">Entrenamiento</a>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Plataforma</button></h5>
+          <div class="footer-col-body">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes somos</a>
+            <a href="plataforma.html">Plataforma</a>
+            <a href="entrenamiento.html">Entrenamiento</a>
+          </div>
         </div>
-        <div>
-          <h5>Información</h5>
-          <a href="regiones.html">Regiones</a>
-          <a href="canales.html">Canales de atención</a>
-          <a href="prensa.html">Sala de prensa</a>
-          <a href="eventos.html">Eventos</a>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Información</button></h5>
+          <div class="footer-col-body">
+            <a href="regiones.html">Regiones</a>
+            <a href="canales.html">Canales de atención</a>
+            <a href="prensa.html">Sala de prensa</a>
+            <a href="eventos.html">Eventos</a>
+          </div>
         </div>
-        <div>
-          <h5>Contacto</h5>
-          <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
-          <a href="tel:+576017702692">(601) 770 2692</a>
-          <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Contacto</button></h5>
+          <div class="footer-col-body">
+            <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
+            <a href="tel:+576017702692">(601) 770 2692</a>
+            <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Consejo Nacional Electoral &middot; Aliados tecnologicos</span>
-        <span>Aviso de privacidad &middot; Terminos y condiciones</span>
+        <span>© 2026 Consejo Nacional Electoral · Aliados tecnológicos</span>
+        <span>Aviso de privacidad · Términos y condiciones</span>
       </div>
     </div>
   </footer>
@@ -266,32 +531,6 @@
 
   <script src="js/shell.js"></script>
   <script src="js/scrolly.js"></script>
-  <script>
-  (function(){
-    // Tab buttons — cache única al cargar
-    var tabs = document.querySelectorAll('.region-tab');
-    tabs.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        tabs.forEach(function(b){
-          b.className='btn outline region-tab';
-          b.setAttribute('aria-pressed','false');
-        });
-        btn.className='btn region-tab';
-        btn.setAttribute('aria-pressed','true');
-      });
-    });
-    // Map dots — cache única
-    var cityLabel = document.getElementById('cityLabel');
-    var dots = document.querySelectorAll('.map-dot');
-    dots.forEach(function(dot){
-      dot.addEventListener('click', function(){
-        dots.forEach(function(d){ d.style.background='#15803d'; d.style.width='14px'; d.style.height='14px'; d.setAttribute('aria-pressed','false'); });
-        dot.style.background='#1e3a8a'; dot.style.width='18px'; dot.style.height='18px';
-        dot.setAttribute('aria-pressed','true');
-        if(cityLabel) cityLabel.textContent = dot.getAttribute('data-city');
-      });
-    });
-  })();
-  </script>
+  <script src="js/regiones.js"></script>
 </body>
 </html>

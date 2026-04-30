@@ -5,49 +5,55 @@
   <title>Actores Electorales 2026 — Eventos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1e3a8a">
+  <meta name="description" content="Calendario de eventos del proceso electoral 2026: simulacros, debates presidenciales, capacitaciones y foros de transparencia.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
+<body data-page="eventos">
+  <!-- @partial:header -->
+<a href="#mainContent" class="skip-link">Saltar al contenido</a>
 
-  <!-- HEADER -->
-  <header class="hdr-wrap" role="banner">
-    <div class="hdr-inner">
-      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
-        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
-      </a>
-      <nav class="hdr-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes somos</a>
-        <a href="plataforma.html">Plataforma</a>
-        <a href="entrenamiento.html">Entrenamiento</a>
-        <a href="regiones.html">Regiones</a>
-        <a href="canales.html">Canales de atención</a>
-        <a href="prensa.html">Sala de prensa</a>
-        <a href="eventos.html" class="active" aria-current="page">Eventos</a>
-      </nav>
-      <div class="hdr-cta"><a class="btn red" href="plataforma.html"><span style="color:#ffc627" aria-hidden="true">●</span> Ingresar</a></div>
-      <button class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
-        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-    </div>
-    <div class="flag-rule" aria-hidden="true"><div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div></div>
-    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
-      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
-      <a href="index.html">Inicio</a><a href="quienes-somos.html">Quiénes somos</a><a href="plataforma.html">Plataforma</a><a href="entrenamiento.html">Entrenamiento</a><a href="regiones.html">Regiones</a><a href="canales.html">Canales de atención</a><a href="prensa.html">Sala de prensa</a><a href="eventos.html" class="active">Eventos</a>
-      <div class="mnav-cta">
-        <a class="btn red" href="plataforma.html">Ingresar a la Plataforma</a>
-        <a class="btn outline" href="canales.html">Contacto</a>
-      </div>
+<header class="hdr-wrap" role="banner">
+  <div class="hdr-inner">
+    <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+      <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+    </a>
+    <nav class="hdr-nav" aria-label="Navegación principal">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+      <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+      <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+      <a href="regiones.html" data-nav="regiones">Regiones</a>
+      <a href="canales.html" data-nav="canales">Canales de atención</a>
+      <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+      <a href="eventos.html" data-nav="eventos">Eventos</a>
     </nav>
-  </header>
+    <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
+      <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="flag-rule" aria-hidden="true">
+    <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+  </div>
+  <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+    <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
+    <a href="index.html" data-nav="inicio">Inicio</a>
+    <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+    <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+    <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+    <a href="regiones.html" data-nav="regiones">Regiones</a>
+    <a href="canales.html" data-nav="canales">Canales de atención</a>
+    <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+    <a href="eventos.html" data-nav="eventos">Eventos</a>
+  </nav>
+</header>
+<!-- @end-partial:header -->
 
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
 
@@ -73,7 +79,7 @@
               <div class="ae-kicker-y">Próximo evento</div>
               <h2 style="font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-0.025em;color:#fff;line-height:1">Inscríbete a los eventos.</h2>
               <p style="font-size:17px;color:rgba(255,255,255,0.85);margin-top:14px;max-width:560px;line-height:1.55">El próximo simulacro de escrutinio es el <b style="color:#ffc627">24 de abril</b>. Cupos limitados para testigos electorales acreditados.</p>
-              <button class="btn yellow" style="margin-top:28px">Inscribirme ahora →</button>
+              <button type="button" class="btn yellow" style="margin-top:28px">Inscribirme ahora →</button>
             </div>
             <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:14px;padding:24px;backdrop-filter:blur(10px)">
               <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#ffc627;margin-bottom:10px">Evento más cercano</div>
@@ -123,8 +129,8 @@
             <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:20px">
               <h3 style="font-size:28px;font-weight:800;letter-spacing:-0.02em">Abril 2026</h3>
               <div style="display:flex;gap:6px">
-                <button style="width:36px;height:36px;border:1px solid #e2e8f0;background:#fff;border-radius:8px;cursor:pointer" aria-label="Mes anterior">←</button>
-                <button style="width:36px;height:36px;border:1px solid #1e3a8a;background:#1e3a8a;color:#fff;border-radius:8px;cursor:pointer" aria-label="Mes siguiente">→</button>
+                <button type="button" style="width:36px;height:36px;border:1px solid #e2e8f0;background:#fff;border-radius:8px;cursor:pointer" aria-label="Mes anterior">←</button>
+                <button type="button" style="width:36px;height:36px;border:1px solid #1e3a8a;background:#1e3a8a;color:#fff;border-radius:8px;cursor:pointer" aria-label="Mes siguiente">→</button>
               </div>
             </div>
             <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden">
@@ -154,7 +160,7 @@
                 <div>24 de febrero de 2026</div><div>8:00 a.m. – 11:00 a.m.</div><div>Bogotá D.C., Colombia</div>
               </div>
             </div>
-            <p style="font-size:13px;color:#334155;margin-top:18px;line-height:1.65;font-style:italic;border-left:3px solid #ffc627;padding-left:14px">La Plataforma de Postulación y Acreditación de Actores Electorales digitaliza completamente este proceso mediante la eliminación de trámites físicos.</p>
+            <p style="font-size:13px;color:#334155;margin-top:18px;line-height:1.65;border-left:3px solid #ffc627;padding-left:14px">La Plataforma de Postulación y Acreditación de Actores Electorales digitaliza completamente este proceso mediante la eliminación de trámites físicos.</p>
           </div>
         </div>
       </div>
@@ -188,11 +194,34 @@
             <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
             <span class="ae-brand-mono">ACTORES <span style="color:#f43f5e">| 2026</span></span>
           </div>
-          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026.</p>
+          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
         </div>
-        <div><h5>Plataforma</h5><a href="index.html">Inicio</a><a href="quienes-somos.html">Quiénes somos</a><a href="plataforma.html">Plataforma</a><a href="entrenamiento.html">Entrenamiento</a></div>
-        <div><h5>Información</h5><a href="regiones.html">Regiones</a><a href="canales.html">Canales de atención</a><a href="prensa.html">Sala de prensa</a><a href="eventos.html">Eventos</a></div>
-        <div><h5>Contacto</h5><a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a><a href="tel:+576017702692">(601) 770 2692</a><a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a></div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Plataforma</button></h5>
+          <div class="footer-col-body">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes somos</a>
+            <a href="plataforma.html">Plataforma</a>
+            <a href="entrenamiento.html">Entrenamiento</a>
+          </div>
+        </div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Información</button></h5>
+          <div class="footer-col-body">
+            <a href="regiones.html">Regiones</a>
+            <a href="canales.html">Canales de atención</a>
+            <a href="prensa.html">Sala de prensa</a>
+            <a href="eventos.html">Eventos</a>
+          </div>
+        </div>
+        <div class="footer-col" data-open="false">
+          <h5><button class="footer-col-btn" type="button">Contacto</button></h5>
+          <div class="footer-col-body">
+            <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
+            <a href="tel:+576017702692">(601) 770 2692</a>
+            <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Consejo Nacional Electoral · Aliados tecnológicos</span>
@@ -205,37 +234,6 @@
 
   <script src="js/shell.js"></script>
   <script src="js/scrolly.js"></script>
-  <script>
-  (function(){
-    var grid = document.getElementById('calGrid');
-    if(!grid) return;
-    var eventDays = [8,15,17,22,24];
-    // Event delegation: 1 listener en el grid en vez de 30.
-    grid.addEventListener('click', function(e){
-      var btn = e.target.closest('.cal-day');
-      if(!btn || !grid.contains(btn)) return;
-      grid.querySelectorAll('.cal-day').forEach(function(b){ b.style.background='#fff'; });
-      btn.style.background='#ffc627';
-    });
-    for(var i=1;i<=30;i++){
-      var btn = document.createElement('button');
-      btn.type='button';
-      btn.className='cal-day';
-      btn.setAttribute('aria-label','Día '+i);
-      btn.style.cssText='aspect-ratio:1/1;border:0.5px solid #f1f5f9;background:'+(i===15?'#ffc627':'#fff')+';cursor:pointer;padding:8px;display:flex;flex-direction:column;align-items:flex-start;font-family:inherit';
-      var num = document.createElement('div');
-      num.style.cssText='font-size:13px;font-weight:800;color:#0f172a';
-      num.textContent=i;
-      btn.appendChild(num);
-      if(eventDays.indexOf(i)!==-1){
-        var lbl = document.createElement('div');
-        lbl.style.cssText='font-size:9px;margin-top:4px;padding:2px 4px;background:'+(i===15?'#1e3a8a':'#eaf1ff')+';color:'+(i===15?'#fff':'#1e3a8a')+';border-radius:4px;font-weight:700;line-height:1.2;text-align:left';
-        lbl.textContent='Campaña pres...';
-        btn.appendChild(lbl);
-      }
-      grid.appendChild(btn);
-    }
-  })();
-  </script>
+  <script src="js/pages.js"></script>
 </body>
 </html>

@@ -1,84 +1,96 @@
 <?php
 /**
- * Header global del tema.
+ * AE Header — versión WordPress
+ * =============================================================
+ * Espejo de partials/header.html. Mismo markup, mismas clases.
+ * Lo único distinto es de dónde sale la data:
  *
- * Desde <!DOCTYPE> hasta justo antes de <main>. Incluye skip-link,
- * header institucional con logo + nav desktop + CTA + burger móvil,
- * franja tricolor (flag-rule), drawer móvil y progress rail global.
+ *   Estático                       WordPress
+ *   ----------------------------   ------------------------------------
+ *   <body data-page="key">         <body <?php body_class(); ?>
+ *                                        data-page="<?php echo $ae_page; ?>">
+ *   href="index.html"              href="<?php echo home_url('/'); ?>"
+ *   href="quienes-somos.html"      href="<?php echo home_url('/quienes-somos'); ?>"
+ *   assets/logo.svg                <?php echo get_template_directory_uri(); ?>/assets/logo.svg
+ *   <a class="active" ...>         walker añade .current-menu-item
  *
- * @package ActoresElectorales2026
+ * Para activar este header en functions.php:
+ *
+ *   add_action('after_setup_theme', function () {
+ *       register_nav_menus([
+ *           'primary' => __('Navegación principal', 'ae'),
+ *           'mobile'  => __('Navegación móvil', 'ae'),
+ *       ]);
+ *   });
+ *
+ * Y en cualquier *.php usar `<?php get_header(); ?>`.
+ *
+ * @package ActoresElectorales
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit;
 }
-?><!DOCTYPE html>
+
+/**
+ * Resuelve la "key" de página para el data-page.
+ * Mismo mapa que scripts/sync_partials.py para mantener paridad.
+ */
+function ae_get_page_key(): string {
+    if (is_front_page() || is_home()) {
+        return 'inicio';
+    }
+    $slug = get_post_field('post_name', get_queried_object_id());
+    if (!$slug) {
+        return 'inicio';
+    }
+    // Páginas internas que viven dentro del bloque "Quiénes somos"
+    $internal_to_qs = ['aliados', 'metricas', 'compromisos', 'propositos'];
+    if (in_array($slug, $internal_to_qs, true)) {
+        return 'quienes-somos';
+    }
+    return $slug;
+}
+
+$ae_page = ae_get_page_key();
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-page="<?php echo esc_attr($ae_page); ?>">
 <?php wp_body_open(); ?>
 
-	<a href="#mainContent" class="skip-link"><?php esc_html_e( 'Saltar al contenido', 'actores-electorales-2026' ); ?></a>
+<a href="#mainContent" class="skip-link"><?php esc_html_e('Saltar al contenido', 'ae'); ?></a>
 
-	<!-- ===== HEADER ===== -->
-	<header class="hdr-wrap" role="banner">
-		<div class="hdr-inner">
-			<a class="hdr-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) . ' — ' . __( 'Inicio', 'actores-electorales-2026' ) ); ?>">
-				<?php
-				if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-					the_custom_logo();
-				} else {
-					printf(
-						'<img src="%1$s" alt="%2$s" class="hdr-logo-img">',
-						esc_url( AE_THEME_URI . '/assets/logo.svg' ),
-						esc_attr( get_bloginfo( 'name' ) )
-					);
-				}
-				?>
-			</a>
-
-			<nav class="hdr-nav" aria-label="<?php esc_attr_e( 'Navegación principal', 'actores-electorales-2026' ); ?>">
-				<?php
-				if ( has_nav_menu( 'header-main' ) ) {
-					wp_nav_menu( array(
-						'theme_location' => 'header-main',
-						'container'      => false,
-						'menu_class'     => 'hdr-nav-list',
-						'items_wrap'     => '%3$s',
-						'walker'         => new AE_Flat_Link_Walker(),
-						'depth'          => 1,
-						'fallback_cb'    => 'ae_header_nav_fallback',
-					) );
-				} else {
-					ae_header_nav_fallback();
-				}
-				?>
-			</nav>
-
-			<div class="hdr-cta">
-				<a class="btn red" href="<?php echo esc_url( home_url( '/plataforma/' ) ); ?>">
-					<span style="color:#ffc627" aria-hidden="true">&#9679;</span>
-					<?php esc_html_e( 'Ingresar', 'actores-electorales-2026' ); ?>
-				</a>
-			</div>
-
-			<button type="button" class="hdr-mobile-toggle" aria-label="<?php esc_attr_e( 'Abrir menú', 'actores-electorales-2026' ); ?>" aria-expanded="false" aria-controls="aeMobileNav">
-				<span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-			</button>
-		</div>
-
-		<div class="flag-rule" aria-hidden="true">
-			<div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
-		</div>
-
-		<?php get_template_part( 'template-parts/nav-mobile' ); ?>
-	</header>
-
-	<!-- Progress Rail -->
-	<div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
-
-	<main id="mainContent">
+<header class="hdr-wrap" role="banner">
+    <div class="hdr-inner">
+        <a class="hdr-logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php esc_attr_e('Actores Electorales 2026 — Inicio', 'ae'); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo.svg'); ?>" alt="<?php esc_attr_e('Actores Electorales 2026', 'ae'); ?>" class="hdr-logo-img">
+        </a>
+        <?php
+        // Walker plano: emite <a> directos sin <ul>/<li>, igual que el HTML estático.
+        // Si prefieres no usar walker custom, registra un menú "primary" desde el admin
+        // y reemplaza estos arrays por wp_nav_menu(['theme_location' => 'primary']).
+        ae_render_flat_nav('primary', 'hdr-nav', __('Navegación principal', 'ae'));
+        ?>
+        <button type="button" class="hdr-mobile-toggle" aria-label="<?php esc_attr_e('Abrir menú', 'ae'); ?>" aria-expanded="false" aria-controls="aeMobileNav">
+            <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+    </div>
+    <div class="flag-rule" aria-hidden="true">
+        <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
+    </div>
+    <?php
+    ae_render_flat_nav('mobile', 'hdr-mobile-nav', __('Navegación móvil', 'ae'), [
+        'id'     => 'aeMobileNav',
+        'aria_hidden' => 'true',
+        'before' => '<button type="button" class="mnav-close" aria-label="' . esc_attr__('Cerrar menú', 'ae') . '">✕</button>',
+    ]);
+    ?>
+</header>

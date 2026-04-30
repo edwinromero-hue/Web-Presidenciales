@@ -627,7 +627,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   max-width: 20ch;
 }
 .ae-banner-title em {
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
   font-weight: 300;
   color: inherit;
@@ -1239,7 +1239,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-logo-tiempo        { font-family: 'Manrope', Georgia, serif; color: #1259b4; letter-spacing: .01em; }
 .ae-logo-semana        { font-family: 'Manrope', sans-serif; color: #e11d48; letter-spacing: .04em; }
 .ae-logo-espectador    { font-family: 'Manrope', sans-serif; color: #1e3a8a; font-weight: 900; letter-spacing: -0.01em; }
-.ae-logo-vanguardia    { font-family: 'Manrope', sans-serif; color: #0b3d3a; font-style: italic; font-weight: 800; }
+.ae-logo-vanguardia    { font-family: 'Manrope', sans-serif; color: #0b3d3a; font-style: normal; font-weight: 800; }
 .ae-logo-vanguardia span { color: #2fb3d9; font-style: normal; font-weight: 900; }
 .ae-logo-portafolio    { font-family: 'Archivo', sans-serif; color: #1e3a8a; font-weight: 900; letter-spacing: -0.02em; }
 .ae-logo-infobae       { font-family: 'Manrope', sans-serif; color: #0f172a; font-weight: 800; letter-spacing: -0.02em; text-transform: lowercase; }
@@ -1328,7 +1328,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-video-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -1640,7 +1640,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-scene-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -1734,7 +1734,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-pageinfo-statement-sub {
   display: block;
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   font-size: clamp(22px, 3.5vw, 48px);
   letter-spacing: -0.01em;
@@ -1742,7 +1742,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   margin-top: 12px;
 }
 .ae-pageinfo-statement-sub em {
-  font-style: italic;
+  font-style: normal;
   color: var(--ae-blue);
 }
 .ae-pageinfo-statement .ae-info-intro {
@@ -1847,7 +1847,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-info-head .ae-h2 em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -2026,7 +2026,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   font-weight: 700;
   color: var(--ae-blue);
   line-height: 1.4;
-  font-style: italic;
+  font-style: normal;
 }
 .ae-info-floatlink-top {
   grid-column: 2; grid-row: 1;
@@ -2105,7 +2105,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-info-block-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-ink-2);
 }
@@ -2550,7 +2550,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-hub-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -2765,7 +2765,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-detail-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -2938,7 +2938,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-detail-purpose-tag {
   font-size: 14px;
-  font-style: italic;
+  font-style: normal;
   color: var(--ae-blue);
   margin: 0 !important;
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
@@ -2983,7 +2983,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-board-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -3244,7 +3244,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-board-h em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 .ae-board-scene-blue   .ae-board-h em { color: var(--ae-blue); }
@@ -3378,7 +3378,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-board-outro-text em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -3444,7 +3444,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-poster-hero-h em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--ae-blue);
 }
@@ -3612,7 +3612,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-poster-title em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: #ffc627;
 }
@@ -3803,7 +3803,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-diag-h em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic; font-weight: 300;
+  font-style: normal; font-weight: 300;
   color: var(--ae-blue);
 }
 .ae-diag-p {
@@ -3983,7 +3983,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 }
 .ae-diag-center-tag em {
   font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
-  font-style: italic; font-weight: 300;
+  font-style: normal; font-weight: 300;
   color: var(--ae-blue);
 }
 
@@ -4108,18 +4108,19 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   transition: transform 320ms var(--ease);
   text-align: center;
 }
-.ae-diag-pos-1 { top: 18%; left: 20%; }
-.ae-diag-pos-2 { top: 18%; left: 80%; }
-.ae-diag-pos-3 { top: 56%; left: 86%; }
-.ae-diag-pos-4 { top: 88%; left: 50%; }
-.ae-diag-pos-5 { top: 56%; left: 14%; }
+/* 4 nodos en las 4 esquinas alrededor del balón central (2x2) */
+.ae-diag-pos-1 { top: 22%; left: 22%; }
+.ae-diag-pos-2 { top: 22%; left: 78%; }
+.ae-diag-pos-3 { top: 78%; left: 78%; }
+.ae-diag-pos-4 { top: 78%; left: 22%; }
+/* pos-5 ya no se usa, hidden por seguridad si quedara markup viejo */
+.ae-diag-pos-5 { display: none !important; }
 
 @media (max-width: 599.98px) {
-  .ae-diag-pos-1 { top: 20%; left: 28%; }
-  .ae-diag-pos-2 { top: 20%; left: 72%; }
-  .ae-diag-pos-3 { top: 56%; left: 84%; }
-  .ae-diag-pos-4 { top: 90%; left: 50%; }
-  .ae-diag-pos-5 { top: 56%; left: 16%; }
+  .ae-diag-pos-1 { top: 24%; left: 26%; }
+  .ae-diag-pos-2 { top: 24%; left: 74%; }
+  .ae-diag-pos-3 { top: 76%; left: 74%; }
+  .ae-diag-pos-4 { top: 76%; left: 26%; }
   .ae-diag-node { width: clamp(120px, 32vw, 150px); }
 }
 
@@ -4197,16 +4198,28 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   transform: translateX(calc(-50% - clamp(54px, 7vw, 78px)));
 }
 
-/* Título y stat */
+/* Título único (sin badge ni stat) — permite hasta 2 líneas */
 .ae-diag-node-title {
   font-family: var(--font-impact, 'Outfit'), sans-serif;
   font-weight: 800;
-  font-size: clamp(16px, 1.9vw, 22px);
-  letter-spacing: -0.005em;
+  font-size: clamp(15px, 1.8vw, 20px);
+  letter-spacing: -0.01em;
   color: var(--ae-ink);
-  line-height: 1.2;
-  margin-top: 4px;
+  line-height: 1.18;
+  margin-top: 10px;
+  text-align: center;
+  text-wrap: balance;
+  max-width: 18ch;
 }
+.ae-diag-node-title-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(13px, 1.6vw, 17px);
+}
+/* Ocultar badge y stat ya que los nodos solo muestran el título */
+.ae-diag-node-badge,
+.ae-diag-node-stat,
+.ae-diag-node-cta { display: none; }
 .ae-diag-node-stat {
   font-family: var(--font-impact, 'Outfit'), sans-serif;
   font-weight: 800;
@@ -4491,3 +4504,1955 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   .ae-diag-node-cta { animation: none; transition: none; }
 }
 
+/* ============================================================
+   REGIONES — LOCATOR (estilo localizador bancario)
+   Panel izquierdo: CTA + tabs + buscador + lista
+   Panel derecho:  mapa con pins
+   ============================================================ */
+.ae-locator { background: #f8fafc; }
+.ae-locator-head { text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+.ae-locator-head .eyebrow { justify-content: center; }
+.ae-locator-head .ae-h2 em {
+  font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
+  font-style: normal; font-weight: 300; color: var(--ae-blue);
+}
+
+/* Shell con panel + mapa */
+.ae-locator-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--ae-line);
+  box-shadow: 0 12px 32px rgba(15,23,42,0.06);
+}
+@media (min-width: 900px) {
+  .ae-locator-shell {
+    grid-template-columns: minmax(360px, 5fr) minmax(0, 7fr);
+    gap: 0;
+  }
+}
+
+/* ── Panel ── */
+.ae-locator-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 32px);
+  background: #ffffff;
+  min-height: 0;
+}
+@media (min-width: 900px) {
+  .ae-locator-panel { border-right: 1px solid var(--ae-line); height: 720px; }
+}
+
+/* CTA principal amarillo */
+.ae-locator-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--ae-yellow);
+  color: var(--ae-ink);
+  border: 0;
+  border-radius: 100px;
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(255,198,39,0.32);
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.ae-locator-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(255,198,39,0.42); }
+.ae-locator-cta:active { transform: translateY(0); }
+
+/* Tabs */
+.ae-locator-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-bottom: 2px solid var(--ae-line);
+}
+.ae-locator-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  color: var(--ae-ink-2);
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease), background 200ms var(--ease);
+}
+.ae-locator-tab:hover { color: var(--ae-ink); background: rgba(15,23,42,0.03); }
+.ae-locator-tab.is-active {
+  color: #ffffff;
+  background: #0f172a;
+  border-bottom-color: var(--ae-yellow);
+  border-radius: 8px 8px 0 0;
+}
+.ae-locator-tab svg { flex: 0 0 16px; }
+
+/* Buscador */
+.ae-locator-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px 0 40px;
+  background: #f1f5f9;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  transition: border-color 200ms var(--ease), background 200ms var(--ease);
+}
+.ae-locator-search:focus-within {
+  background: #ffffff;
+  border-color: var(--ae-blue);
+}
+.ae-locator-search-icon {
+  position: absolute;
+  left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--ae-muted);
+  pointer-events: none;
+}
+.ae-locator-search input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ae-ink);
+  padding: 12px 0;
+  outline: 0;
+  min-width: 0;
+}
+.ae-locator-search input::placeholder { color: var(--ae-muted); }
+.ae-locator-search-btn {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--ae-ink-2);
+  cursor: pointer;
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.ae-locator-search-btn:hover { background: rgba(15,23,42,0.06); color: var(--ae-blue); }
+
+/* Filtros */
+.ae-locator-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.ae-locator-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ae-ink-2);
+  cursor: pointer;
+  user-select: none;
+}
+.ae-locator-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+.ae-locator-check span {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2px solid var(--ae-line);
+  border-radius: 4px;
+  background: #ffffff;
+  position: relative;
+  transition: border-color 200ms, background 200ms;
+}
+.ae-locator-check input:checked + span {
+  background: var(--ae-blue);
+  border-color: var(--ae-blue);
+}
+.ae-locator-check input:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 4px; top: 0px;
+  width: 6px; height: 11px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Lista resultados */
+.ae-locator-list {
+  flex: 1;
+  min-height: 280px;
+  overflow-y: auto;
+  margin: 0 -8px -8px;
+  padding: 0 8px 8px;
+}
+.ae-locator-list::-webkit-scrollbar { width: 6px; }
+.ae-locator-list::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.18); border-radius: 100px; }
+.ae-locator-pane { list-style: none; padding: 0; margin: 0; display: none; }
+.ae-locator-pane.is-active { display: block; }
+.ae-locator-pane > li { border-bottom: 1px solid var(--ae-line); }
+.ae-locator-pane > li:last-child { border-bottom: 0; }
+
+.ae-locator-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 12px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: background 200ms var(--ease);
+}
+.ae-locator-item:hover { background: rgba(30,58,138,0.04); }
+.ae-locator-item.is-active {
+  background: linear-gradient(90deg, rgba(255,198,39,0.18), rgba(255,255,255,0));
+  box-shadow: inset 3px 0 0 var(--ae-yellow);
+}
+.ae-locator-item h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--ae-ink);
+  margin: 0;
+}
+.ae-locator-item .ae-locator-addr {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ae-ink-2);
+  margin: 0;
+}
+.ae-locator-item .ae-locator-addr svg { flex: 0 0 14px; color: var(--ae-blue); }
+.ae-locator-item .ae-locator-status {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+.ae-locator-item .ae-locator-status.open { color: #15803d; }
+/* Línea con el nombre de la sede (ColorWorking, Hotel Amazon, etc.) */
+.ae-locator-item .ae-locator-sede {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ae-blue);
+  margin: 4px 0 0;
+}
+/* Línea con la dirección textual */
+.ae-locator-item .ae-locator-detail {
+  font-size: 12px;
+  color: var(--ae-ink-2);
+  margin: 2px 0 0;
+  line-height: 1.4;
+}
+
+/* ── Foto de la sede (debajo de la dirección, solo en card activa) ──
+   Por defecto está oculta. Cuando el usuario selecciona el ítem (click en
+   la card o pin del mapa → JS añade .is-active), se revela con animación.
+   Si el atributo data-photo del <a> tiene URL, JS pone src en el <img>;
+   si está vacío, queda el placeholder de marca debajo. */
+.ae-locator-item .ae-locator-photo {
+  display: none;
+  position: relative;
+  margin: 10px 0 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(30,58,138,0.92) 0%, rgba(22,40,92,0.92) 100%),
+    repeating-linear-gradient(45deg, transparent 0 8px, rgba(255,255,255,0.04) 8px 16px);
+  isolation: isolate;
+}
+.ae-locator-item.is-expanded .ae-locator-photo {
+  display: block;
+  animation: aeLocatorPhotoIn 280ms var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
+}
+.ae-locator-item .ae-locator-photo::before {
+  content: 'Foto de la sede';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+}
+.ae-locator-item .ae-locator-photo-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+/* Solo visible cuando JS le pone un src real (no vacío) */
+.ae-locator-item .ae-locator-photo-img[src]:not([src=""]) { opacity: 1; }
+
+@keyframes aeLocatorPhotoIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ae-locator-item.is-expanded .ae-locator-photo { animation: none; }
+  .ae-locator-item .ae-locator-photo-img { transition: none; }
+  .ae-locator-toggle-icon { transition: none; }
+}
+/* ── Toggle de expansión (flecha down/up para mostrar la foto) ── */
+.ae-locator-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  inline-size: 28px;
+  block-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(30,58,138,0.06);
+  color: var(--ae-blue);
+  cursor: pointer;
+  user-select: none;
+  transition: background 180ms var(--ease, ease), color 180ms var(--ease, ease), transform 180ms var(--ease, ease);
+}
+.ae-locator-toggle:hover {
+  background: var(--ae-blue);
+  color: #ffffff;
+}
+.ae-locator-toggle:focus-visible {
+  outline: 2px solid var(--ae-yellow);
+  outline-offset: 2px;
+}
+.ae-locator-toggle-icon {
+  display: block;
+  transition: transform 220ms var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
+}
+/* Flecha rota 180° cuando la card está expandida */
+.ae-locator-toggle[aria-expanded="true"] .ae-locator-toggle-icon {
+  transform: rotate(180deg);
+}
+.ae-locator-toggle[aria-expanded="true"] {
+  background: var(--ae-yellow);
+  color: var(--ae-blue);
+}
+
+/* ── Panel del mapa ── */
+.ae-locator-mapwrap {
+  position: relative;
+  background: linear-gradient(135deg, #eef2f8 0%, #fef9e7 100%);
+  min-height: 480px;
+  overflow: hidden;
+}
+@media (min-width: 900px) { .ae-locator-mapwrap { height: 720px; } }
+
+.ae-locator-mapcanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mount point para proveedores externos (Leaflet/Google/Mapbox).
+   Por defecto está oculto; cuando un proveedor real monta exitosamente
+   el wrap recibe la clase .has-real-map y se invierten las visibilidades. */
+.ae-locator-mapmount {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  visibility: hidden;
+  pointer-events: none;
+}
+.ae-locator-mapwrap.has-real-map .ae-locator-mapmount {
+  visibility: visible;
+  pointer-events: auto;
+}
+/* Ocultar el SVG fallback + pins absolutos cuando el proveedor real está activo */
+.ae-locator-mapwrap.has-real-map .ae-locator-mapcanvas,
+.ae-locator-mapwrap.has-real-map .ae-locator-grid,
+.ae-locator-mapwrap.has-real-map .ae-locator-svg,
+.ae-locator-mapwrap.has-real-map .ae-loc-pin {
+  display: none !important;
+}
+/* El tooltip + GPS button siguen visibles encima del mapa real */
+.ae-locator-mapwrap.has-real-map .ae-locator-tip,
+.ae-locator-mapwrap.has-real-map .ae-locator-gps,
+.ae-locator-mapwrap.has-real-map .ae-locator-myloc { z-index: 6; }
+.ae-locator-grid { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ae-locator-svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 75%;
+  height: 90%;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(15,23,42,0.10));
+}
+/* Default: Colombia visible, mundo oculto. JS cambia data-tab y CSS muestra el correcto */
+.ae-locator-svg-world { display: none; }
+[data-tab="consulados"] .ae-locator-svg-co    { display: none; }
+[data-tab="consulados"] .ae-locator-svg-world { display: block; }
+
+/* Pins */
+.ae-loc-pin {
+  position: absolute;
+  width: 28px; height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  display: none; /* default: oculto, se muestran solo los del tab activo */
+}
+.ae-loc-pin > span {
+  display: block;
+  width: 100%; height: 100%;
+  background: var(--ae-yellow);
+  border: 3px solid #ffffff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 4px 10px rgba(15,23,42,0.20);
+  position: relative;
+  transition: transform 200ms var(--ease), background 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.ae-loc-pin > span::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* Mostrar pins según tab activo */
+[data-tab="colombia"]   .pin-colombia,
+[data-tab="municipios"] .pin-municipios,
+[data-tab="consulados"] .pin-consulados { display: block; }
+
+/* Color por tab */
+.pin-colombia   > span { background: var(--ae-blue); }
+.pin-municipios > span { background: var(--ae-red); }
+.pin-consulados > span { background: var(--ae-yellow); }
+
+.ae-loc-pin:hover > span,
+.ae-loc-pin.is-active > span {
+  transform: rotate(-45deg) scale(1.3);
+  background: #0f172a;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.32);
+}
+.ae-loc-pin.is-active > span { background: var(--ae-red); }
+.ae-loc-pin.is-active::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 2px solid var(--ae-red);
+  border-radius: 50%;
+  animation: aePinRing 1.6s var(--ease) infinite;
+  pointer-events: none;
+}
+@keyframes aePinRing {
+  0%   { opacity: 0.7; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+
+/* GPS pill (top-right del mapa) */
+.ae-locator-gps {
+  position: absolute;
+  top: 16px; right: 16px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #f5f0ff;
+  color: #6b21a8;
+  border: 1.5px solid #c4b5fd;
+  border-radius: 100px;
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+  transition: transform 200ms var(--ease), background 200ms var(--ease);
+}
+.ae-locator-gps:hover { transform: translateY(-1px); background: #ede9fe; }
+
+/* Floating my-location button (bottom-right) */
+.ae-locator-myloc {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  background: var(--ae-yellow);
+  border: 0;
+  border-radius: 50%;
+  color: var(--ae-ink);
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(255,198,39,0.40);
+  transition: transform 200ms var(--ease);
+}
+.ae-locator-myloc:hover { transform: translateY(-2px) scale(1.05); }
+
+/* Tooltip flotante sobre pin seleccionado */
+.ae-locator-tip {
+  position: absolute;
+  top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border-radius: 100px;
+  border: 1px solid var(--ae-line);
+  box-shadow: 0 8px 18px rgba(15,23,42,0.10);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ae-ink);
+}
+.ae-locator-tip[hidden] { display: none; }
+.ae-locator-tip-flag { display: flex; gap: 1px; width: 14px; height: 8px; }
+.ae-locator-tip-flag i { flex: 1; height: 100%; border-radius: 1px; }
+.ae-locator-tip-flag i:nth-child(1) { background: var(--ae-yellow); }
+.ae-locator-tip-flag i:nth-child(2) { background: var(--ae-blue); }
+.ae-locator-tip-flag i:nth-child(3) { background: var(--ae-red); }
+
+/* Mobile: panel arriba (lista), mapa abajo */
+@media (max-width: 899.98px) {
+  .ae-locator-shell { border-radius: 14px; }
+  .ae-locator-panel { height: auto; }
+  .ae-locator-list { max-height: 420px; }
+  .ae-locator-mapwrap { min-height: 380px; height: 380px; }
+  .ae-locator-tab { font-size: 12px; padding: 10px 4px; }
+  .ae-locator-tab svg { width: 14px; height: 14px; }
+}
+@media (max-width: 480px) {
+  .ae-locator-tab span { display: none; }
+  .ae-locator-cta { font-size: 14px; padding: 14px 18px; }
+}
+
+/* ============================================================
+   QUIENES SOMOS — Mobile grid 2x2 limpio (4 nodos sin nodo 5 centrado)
+   ============================================================ */
+@media (max-width: 699.98px) {
+  /* En mobile el .ae-diag-canvas se vuelve un grid de 2 columnas (ya estaba así).
+     Ahora son exactamente 4 nodos en 2 filas — el quinto ya no existe. */
+  .ae-diag-canvas { grid-template-columns: 1fr 1fr; }
+  .ae-diag-canvas > .ae-diag-center { grid-column: 1 / -1; }
+
+  /* Cards mobile: foto izquierda, título derecha (centrado vertical) */
+  .ae-diag-node-title {
+    text-align: left;
+    margin-top: 0;
+    align-self: center;
+    max-width: none;
+  }
+}
+
+/* ============================================================
+   QUIENES SOMOS — INLINE DETAIL PANEL
+   Click en satélite muestra info en panel izq sin navegar
+   ============================================================ */
+
+/* Estados intro / detail mediante data-state */
+.ae-diag-head [data-state-content="intro"]  { display: block; }
+.ae-diag-head [data-state-content="detail"] { display: none; }
+.ae-diag-head[data-state="detail"] [data-state-content="intro"]  { display: none; }
+.ae-diag-head[data-state="detail"] [data-state-content="detail"] { display: block; }
+
+/* Botón "Volver" */
+.ae-diag-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px 8px 10px;
+  background: transparent;
+  border: 1.5px solid var(--ae-line);
+  border-radius: 100px;
+  color: var(--ae-ink-2);
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.ae-diag-back:hover {
+  color: var(--ae-blue);
+  border-color: var(--ae-blue);
+  transform: translateX(-2px);
+}
+.ae-diag-back:focus-visible { outline: 3px solid var(--ae-blue); outline-offset: 3px; }
+
+/* Panel detalle */
+.ae-diag-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: aePanelIn 320ms var(--ease) backwards;
+}
+.ae-diag-panel[hidden] { display: none; }
+@keyframes aePanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ae-diag-panel .eyebrow { margin: 0; }
+.ae-diag-panel h2.ae-diag-h {
+  font-size: clamp(26px, 3.4vw, 38px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--ae-ink);
+}
+.ae-diag-panel h2.ae-diag-h em {
+  font-family: var(--font-display, 'ClashDisplay'), Georgia, serif;
+  font-style: normal; font-weight: 300;
+}
+.ae-diag-panel-blue     h2.ae-diag-h em { color: var(--ae-blue); }
+.ae-diag-panel-red      h2.ae-diag-h em { color: var(--ae-red); }
+.ae-diag-panel-yellow   h2.ae-diag-h em { color: #b8860b; }
+.ae-diag-panel-bluedark h2.ae-diag-h em { color: #0f172a; }
+.ae-diag-panel-cyan     h2.ae-diag-h em { color: #1d7892; }
+
+.ae-diag-panel p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.55;
+  color: var(--ae-ink-2);
+  margin: 0;
+  max-width: 38ch;
+}
+
+/* Bullets del panel */
+.ae-diag-panel-bullets {
+  list-style: none;
+  padding: 0; margin: 6px 0 4px;
+  display: flex; flex-direction: column;
+  gap: 8px;
+}
+.ae-diag-panel-bullets li {
+  position: relative;
+  padding: 8px 12px 8px 28px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  border-left: 3px solid currentColor;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ae-ink);
+  backdrop-filter: blur(2px);
+}
+.ae-diag-panel-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.ae-diag-panel-bullets li strong { font-weight: 800; }
+.ae-diag-panel-blue     .ae-diag-panel-bullets li { color: var(--ae-blue); }
+.ae-diag-panel-red      .ae-diag-panel-bullets li { color: var(--ae-red); }
+.ae-diag-panel-yellow   .ae-diag-panel-bullets li { color: #b8860b; }
+.ae-diag-panel-bluedark .ae-diag-panel-bullets li { color: #0f172a; }
+.ae-diag-panel-cyan     .ae-diag-panel-bullets li { color: #1d7892; }
+
+/* CTA "Ver capítulo completo" */
+.ae-diag-panel-cta {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-size: 13px;
+  padding: 10px 18px;
+}
+
+/* === Estado del diagrama cuando hay un detalle abierto === */
+/* Atenuar los satélites que NO están abiertos */
+.ae-diag[data-state="detail"] .ae-diag-node:not(.is-open) {
+  opacity: 0.42;
+  transform: translate(-50%, -50%) scale(0.94);
+  transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+}
+.ae-diag[data-state="detail"] .ae-diag-node:not(.is-open) .ae-diag-node-cta {
+  opacity: 0;
+}
+
+/* Resaltar el satélite abierto (anillo + lift) */
+.ae-diag-node.is-open {
+  z-index: 5;
+}
+.ae-diag-node.is-open .ae-diag-node-photo {
+  border-color: currentColor;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 14px 32px rgba(15,23,42,0.22);
+  transform: scale(1.06);
+}
+.ae-diag-node.is-open .ae-diag-node-photo::before {
+  opacity: 0.85;
+  animation: aeOpenPulse 1.8s var(--ease) infinite;
+}
+@keyframes aeOpenPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.08); opacity: 0.55; }
+}
+.ae-diag-node.is-open .ae-diag-node-badge {
+  background: currentColor;
+  color: #ffffff !important;
+  border-color: currentColor;
+}
+
+/* Atenuar las líneas SVG conectoras cuando hay detalle (excepto la del activo idealmente,
+   pero como no podemos targetear por data-detail desde CSS, las atenuamos todas y la del
+   activo se aprecia igual gracias al satélite resaltado) */
+.ae-diag[data-state="detail"] .ae-diag-line { opacity: 0.35; transition: opacity 320ms; }
+
+/* Mobile: panel detalle reemplaza el intro inline (igual flow) */
+@media (max-width: 699.98px) {
+  .ae-diag-back { font-size: 11px; padding: 7px 12px 7px 8px; }
+  .ae-diag-panel h2.ae-diag-h { font-size: clamp(22px, 6vw, 28px); }
+  .ae-diag-panel p { font-size: 14px; max-width: none; }
+  .ae-diag-panel-bullets li { padding: 7px 10px 7px 24px; font-size: 12.5px; }
+  .ae-diag-panel-bullets li::before { left: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-diag-panel { animation: none; }
+  .ae-diag-node.is-open .ae-diag-node-photo::before { animation: none; }
+}
+
+/* ============================================================
+   QUIENES SOMOS — BLOQUES de contenido en paneles
+   - Hint en el intro
+   - .ae-diag-steps  (BLOQUE 3 · 4 pasos numerados)
+   - .ae-diag-stats  (BLOQUE 4 · 4 stat cards azul-amarillo)
+   ============================================================ */
+
+/* Hint debajo del subtítulo del intro */
+.ae-diag-p-hint {
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ae-blue);
+  margin: 14px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ae-diag-p-hint::before {
+  content: '';
+  width: 18px; height: 1.5px;
+  background: currentColor;
+  display: inline-block;
+}
+.ae-diag-p strong { font-weight: 800; color: var(--ae-ink); }
+.ae-diag-panel p strong { font-weight: 800; color: var(--ae-ink); }
+
+/* ── BLOQUE 3: pasos numerados — carrusel horizontal con scroll-snap ── */
+.ae-diag-carousel {
+  margin: 10px 0 0;
+  position: relative;
+}
+.ae-diag-steps {
+  list-style: none;
+  margin: 0;
+  padding: 4px 4px 12px;        /* aire para sombra inferior */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* Firefox */
+  counter-reset: aeStep;
+  scroll-padding-inline: 4px;
+}
+.ae-diag-steps::-webkit-scrollbar { display: none; }
+
+.ae-diag-step {
+  position: relative;
+  flex: 0 0 86%;                 /* 1 card + peek del siguiente, siempre */
+  max-width: 340px;              /* tope para paneles muy anchos */
+  min-width: 0;                  /* permite que el grid interior se reduzca */
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);  /* la 1fr puede encogerse */
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 2px;
+  padding: 14px 14px 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--ae-line);
+  box-shadow: 0 4px 10px rgba(15,23,42,0.04);
+  align-items: start;
+  overflow: hidden;              /* clip por seguridad si hay palabras larguísimas */
+}
+.ae-diag-step-num {
+  grid-row: 1 / span 2;
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--ae-yellow);
+  font-variant-numeric: tabular-nums;
+  align-self: center;
+  text-align: center;
+}
+.ae-diag-step-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ae-blue);
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  min-width: 0;
+  overflow-wrap: anywhere;       /* nunca desborda la columna */
+}
+.ae-diag-step-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ae-ink-2);
+  margin: 0;
+  text-wrap: pretty;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ae-diag-step-desc strong { color: var(--ae-ink); }
+
+/* ── Controles del carrusel (flechas + bullets) ── */
+.ae-diag-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+.ae-diag-carousel-btn {
+  inline-size: 30px;
+  block-size: 30px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--ae-line);
+  background: #ffffff;
+  color: var(--ae-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.ae-diag-carousel-btn:hover {
+  background: var(--ae-blue);
+  color: #ffffff;
+  border-color: var(--ae-blue);
+}
+.ae-diag-carousel-btn:active { transform: scale(0.94); }
+.ae-diag-carousel-btn:focus-visible {
+  outline: 2px solid var(--ae-yellow);
+  outline-offset: 2px;
+}
+.ae-diag-carousel-btn:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+.ae-diag-carousel-btn:disabled:hover {
+  background: #ffffff;
+  color: var(--ae-blue);
+  border-color: var(--ae-line);
+}
+.ae-diag-carousel-btn svg { display: block; }
+
+.ae-diag-carousel-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ae-diag-carousel-dots li { display: inline-flex; }
+.ae-diag-carousel-dots button {
+  inline-size: 8px;
+  block-size: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(30,58,138,0.22);
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.ae-diag-carousel-dots button:hover { background: rgba(30,58,138,0.45); }
+.ae-diag-carousel-dots button.is-active {
+  background: var(--ae-yellow);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px rgba(255,198,39,0.28);
+}
+.ae-diag-carousel-dots button:focus-visible {
+  outline: 2px solid var(--ae-blue);
+  outline-offset: 3px;
+}
+
+/* ── BLOQUE 4: stat cards (4 en grid 2x2 azul/amarillo) ── */
+.ae-diag-stats {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.ae-diag-stat {
+  background: linear-gradient(180deg, var(--ae-blue) 0%, #16285c 100%);
+  color: #ffffff;
+  padding: 16px 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  box-shadow: 0 6px 16px rgba(15,23,42,0.10);
+  position: relative;
+  overflow: hidden;
+}
+.ae-diag-stat::before {
+  content: '';
+  position: absolute;
+  inset: auto -40% -50% auto;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(255,198,39,0.18);
+  z-index: 0;
+  pointer-events: none;
+}
+.ae-diag-stat > * { position: relative; z-index: 1; }
+.ae-diag-stat-num {
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ae-yellow);
+  font-variant-numeric: tabular-nums;
+}
+.ae-diag-stat-lbl {
+  font-family: var(--font-impact, 'Outfit'), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.95);
+  letter-spacing: 0.005em;
+}
+
+/* ── Mobile tweaks para paneles con contenido grande ── */
+@media (max-width: 699.98px) {
+  .ae-diag-steps { gap: 8px; padding-bottom: 10px; }
+  .ae-diag-step { padding: 12px; }
+  .ae-diag-step-num { font-size: 28px; }
+  .ae-diag-step-title { font-size: 13.5px; }
+  .ae-diag-step-desc { font-size: 12.5px; }
+
+  .ae-diag-carousel-controls { gap: 10px; margin-top: 4px; }
+  .ae-diag-carousel-btn { inline-size: 28px; block-size: 28px; }
+
+  .ae-diag-stats { gap: 8px; }
+  .ae-diag-stat { padding: 14px 10px; }
+  .ae-diag-stat-num { font-size: 26px; }
+  .ae-diag-stat-lbl { font-size: 10.5px; }
+}
+@media (max-width: 380px) {
+  /* En pantallas muy chicas, las stats van en 1 columna */
+  .ae-diag-stats { grid-template-columns: 1fr; }
+}
+
+/* ── Animación de entrada de las stats (BLOQUE 4) ──
+   Se activa al añadir .is-animating desde JS cuando el panel se hace visible.
+   El delay por card lo setea JS via --ae-stat-delay para preservar el stagger
+   incluso si el orden cambia. */
+@keyframes aeStatPop {
+  0%   { opacity: 0; transform: translateY(14px) scale(0.94); }
+  60%  { opacity: 1; transform: translateY(-2px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.ae-diag-stat.is-animating {
+  animation: aeStatPop 560ms cubic-bezier(0.22, 1, 0.36, 1) var(--ae-stat-delay, 0ms) both;
+}
+.ae-diag-stat.is-animating .ae-diag-stat-num {
+  /* La cifra arranca en blanco y se "tinta" amarilla mientras cuenta */
+  animation: aeStatNumGlow 700ms ease-out var(--ae-stat-delay, 0ms) both;
+}
+@keyframes aeStatNumGlow {
+  0%   { text-shadow: 0 0 0 rgba(255,198,39,0); }
+  60%  { text-shadow: 0 0 18px rgba(255,198,39,0.55); }
+  100% { text-shadow: 0 0 0 rgba(255,198,39,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ae-diag-stat.is-animating,
+  .ae-diag-stat.is-animating .ae-diag-stat-num { animation: none; }
+}
+
+
+
+/* ============================================================
+   CANALES DE ATENCIÓN — Banner compacto + Form/Info 2-col + FAQ
+   - Banner: reusa primitives (.ae-banner-mesh, .ae-banner-shape,
+     .shape-hex-yellow/blue, .ae-banner-flag) en variante reducida.
+   - Form: 2 columnas en desktop, 1 en mobile.
+   - Info: card con shapes decorativas + 3 canales.
+   ============================================================ */
+
+/* ── Banner compacto (héroe reducido — fit single-viewport) ── */
+.ae-banner-compact {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+  padding: 32px 0 28px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ae-banner-compact .ae-banner-mesh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+.ae-banner-compact .ae-banner-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.ae-banner-compact .shape-hex-yellow.shape-tl {
+  top: 22%;
+  left: 5%;
+  width: 56px;
+  height: 64px;
+}
+.ae-banner-compact .shape-hex-blue.shape-br {
+  bottom: 18%;
+  right: 6%;
+  width: 50px;
+  height: 58px;
+}
+.ae-banner-compact-zigzag {
+  position: absolute;
+  top: 24%;
+  right: 14%;
+  width: 96px;
+  opacity: 0.42;
+  transform: rotate(-10deg);
+  z-index: 1;
+  pointer-events: none;
+}
+.ae-banner-compact-inner {
+  position: relative;
+  z-index: 2;
+}
+.ae-banner-compact-crumb {
+  font-size: 13px;
+  color: var(--ae-ink-2);
+  margin-bottom: 14px;
+}
+.ae-banner-compact-crumb a {
+  color: var(--ae-ink-2);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.ae-banner-compact-crumb a:hover { color: var(--ae-blue); }
+.ae-banner-compact-crumb span[aria-current] {
+  color: var(--ae-blue);
+  font-weight: 700;
+}
+.ae-banner-compact-crumb span[aria-hidden] { margin: 0 8px; color: var(--ae-muted); }
+.ae-banner-compact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.ae-banner-compact-title {
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: clamp(30px, 4.6vw, 52px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--ae-ink);
+  margin: 8px 0 0;
+}
+.ae-banner-compact-title em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--ae-blue);
+}
+@media (max-width: 699.98px) {
+  .ae-banner-compact { padding: 24px 0 22px; }
+  .ae-banner-compact-zigzag { display: none; }
+  .ae-banner-compact .shape-hex-yellow.shape-tl { width: 40px; height: 46px; top: 6%; }
+  .ae-banner-compact .shape-hex-blue.shape-br { width: 36px; height: 42px; bottom: 6%; }
+}
+
+/* ── Página Canales: distribuye banner + info en un solo viewport (desktop).
+   En tablet/mobile soltamos el min-height para no forzar overflow raro. */
+.canales-flow {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 960px) {
+  .canales-flow { min-height: calc(100vh - 80px); }
+  .canales-flow .ae-banner-compact { flex: 0 0 auto; }
+  .canales-flow .ae-contact-section {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+  .canales-flow .ae-contact-section > .wrap { width: 100%; }
+}
+
+/* ── Sección Información (izq) + FAQ (der) en single-viewport ──
+   Proporción 0.85 / 1.15: la FAQ tiene más texto largo así que pesa más.
+   En tablet/mobile colapsa a 1 columna, soltando también el min-height
+   forzado del .canales-flow (ver más abajo). */
+.ae-contact-section { background: #ffffff; padding: 24px 0 32px; }
+.ae-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 959.98px) {
+  .ae-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* Contenedor de la columna FAQ (sin estilos de "section" porque ya viene
+   embebida; solo aporta el centrado/intro y el accordion) */
+.ae-contact-faq { min-width: 0; }
+.ae-contact-faq .ae-faq-intro {
+  text-align: left;
+  max-width: none;
+  margin: 0 0 14px;
+}
+.ae-contact-faq .ae-faq-intro .eyebrow { justify-content: flex-start; }
+.ae-contact-faq .ae-faq-h { font-size: clamp(22px, 2.6vw, 30px); margin: 6px 0 6px; }
+.ae-contact-faq .ae-faq-lead { font-size: 13.5px; }
+.ae-contact-faq .faq-group { gap: 30px; max-width: none; }
+/* Items con aire suficiente para escanear, sin perder densidad */
+.ae-contact-faq .ae-faq-btn { padding: 14px 18px; font-size: 14px; }
+.ae-contact-faq .ae-faq-plus { font-size: 20px; }
+.ae-contact-faq .ae-faq-answer-inner { padding: 0 18px 16px; font-size: 13.5px; line-height: 1.5; }
+
+/* ── Form (columna izquierda) ── */
+.ae-contact-form-wrap { min-width: 0; }
+.ae-contact-h {
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: clamp(28px, 3.8vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--ae-ink);
+  margin: 0 0 12px;
+}
+.ae-contact-h em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--ae-blue);
+}
+.ae-contact-h-sm {
+  font-size: clamp(22px, 2.6vw, 28px);
+  margin-bottom: 6px;
+}
+.ae-contact-lead {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ae-ink-2);
+  margin: 0 0 28px;
+  max-width: 540px;
+}
+
+.ae-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ae-contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 599.98px) {
+  .ae-contact-row { grid-template-columns: 1fr; }
+}
+.ae-contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.ae-contact-field-full { width: 100%; }
+.ae-contact-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ae-ink);
+  text-transform: uppercase;
+}
+.ae-contact-form input,
+.ae-contact-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ae-ink);
+  background: #f8fafc;
+  border: 1px solid var(--ae-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+.ae-contact-form input:focus,
+.ae-contact-form textarea:focus {
+  border-color: var(--ae-blue);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30,58,138,0.10);
+}
+.ae-contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.5;
+}
+.ae-contact-form input:invalid:not(:placeholder-shown),
+.ae-contact-form textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--ae-red);
+}
+
+.ae-contact-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ae-ink-2);
+  cursor: pointer;
+  margin-top: 6px;
+}
+.ae-contact-check input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+  inline-size: 16px;
+  block-size: 16px;
+  cursor: pointer;
+  accent-color: var(--ae-blue);
+}
+.ae-contact-check span strong { font-weight: 800; color: var(--ae-ink); }
+.ae-contact-link {
+  color: var(--ae-blue);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.ae-contact-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.ae-contact-submit { font-size: 14px; padding: 13px 28px; }
+@media (max-width: 599.98px) {
+  .ae-contact-actions { justify-content: stretch; }
+  .ae-contact-submit { width: 100%; justify-content: center; }
+}
+
+/* ── Información (card azul, columna izq de la grid 2-col) ── */
+.ae-contact-info {
+  position: relative;
+  background: linear-gradient(180deg, var(--ae-blue) 0%, #16285c 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 22px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 12px 40px rgba(15,23,42,0.12);
+  min-width: 0;
+}
+.ae-contact-info-inner {
+  position: relative;
+  z-index: 2;
+}
+.ae-contact-info-eyebrow { color: rgba(255,198,39,0.95) !important; margin-bottom: 8px; }
+.ae-contact-info .ae-contact-h { color: #ffffff; }
+.ae-contact-info .ae-contact-h em { color: var(--ae-yellow); }
+.ae-contact-info-lead {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 18px;
+}
+
+/* Decoraciones de fondo en la card de info */
+.ae-contact-info-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.ae-contact-info-shape-hex {
+  top: -50px;
+  right: -60px;
+  inline-size: 140px;
+  block-size: 156px;
+  background: var(--ae-yellow);
+  opacity: 0.10;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.ae-contact-info-shape-dot {
+  bottom: -70px;
+  left: -50px;
+  inline-size: 160px;
+  block-size: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1.5px) 0 0 / 12px 12px;
+  opacity: 0.4;
+}
+
+/* Lista de canales: stack vertical (la columna izq de la grid es estrecha,
+   así que cada canal es una fila horizontal con icon + body). */
+.ae-contact-channels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ae-contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
+  min-width: 0;
+}
+.ae-contact-channel:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,198,39,0.35);
+  transform: translateY(-1px);
+}
+.ae-contact-channel-icon {
+  flex-shrink: 0;
+  inline-size: 36px;
+  block-size: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--ae-yellow);
+  color: var(--ae-blue);
+}
+.ae-contact-channel-mail .ae-contact-channel-icon { background: var(--ae-yellow); color: var(--ae-blue); }
+.ae-contact-channel-phone .ae-contact-channel-icon { background: rgba(255,255,255,0.95); color: var(--ae-red); }
+.ae-contact-channel-wa .ae-contact-channel-icon { background: #25D366; color: #ffffff; }
+.ae-contact-channel-icon svg { display: block; }
+
+.ae-contact-channel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.ae-contact-channel-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  /* Una sola línea: si el espacio es chico, se trunca con elipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ae-contact-channel-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  /* "anywhere" rompe en cualquier carácter solo si no hay otra opción —
+     evita que el email salte línea por carácter en columnas estrechas. */
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+  transition: color 180ms ease;
+}
+.ae-contact-channel-value:hover { color: var(--ae-yellow); }
+
+@media (max-width: 599.98px) {
+  .ae-contact-info { padding: 24px 18px; }
+  .ae-contact-channel { padding: 10px 12px; }
+  .ae-contact-channel-icon { inline-size: 32px; block-size: 32px; }
+  .ae-contact-channel-value { font-size: 13px; }
+}
+
+/* ── FAQ section (debajo de form/info) ── */
+.ae-faq-section { background: #f8fafc; }
+.ae-faq-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+.ae-faq-intro .eyebrow { justify-content: center; display: inline-flex; }
+.ae-faq-h {
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--ae-ink);
+  margin: 8px 0 10px;
+}
+.ae-faq-h em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--ae-blue);
+}
+.ae-faq-lead {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ae-ink-2);
+  margin: 0;
+}
+.ae-faq-section .faq-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   NO-ITALIC: la línea gráfica institucional no usa cursivas.
+   Esta sección neutraliza la itálica nativa de los browsers
+   en tags semánticos sin perder su valor para lectores de pantalla.
+   ============================================================ */
+em, i, cite, dfn, var, address,
+.ae-banner-title em,
+.ae-banner-compact-title em,
+.ae-video-title em,
+.ae-scene-title em,
+.ae-pageinfo-statement-sub,
+.ae-pageinfo-statement-sub em,
+.ae-info-head .ae-h2 em,
+.ae-info-floatlink,
+.ae-info-block-title em,
+.ae-hub-title em,
+.ae-detail-title em,
+.ae-detail-purpose-tag,
+.ae-board-title em,
+.ae-board-h em,
+.ae-board-outro-text em,
+.ae-poster-hero-h em,
+.ae-poster-title em,
+.ae-diag-h em,
+.ae-diag-center-tag em,
+.ae-locator-head .ae-h2 em,
+.ae-diag-panel h2.ae-diag-h em,
+.ae-contact-h em,
+.ae-faq-h em,
+.ae-logo-vanguardia {
+  font-style: normal;
+}
+
+/* ============================================================
+   MOBILE-RESPONSIVE — barrido 320–768px
+   Consolidación de overrides específicos detectados en el audit.
+   No tocan el desktop: todo vive bajo @media (max-width: …).
+   ============================================================ */
+
+/* ── Inputs / selects / textareas: ≥16px en mobile para evitar zoom de iOS
+      (Apple aplica zoom al focus de cualquier control con font-size <16px).
+      Aplica a controles inline-styled de plataforma.html y a los selectores
+      .ae-locator-search input, .ae-contact-form input/textarea. ── */
+@media (max-width: 767.98px) {
+  input,
+  select,
+  textarea,
+  .ae-locator-search input,
+  .ae-contact-form input,
+  .ae-contact-form textarea,
+  .ae-contact-form select {
+    font-size: 16px;
+  }
+  /* Plataforma — login form (estilos inline en HTML) */
+  #loginTipo,
+  #loginCedula,
+  #loginPass {
+    font-size: 16px !important;
+  }
+  /* Chat widget input (canales.html, inline) */
+  #chatWidget input[type="text"] { font-size: 16px !important; }
+}
+
+/* ── Touch targets ≥44×44 (WCAG 2.5.5) en mobile ──
+      Bumpea botones decorativos de calendario en eventos.html y los filtros
+      de prensa.html que vienen inline a 36/32px. ── */
+@media (max-width: 767.98px) {
+  /* Eventos: navegación de mes */
+  button[aria-label="Mes anterior"],
+  button[aria-label="Mes siguiente"] {
+    inline-size: 44px !important;
+    block-size: 44px !important;
+    min-inline-size: 44px;
+    min-block-size: 44px;
+  }
+  /* Prensa: filtros redondeados — padding vertical 12px → ≈48px */
+  .filter-btn {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    min-height: 44px;
+  }
+}
+
+/* ── Calendar inner cells: number font-size mínimo ya está en 13px (eventos.html
+      JS), aceptable como microcopy de día. ── */
+
+/* ── Featured news card en prensa.html (inline 2-col grid) → 1-col en mobile.
+      Targetea cualquier .news-card que use display:grid inline (los listados
+      .g3 normales NO usan display:grid en .news-card, son .body interna). ── */
+@media (max-width: 699.98px) {
+  a.news-card[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Reduce padding del bloque de texto interno a algo razonable */
+  a.news-card[style*="grid-template-columns"] > div[style*="padding:48px"] {
+    padding: 28px 22px !important;
+  }
+}
+
+/* ── Eventos: card destacada (.ae-banner-compact + hex-deco overlap) ──
+      El hex-deco del hero (220x220px right:-40px) puede empujar layout en
+      Safari iOS. Body ya tiene overflow-x:hidden; reforzamos. ── */
+@media (max-width: 599.98px) {
+  /* Decoraciones inline grandes que asoman fuera del viewport: contenerlas */
+  .ph-deco,
+  .ph-deco-2 {
+    /* No las escondemos para no perder identidad visual; sólo limitar tamaño */
+    inline-size: 160px;
+    block-size: 160px;
+  }
+}
+
+/* ── Plataforma: mockup móvil dentro de COMITIUM (width:280px inline).
+      280 + padding outer puede exceder 320px. Dejamos que respire. ── */
+@media (max-width: 359.98px) {
+  /* sólo en viewports muy estrechos (Galaxy Fold cerrado, iPhone SE 1) */
+  section#comitium [style*="width:280px"] {
+    width: 100% !important;
+    max-width: 260px;
+  }
+}
+
+/* ── Chat widget de canales.html: el inline `width:360px` rompe en <360vw.
+      Forzamos full-fluid con márgenes 12px y safe-area en mobile. ── */
+@media (max-width: 767.98px) {
+  #chatWidget {
+    width: auto !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    max-width: 360px;
+    margin-left: auto;
+    /* En viewports cortos, evitar que cubra todo el alto */
+    max-height: min(70vh, 70dvh, 480px) !important;
+  }
+  #chatToggle {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 12px !important;
+  }
+}
+
+/* ── Entrenamiento: títulos de módulo .mod-info h4 truncados con ellipsis.
+      En mobile preferimos wrap a truncar — el título es información clave. ── */
+@media (max-width: 767.98px) {
+  .mod-info h4 {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.25;
+  }
+  /* mod-num 40x40 (entrenamiento.html line 34): aceptable para indicador,
+     pero el .faq-btn padre es el target (≥44px ya). */
+}
+
+/* ── Quiénes somos · diagrama radial: en viewports muy estrechos, los nodos
+      satélite con clamp(120px, 32vw, 150px) caben justos en 320px (32vw=
+      102px). Refinamos para 320–360 y aseguramos centrado del 2x2. ── */
+@media (max-width: 359.98px) {
+  .ae-diag-node { width: clamp(96px, 36vw, 124px); }
+  .ae-diag-pos-1 { top: 26%; left: 28%; }
+  .ae-diag-pos-2 { top: 26%; left: 72%; }
+  .ae-diag-pos-3 { top: 74%; left: 72%; }
+  .ae-diag-pos-4 { top: 74%; left: 28%; }
+  .ae-diag-globalbadge { padding: 6px 10px 6px 8px; }
+  .ae-diag-globalbadge-num { font-size: 18px; }
+  .ae-diag-globalbadge-lbl { font-size: 8px; }
+}
+
+/* ── Regiones · locator: tabs en mobile son tres iconos — verificamos que
+      .ae-locator-tab tenga ≥44px de target en mobile (el pad 10px*2 + texto
+      = ≈40px → bump a 12px*2). ── */
+@media (max-width: 599.98px) {
+  .ae-locator-tab {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    min-height: 44px;
+  }
+  /* Cuando span se oculta (≤480px ya en CSS base), el icon queda solo —
+     mantener target tocable */
+  .ae-locator-tab svg { width: 18px; height: 18px; }
+  /* Buscador con input ≥16px ya cubierto arriba; bump search-btn */
+  .ae-locator-search-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ── Prensa: "Lo que hablan los medios" — el block dark padding 56px 0 con
+      g2 a 40px gap se ve denso en mobile. Reducimos. ── */
+@media (max-width: 599.98px) {
+  section[style*="background:#0f172a"] { padding-top: 40px !important; padding-bottom: 40px !important; }
+  /* El stack vertical ya viene del .g2 default (1fr en mobile). */
+}
+
+/* ── Eventos: hero compacto con .hex-deco 220×220 inline puede empujar el
+      h2 en 320px. Texto h2 con clamp(32px,5vw,56px) es OK; sólo padding aire. ── */
+@media (max-width: 599.98px) {
+  /* Tarjeta inferior-izquierda del hero "Próximo" (3 inline cards 17px) */
+  /* font-size:17px aceptable; 13px en links — cumple mínimo legible */
+}
+
+/* ── Calendario eventos: grid 7-col puede hacer que celdas sean <44px en
+      width en mobile pequeño. CSS ya maneja `padding:6px 4px` — touch ok. ── */
+
+/* ── Footer accordion: ya tiene min-height:44px en .footer-col-btn; ok. ── */
+
+/* ── Sticky CTA mobile (index.html): sólo display en <768px (ya configurado).
+      Asegurar que botones cumplen 44px ── */
+@media (max-width: 767.98px) {
+  .sticky-cta .btn { min-height: 44px; }
+}
+
+/* ── Plataforma · login form: select sin placeholder visible en iOS. Asegurar
+      legibilidad. ── */
+
+/* ── Banners home: en max-width:999.98px ya están en scroll-snap horizontal
+      (no pinning) — cumple regla de "no pinear en mobile". ── */
+
+/* ── Hex-deco / ph-deco: con body{overflow-x:hidden} no hay rebote. OK. ── */
+
+/* ── Reduce-motion (sin cambios sobre lo ya existente): sigue activado para
+      banners, scenes, layer-cards, hz-track, quote-slides. ── */
+
+
+/* ============================================================
+   PÁGINA EN CONSTRUCCIÓN — Placeholder responsivo (mobile-first)
+   Usado mientras se prepara contenido final de quienes-somos /
+   plataforma. SVG con franjas tricolor + card "Page Under
+   Construction" centrada vertical y horizontalmente.
+   ============================================================ */
+.ae-construction {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px 56px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+  isolation: isolate;
+}
+.ae-construction-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  max-width: 820px;
+  width: 100%;
+}
+.ae-construction-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ae-blue);
+  margin: 0;
+}
+.ae-construction-eyebrow::before {
+  content: '';
+  inline-size: 24px;
+  block-size: 1.5px;
+  background: currentColor;
+  display: inline-block;
+}
+.ae-construction-img {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 40px rgba(15, 23, 42, 0.08));
+}
+.ae-construction-title {
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: clamp(24px, 3.6vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ae-ink);
+  margin: 0;
+}
+.ae-construction-title em {
+  font-style: normal; /* sin itálica por regla NO-ITALIC */
+  color: var(--ae-blue);
+  font-weight: 800;
+}
+.ae-construction-lead {
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.55;
+  color: var(--ae-ink-2);
+  margin: 0;
+  max-width: 520px;
+}
+.ae-construction-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 4px;
+}
+.ae-construction-actions .btn {
+  font-size: 14px;
+  padding: 13px 26px;
+  min-block-size: 44px;
+}
+
+/* Mobile <600px: contenido más compacto, padding ajustado */
+@media (max-width: 599.98px) {
+  .ae-construction {
+    min-height: calc(100vh - 70px);
+    padding: 20px 16px 40px;
+  }
+  .ae-construction-inner { gap: 20px; }
+  .ae-construction-img { max-width: 100%; }
+  .ae-construction-actions { width: 100%; }
+  .ae-construction-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* Tablet (600-959px): leve ajuste */
+@media (min-width: 600px) and (max-width: 959.98px) {
+  .ae-construction-img { max-width: 620px; }
+}
+
+/* prefers-reduced-motion: drop-shadow innecesario en transiciones */
+@media (prefers-reduced-motion: reduce) {
+  .ae-construction-img { filter: none; }
+}
+
+/* ============================================================
+   ENTRENAMIENTO PAGE STYLES
+   (migrated from inline <style> in entrenamiento.html)
+   ============================================================ */
+.ph-2col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 880px) { .ph-2col { grid-template-columns: 1fr; } }
+
+.cert-card { background: #fff; border: 1px solid var(--ae-line); border-radius: 20px; padding: 32px; box-shadow: 0 20px 50px rgba(15,23,42,0.08); position: relative; }
+.cert-card .tri-dots { display: flex; gap: 5px; margin-bottom: 18px; }
+.cert-card .tri-dots span { width: 10px; height: 10px; border-radius: 999px; }
+.cert-card .cert-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--ae-muted); margin-bottom: 12px; }
+.cert-card h4 { font-size: 20px; font-weight: 800; margin-bottom: 24px; }
+.cert-ring { width: 140px; height: 140px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto; position: relative; }
+.cert-ring-inner { text-align: center; }
+.cert-ring-inner .pct { font-size: 36px; font-weight: 800; color: var(--ae-blue); line-height: 1; }
+.cert-ring-inner .sub { font-size: 11px; color: var(--ae-muted); margin-top: 4px; font-weight: 600; }
+.badge-new { position: absolute; top: -10px; right: -10px; background: var(--ae-red); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .1em; padding: 5px 12px; border-radius: 999px; text-transform: uppercase; }
+
+/* Module accordion */
+.mod-header { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.mod-num { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; font-weight: 800; flex-shrink: 0; background: var(--ae-paper-3); color: var(--ae-ink-2); border: 1.5px solid var(--ae-line); }
+.mod-num.done { background: var(--ae-blue); color: #fff; border-color: var(--ae-blue); }
+.mod-info { flex: 1; min-width: 0; }
+.mod-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mod-meta { display: flex; gap: 14px; font-size: 12px; color: var(--ae-muted); font-weight: 600; flex-wrap: wrap; }
+.mod-progress { height: 4px; background: var(--ae-paper-3); border-radius: 999px; margin-top: 8px; overflow: hidden; }
+.mod-progress-fill { height: 100%; border-radius: 999px; background: var(--ae-blue); transition: width 800ms var(--ease); }
+
+/* Video cards */
+.vid-card { background: #1a2744; border-radius: 16px; overflow: hidden; transition: all 200ms var(--ease); cursor: pointer; }
+.vid-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.vid-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.vid-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.vid-play { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(15,23,42,0.35); transition: background 200ms; }
+.vid-card:hover .vid-play { background: rgba(15,23,42,0.15); }
+.vid-play-btn { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.95); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.vid-play-btn::after { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent var(--ae-blue); margin-left: 3px; }
+.vid-duration { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+.vid-body { padding: 18px 20px; }
+.vid-body h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.vid-body p { font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 0; }
+
+/* Download cards */
+.dl-card { display: flex; align-items: center; gap: 16px; }
+.dl-card .ic { flex-shrink: 0; }
+.dl-card .dl-info { flex: 1; min-width: 0; }
+.dl-card .dl-info h4 { margin-bottom: 4px; }
+.dl-card .dl-size { font-size: 12px; color: var(--ae-muted); font-weight: 600; }
+
+/* ============================================================
+   SHARED BREADCRUMB (detail sub-pages)
+   ============================================================ */
+.breadcrumb { color: var(--ae-muted); font-size: 13px; margin-bottom: 16px; font-weight: 600; letter-spacing: .04em; }
+.breadcrumb a { color: var(--ae-blue); }
+
+/* ============================================================
+   SCREEN-READER ONLY UTILITY
+   ============================================================ */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ============================================================
+   QUIÉNES SOMOS — MOBILE override (final, gana por orden)
+   - Sin balón, sin SVG de líneas, sin grid 2x2.
+   - Cards apiladas en single-column, centradas, full-width.
+   - El panel de detalle (BLOQUE 1/2/3/4) se mueve INLINE debajo
+     de cada card via JS — esto sobrescribe layouts previos.
+   ============================================================ */
+@media (max-width: 699.98px) {
+  /* Quitar elementos decorativos */
+  .ae-diag-canvas > .ae-diag-center,
+  .ae-diag .ae-diag-lines { display: none !important; }
+
+  /* Canvas: flex column centrado, sin grid 2x2 anterior */
+  .ae-diag-canvas {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0 8px;
+    grid-template-columns: none !important;
+  }
+
+  /* Cards: full-width hasta 480px. position:relative crea el contexto de
+     anclaje para el chevron ::after; sin esto el ::after escapa al body. */
+  .ae-diag-node {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto;
+    padding-right: 38px !important; /* espacio reservado para el chevron */
+  }
+
+  /* Estado abierto: borde azul + sombra realzada */
+  .ae-diag-node.is-open {
+    border-color: var(--ae-blue) !important;
+    box-shadow: 0 14px 28px rgba(30,58,138,0.18) !important;
+  }
+
+  /* Indicador chevron (▾) a la derecha de cada card.
+     Se construye con border-right + border-bottom rotados 45° (forma "L"
+     que parece una flecha). Cuando abre, gira 180° para apuntar arriba. */
+  .ae-diag-node::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--ae-ink-2);
+    border-bottom: 2px solid var(--ae-ink-2);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 280ms ease, border-color 200ms ease;
+    pointer-events: none;
+  }
+  .ae-diag-node.is-open::after {
+    border-color: var(--ae-blue);
+    transform: translateY(-20%) rotate(-135deg);
+  }
+
+  /* Host del panel inline (creado por JS): mismo ancho que la card,
+     debajo de ella, dentro del flujo del canvas */
+  .ae-diag-mobile-panel-host {
+    width: 100%;
+    max-width: 480px;
+    margin: -2px auto 4px;
+  }
+  .ae-diag-mobile-panel-host .ae-diag-panel {
+    margin: 0;
+    padding: 16px 18px;
+    background: #f7f9fd;
+    border: 1px solid var(--ae-line);
+    border-radius: 14px;
+    animation: aeMobilePanelOpen 280ms ease-out both;
+  }
+  .ae-diag-mobile-panel-host .ae-diag-panel h2.ae-diag-h {
+    font-size: clamp(20px, 5vw, 24px);
+    margin-top: 4px;
+  }
+  .ae-diag-mobile-panel-host .ae-diag-panel p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  @keyframes aeMobilePanelOpen {
+    0%   { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* En mobile NO usamos el state-machine de .ae-diag-head:
+     - mostramos siempre el intro arriba
+     - el contenedor [data-state-content="detail"] queda vacío
+       (los paneles se movieron al canvas) — lo ocultamos */
+  .ae-diag-head [data-state-content="detail"] { display: none !important; }
+  .ae-diag-head [data-state-content="intro"] { display: block !important; }
+  .ae-diag-back { display: none; }
+
+  /* Cuando un nodo está oscurecido por estado detail desktop, en mobile
+     no aplica — restaurar opacidad/escala de todos los nodos */
+  .ae-diag[data-state="detail"] .ae-diag-node:not(.is-open) {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-diag-mobile-panel-host .ae-diag-panel { animation: none; }
+}
