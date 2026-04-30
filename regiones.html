@@ -87,6 +87,17 @@
 
         <div class="ae-locator-shell">
 
+          <!-- ── MOBILE DROPDOWN (oculto ≥700px) ──
+               Reemplaza la lista en mobile: dropdown arriba del mapa,
+               on-change centra el mapa y abre la card activa debajo.
+               Las <option> se generan desde JS leyendo .ae-locator-item. -->
+          <div class="ae-locator-mobile-bar">
+            <label for="aeLocatorMobileSelect" class="sr-only">Selecciona una región</label>
+            <select id="aeLocatorMobileSelect" class="ae-locator-mobile-select" aria-label="Seleccionar región">
+              <option value="">Selecciona una región…</option>
+            </select>
+          </div>
+
           <!-- ── PANEL IZQ: buscador + lista ── -->
           <aside class="ae-locator-panel" aria-label="Búsqueda y resultados">
             <button type="button" class="ae-locator-cta" id="aeFindNearest">
@@ -105,254 +116,285 @@
             <div class="ae-locator-list" role="region" aria-live="polite">
               <!-- Pane: Colombia (departamentos) -->
               <ol class="ae-locator-pane is-active" id="paneColombia" data-pane="colombia">
-                <li><a href="#" class="ae-locator-item is-active" data-pin="amazonas" data-lat="-4.2150" data-lng="-69.9406" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/hYajdoNyYTu5dicZA" data-email="apoyo.amazonas@actoreselectorales.com">
+                <li><div class="ae-locator-item is-active" role="button" tabindex="0" data-pin="amazonas" data-lat="-4.2150" data-lng="-69.9406" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/hYajdoNyYTu5dicZA" data-email="apoyo.amazonas@actoreselectorales.com">
                   <h3>AMAZONAS</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Leticia</p>
                   <p class="ae-locator-sede">Hotel Amazon Bed &amp; Breakfast</p>
                   <p class="ae-locator-detail">Cll 12 #9-30, Leticia, Amazonas</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.amazonas@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.amazonas@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="antioquia" data-lat="6.2442" data-lng="-75.5812" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/AyvBaUDJmHXyadnXA" data-email="apoyo.antioquia@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="antioquia" data-lat="6.2442" data-lng="-75.5812" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/AyvBaUDJmHXyadnXA" data-email="apoyo.antioquia@actoreselectorales.com">
                   <h3>ANTIOQUIA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Medellín</p>
                   <p class="ae-locator-sede">Coworking Inspira — sede Laureles</p>
                   <p class="ae-locator-detail">Tv 39B #73-23, interior 201</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.antioquia@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.antioquia@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="arauca" data-lat="7.0844" data-lng="-70.7591" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nwHgYD5rzsVKDzds7" data-email="apoyo.arauca@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="arauca" data-lat="7.0844" data-lng="-70.7591" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nwHgYD5rzsVKDzds7" data-email="apoyo.arauca@actoreselectorales.com">
                   <h3>ARAUCA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Arauca</p>
                   <p class="ae-locator-sede">Olab Ocre Coworking Arauca</p>
                   <p class="ae-locator-detail">Cra 26 #20-05, Arauca, Arauca</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.arauca@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.arauca@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="atlantico" data-lat="10.9685" data-lng="-74.7813" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KXXSXSzzTag1Cr479" data-email="apoyo.atlantico@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="atlantico" data-lat="10.9685" data-lng="-74.7813" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KXXSXSzzTag1Cr479" data-email="apoyo.atlantico@actoreselectorales.com">
                   <h3>ATLÁNTICO</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Barranquilla</p>
                   <p class="ae-locator-sede">Cowork Para Todos</p>
                   <p class="ae-locator-detail">Cra 53 #72-136, Barranquilla, Atlántico</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.atlantico@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.atlantico@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="bolivar" data-lat="10.3910" data-lng="-75.4794" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CKehyHFsg6zH2YxR6" data-email="apoyo.bolivar@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="bolivar" data-lat="10.3910" data-lng="-75.4794" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CKehyHFsg6zH2YxR6" data-email="apoyo.bolivar@actoreselectorales.com">
                   <h3>BOLÍVAR</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cartagena de Indias</p>
                   <p class="ae-locator-sede">Tu Work</p>
                   <p class="ae-locator-detail">Calle 6A #3-32, Bocagrande</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.bolivar@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.bolivar@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="boyaca" data-lat="5.5353" data-lng="-73.3678" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/cetAyGmHzXf8gUUA8" data-email="apoyo.boyaca@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="boyaca" data-lat="5.5353" data-lng="-73.3678" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/cetAyGmHzXf8gUUA8" data-email="apoyo.boyaca@actoreselectorales.com">
                   <h3>BOYACÁ</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Tunja</p>
                   <p class="ae-locator-sede">El Camello Coworking</p>
                   <p class="ae-locator-detail">Tv 9A #29-19, Tunja, Boyacá</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.boyaca@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.boyaca@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="caldas" data-lat="5.0689" data-lng="-75.5174" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oyC2ogzJhpyMUeun6" data-email="apoyo.caldas@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="caldas" data-lat="5.0689" data-lng="-75.5174" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oyC2ogzJhpyMUeun6" data-email="apoyo.caldas@actoreselectorales.com">
                   <h3>CALDAS</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Manizales</p>
                   <p class="ae-locator-sede">Thinka Coworking</p>
                   <p class="ae-locator-detail">Cra 23 #64B-33, Manizales, Caldas</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.caldas@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.caldas@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="caqueta" data-lat="1.6144" data-lng="-75.6062" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oT7cXMTrpX6Ssc857" data-email="apoyo.caqueta@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="caqueta" data-lat="1.6144" data-lng="-75.6062" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oT7cXMTrpX6Ssc857" data-email="apoyo.caqueta@actoreselectorales.com">
                   <h3>CAQUETÁ</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Florencia</p>
                   <p class="ae-locator-sede">Hotel Caquetá Real</p>
                   <p class="ae-locator-detail">Cll 18 #9-49, Florencia, Caquetá</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.caqueta@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.caqueta@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="casanare" data-lat="5.3378" data-lng="-72.3959" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/tdeN7bT6SmWiqMJS9" data-email="apoyo.casanare@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="casanare" data-lat="5.3378" data-lng="-72.3959" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/tdeN7bT6SmWiqMJS9" data-email="apoyo.casanare@actoreselectorales.com">
                   <h3>CASANARE</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Yopal</p>
                   <p class="ae-locator-sede">Work Station</p>
                   <p class="ae-locator-detail">Cra 20 #8-77, Yopal, Casanare</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.casanare@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.casanare@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="cauca" data-lat="2.4448" data-lng="-76.6147" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/mmHSdbDzjQCEuBcd9" data-email="apoyo.cauca@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="cauca" data-lat="2.4448" data-lng="-76.6147" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/mmHSdbDzjQCEuBcd9" data-email="apoyo.cauca@actoreselectorales.com">
                   <h3>CAUCA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Popayán</p>
                   <p class="ae-locator-sede">Borém</p>
                   <p class="ae-locator-detail">Cll 2 #2-12, Popayán, Cauca</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.cauca@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.cauca@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="cesar" data-lat="10.4744" data-lng="-73.2438" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/HSyhrmbnFu62Sbpb6" data-email="apoyo.cesar@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="cesar" data-lat="10.4744" data-lng="-73.2438" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/HSyhrmbnFu62Sbpb6" data-email="apoyo.cesar@actoreselectorales.com">
                   <h3>CESAR</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Valledupar</p>
                   <p class="ae-locator-sede">Coworking Oficinas Statera</p>
                   <p class="ae-locator-detail">Cra 13 #14-31, Valledupar, Cesar</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.cesar@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.cesar@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="choco" data-lat="5.6919" data-lng="-76.6583" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KJvH8fRF22j4DiB78" data-email="apoyo.choco@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="choco" data-lat="5.6919" data-lng="-76.6583" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/KJvH8fRF22j4DiB78" data-email="apoyo.choco@actoreselectorales.com">
                   <h3>CHOCÓ</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Quibdó</p>
                   <p class="ae-locator-sede">MIA Hotel Chocó</p>
                   <p class="ae-locator-detail">Centro Comercial El Caraño</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.choco@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.choco@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="cordoba" data-lat="8.7479" data-lng="-75.8814" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nPwZ4Utnh9b4AF5t6" data-email="apoyo.cordoba@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="cordoba" data-lat="8.7479" data-lng="-75.8814" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/nPwZ4Utnh9b4AF5t6" data-email="apoyo.cordoba@actoreselectorales.com">
                   <h3>CÓRDOBA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Montería</p>
                   <p class="ae-locator-sede">Edificio Centro de Negocios Alamedas</p>
                   <p class="ae-locator-detail">Cra 8 #34-45</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.cordoba@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.cordoba@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="guainia" data-lat="3.8703" data-lng="-67.9167" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/61UELWsTW8CoDCqaA" data-email="apoyo.guainia@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="guainia" data-lat="3.8703" data-lng="-67.9167" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/61UELWsTW8CoDCqaA" data-email="apoyo.guainia@actoreselectorales.com">
                   <h3>GUAINÍA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Inírida</p>
                   <p class="ae-locator-sede">Fuente del Guainía</p>
                   <p class="ae-locator-detail">Vía Aeropuerto K 1-2, Inírida, Guainía</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.guainia@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.guainia@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="guaviare" data-lat="2.5736" data-lng="-72.6411" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/MJjyaDMbFqvMRHeA6" data-email="apoyo.guaviare@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="guaviare" data-lat="2.5736" data-lng="-72.6411" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/MJjyaDMbFqvMRHeA6" data-email="apoyo.guaviare@actoreselectorales.com">
                   <h3>GUAVIARE</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> San José del Guaviare</p>
                   <p class="ae-locator-sede">Salón de Eventos Paz Guaviare</p>
                   <p class="ae-locator-detail">Salón de Eventos Paz Guaviare</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.guaviare@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.guaviare@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="huila" data-lat="2.9273" data-lng="-75.2819" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/72oQPgz5kpDBakym8" data-email="apoyo.hulia@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="huila" data-lat="2.9273" data-lng="-75.2819" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/72oQPgz5kpDBakym8" data-email="apoyo.hulia@actoreselectorales.com">
                   <h3>HUILA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Neiva</p>
                   <p class="ae-locator-sede">Conecta Work Center</p>
                   <p class="ae-locator-detail">Cra 4 #12-59, Neiva, Huila</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.hulia@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.hulia@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="guajira" data-lat="11.5444" data-lng="-72.9072" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/ebkdSEFgUw7Yf5B8A" data-email="apoyo.laguajira@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="guajira" data-lat="11.5444" data-lng="-72.9072" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/ebkdSEFgUw7Yf5B8A" data-email="apoyo.laguajira@actoreselectorales.com">
                   <h3>LA GUAJIRA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Riohacha</p>
                   <p class="ae-locator-sede">Spot Coworking</p>
                   <p class="ae-locator-detail">Cll 2 #7-54, Riohacha, La Guajira</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.laguajira@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.laguajira@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="magdalena" data-lat="11.2408" data-lng="-74.1990" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/gquR2KfVfuA7oo2n9" data-email="apoyo.magdalena@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="magdalena" data-lat="11.2408" data-lng="-74.1990" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/gquR2KfVfuA7oo2n9" data-email="apoyo.magdalena@actoreselectorales.com">
                   <h3>MAGDALENA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Santa Marta</p>
                   <p class="ae-locator-sede">Nomaland Coworking</p>
                   <p class="ae-locator-detail">Cll 18 #8C-07, Centro</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.magdalena@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.magdalena@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="meta" data-lat="4.1420" data-lng="-73.6266" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/3goXKNqp4JVgKK6A9" data-email="apoyo.meta@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="meta" data-lat="4.1420" data-lng="-73.6266" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/3goXKNqp4JVgKK6A9" data-email="apoyo.meta@actoreselectorales.com">
                   <h3>META</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Villavicencio</p>
                   <p class="ae-locator-sede">Innovación Coworking</p>
                   <p class="ae-locator-detail">Cra 22 #1-20 sur, Villavicencio, Meta</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.meta@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.meta@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="narino" data-lat="1.2273" data-lng="-77.2879" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/tempo+CoWorking/@1.2273169,-77.2878919,17z" data-email="apoyo.narino@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="narino" data-lat="1.2273" data-lng="-77.2879" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/tempo+CoWorking/@1.2273169,-77.2878919,17z" data-email="apoyo.narino@actoreselectorales.com">
                   <h3>NARIÑO</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Pasto</p>
                   <p class="ae-locator-sede">Tempo CoWorking</p>
                   <p class="ae-locator-detail">Cra 37 #19B-35</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.narino@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.narino@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="norte-santander" data-lat="7.8842" data-lng="-72.4996" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Cata+coworking/@7.8841556,-72.4996302,17z" data-email="apoyo.nortedesantander@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="norte-santander" data-lat="7.8842" data-lng="-72.4996" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Cata+coworking/@7.8841556,-72.4996302,17z" data-email="apoyo.nortedesantander@actoreselectorales.com">
                   <h3>NORTE DE SANTANDER</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cúcuta</p>
                   <p class="ae-locator-sede">Cata CoWorking</p>
                   <p class="ae-locator-detail">Cll 14A #2C-100</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.nortedesantander@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.nortedesantander@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="putumayo" data-lat="1.1473" data-lng="-76.6485" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/pvTbkWrNCJfP9Mob7" data-email="apoyo.putumayo@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="putumayo" data-lat="1.1473" data-lng="-76.6485" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/pvTbkWrNCJfP9Mob7" data-email="apoyo.putumayo@actoreselectorales.com">
                   <h3>PUTUMAYO</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Mocoa</p>
                   <p class="ae-locator-sede">Maloca Café</p>
                   <p class="ae-locator-detail">Cll 7 #5-10, Mocoa, Putumayo</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.putumayo@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.putumayo@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="quindio" data-lat="4.5339" data-lng="-75.6811" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/NxhWE7qxJRADKwNq6" data-email="apoyo.quindio@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="quindio" data-lat="4.5339" data-lng="-75.6811" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/NxhWE7qxJRADKwNq6" data-email="apoyo.quindio@actoreselectorales.com">
                   <h3>QUINDÍO</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Armenia</p>
                   <p class="ae-locator-sede">Fundador Coworking y Papelería</p>
                   <p class="ae-locator-detail">Cra 13A #1A-35, Armenia, Quindío</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.quindio@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.quindio@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="risaralda" data-lat="4.8133" data-lng="-75.6961" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rBmxCZJkW5nCDKTX9" data-email="apoyo.risaralda@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="risaralda" data-lat="4.8133" data-lng="-75.6961" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rBmxCZJkW5nCDKTX9" data-email="apoyo.risaralda@actoreselectorales.com">
                   <h3>RISARALDA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Pereira</p>
                   <p class="ae-locator-sede">Social &amp; Co — Coworking</p>
                   <p class="ae-locator-detail">Centro Comercial Pereira</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.risaralda@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.risaralda@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="sanandres" data-lat="12.5847" data-lng="-81.7006" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CpRpdkTNWtm4MxmW8" data-email="apoyo.sanandresyprovidencia@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="sanandres" data-lat="12.5847" data-lng="-81.7006" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/CpRpdkTNWtm4MxmW8" data-email="apoyo.sanandresyprovidencia@actoreselectorales.com">
                   <h3>SAN ANDRÉS Y PROVIDENCIA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> San Andrés</p>
                   <p class="ae-locator-sede">Centro Comercial New Point, Local 119</p>
                   <p class="ae-locator-detail">Cra 4 #2-37, San Andrés</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.sanandresyprovidencia@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.sanandresyprovidencia@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="santander" data-lat="7.1193" data-lng="-73.1227" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/uX95pb4ZMYNAdm3r6" data-email="apoyo.santander@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="santander" data-lat="7.1193" data-lng="-73.1227" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/uX95pb4ZMYNAdm3r6" data-email="apoyo.santander@actoreselectorales.com">
                   <h3>SANTANDER</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Bucaramanga</p>
                   <p class="ae-locator-sede">ColorWorking</p>
                   <p class="ae-locator-detail">Cra 36 #48-20</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.santander@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.santander@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="sucre" data-lat="9.3047" data-lng="-75.3978" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oCTWBxrRXNLpE8t36" data-email="apoyo.sucre@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="sucre" data-lat="9.3047" data-lng="-75.3978" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/oCTWBxrRXNLpE8t36" data-email="apoyo.sucre@actoreselectorales.com">
                   <h3>SUCRE</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Sincelejo</p>
                   <p class="ae-locator-sede">Las Carolinas SAS</p>
                   <p class="ae-locator-detail">Cll 14 #19A-17, B. Ford, Sincelejo, Sucre</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.sucre@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.sucre@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="tolima" data-lat="4.4389" data-lng="-75.2322" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/sBYiRyRFog2YR7R69" data-email="apoyo.tolima@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="tolima" data-lat="4.4389" data-lng="-75.2322" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/sBYiRyRFog2YR7R69" data-email="apoyo.tolima@actoreselectorales.com">
                   <h3>TOLIMA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Ibagué</p>
                   <p class="ae-locator-sede">Cowork Piedra Pintada</p>
                   <p class="ae-locator-detail">Calle 47 #4-61, Barrio Piedra Pintada</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.tolima@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.tolima@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="valle" data-lat="3.4516" data-lng="-76.5320" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rH97ZjbCCPDGG2eh7" data-email="apoyo.valledelcauca@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="valle" data-lat="3.4516" data-lng="-76.5320" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/rH97ZjbCCPDGG2eh7" data-email="apoyo.valledelcauca@actoreselectorales.com">
                   <h3>VALLE DEL CAUCA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cali</p>
                   <p class="ae-locator-sede">Épico Workspace</p>
                   <p class="ae-locator-detail">Cll 3 #4-19, Cali, Valle del Cauca</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.valledelcauca@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.valledelcauca@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="vaupes" data-lat="1.2538" data-lng="-70.2342" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/JLmTx1jd2GzaEWXq8" data-email="apoyo.vaupes@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="vaupes" data-lat="1.2538" data-lng="-70.2342" data-zoom="11" data-photo="" data-maps-url="https://maps.app.goo.gl/JLmTx1jd2GzaEWXq8" data-email="apoyo.vaupes@actoreselectorales.com">
                   <h3>VAUPÉS</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Mitú</p>
                   <p class="ae-locator-sede">Estadero Los Paisas</p>
                   <p class="ae-locator-detail">Calle 19 #3-86, Barrio Palmeras</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.vaupes@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.vaupes@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
-                <li><a href="#" class="ae-locator-item" data-pin="vichada" data-lat="6.1842" data-lng="-67.4846" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Hotel+Voragine/@6.1841949,-67.4845831,17z" data-email="apoyo.vichada@actoreselectorales.com">
+                </div></li>
+                <li><div class="ae-locator-item" role="button" tabindex="0" data-pin="vichada" data-lat="6.1842" data-lng="-67.4846" data-zoom="11" data-photo="" data-maps-url="https://www.google.com/maps/place/Hotel+Voragine/@6.1841949,-67.4845831,17z" data-email="apoyo.vichada@actoreselectorales.com">
                   <h3>VICHADA</h3>
                   <p class="ae-locator-addr"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-7-4.5-7-12a7 7 0 0 1 14 0c0 7.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Puerto Carreño</p>
                   <p class="ae-locator-sede">Hotel La Vorágine</p>
                   <p class="ae-locator-detail">Carrera 7 #15-293</p>
+                  <a class="ae-locator-mail" href="mailto:apoyo.vichada@actoreselectorales.com" aria-label="Escribir a soporte regional"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>apoyo.vichada@actoreselectorales.com</span></a>
                   <figure class="ae-locator-photo" aria-hidden="true"><img class="ae-locator-photo-img" alt="" loading="lazy" decoding="async"></figure>
                   <span class="ae-locator-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Mostrar u ocultar foto de la sede"><svg class="ae-locator-toggle-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a></li>
+                </div></li>
               </ol>
 
 
@@ -386,10 +428,6 @@
                data-default-zoom="6"
                data-map-tiles="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                data-map-key="">
-            <button type="button" class="ae-locator-gps" aria-label="Activar GPS">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg>
-              Activar GPS
-            </button>
 
             <!-- Mount point: aquí monta el proveedor de mapa real -->
             <div class="ae-locator-mapmount" data-map-mount aria-hidden="true"></div>
@@ -470,10 +508,6 @@
                 <strong>—</strong>
               </div>
             </div>
-
-            <button type="button" class="ae-locator-myloc" aria-label="Mi ubicación">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>
-            </button>
           </div>
 
         </div>

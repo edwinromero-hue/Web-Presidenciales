@@ -380,6 +380,10 @@
       items.forEach(function (it) {
         var on = it.dataset.pin === id && !it.closest('.ae-locator-pane').hasAttribute('hidden');
         it.classList.toggle('is-active', on);
+        // Marca el <li> padre para que en mobile el CSS pueda mostrar
+        // solo la sede activa (los demás <li> quedan display:none).
+        var li = it.closest('li');
+        if (li) li.classList.toggle('is-active-li', on);
         if (on) {
           it.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           // Al seleccionar desde la card o el pin del mapa, autoexpandir esta
@@ -387,6 +391,9 @@
           expandOnly(it);
         }
       });
+      // Sync del dropdown mobile (si el cambio vino de otro origen)
+      var sel = document.getElementById('aeLocatorMobileSelect');
+      if (sel && sel.value !== id) sel.value = id;
       var label = '';
       pins.forEach(function (p) { if (p.dataset.pin === id) label = p.getAttribute('aria-label') || ''; });
       if (tip && label) {
@@ -418,7 +425,10 @@
     pins.forEach(function (p) { p.addEventListener('click', function (e) { e.preventDefault(); selectPlace(p.dataset.pin); }); });
     items.forEach(function (it) {
       it.addEventListener('click', function (e) {
-        e.preventDefault();
+        // Click en el mailto interno → dejar que el navegador abra el cliente
+        // de correo. NO llamar preventDefault ni cambiar selección.
+        if (e.target.closest('.ae-locator-mail')) return;
+
         // Click en la flecha → toggle de la foto (sin cambiar la selección del mapa)
         if (e.target.closest('.ae-locator-toggle')) {
           if (it.classList.contains('is-expanded')) setExpanded(it, false);
@@ -426,6 +436,16 @@
           return;
         }
         // Click en cualquier otra parte de la card → seleccionar (auto-expande también)
+        selectPlace(it.dataset.pin);
+      });
+      // Teclado: Enter/Space activa la card (es <div role="button">, no <a>)
+      it.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        // Enter en el mailto → comportamiento nativo del <a>
+        if (e.target.closest('.ae-locator-mail')) return;
+        // Enter en la flecha lo maneja el handler del toggle
+        if (e.target.closest('.ae-locator-toggle')) return;
+        e.preventDefault();
         selectPlace(it.dataset.pin);
       });
       // Soporte de teclado para el toggle (es <span role="button">)
@@ -442,6 +462,38 @@
       }
     });
     if (search) search.addEventListener('input', function () { filterItems(search.value); });
+
+    // ── Dropdown mobile: poblar <option>s desde las cards y wirear change ──
+    // El <select> está en el HTML pero vacío (solo placeholder). Aquí leemos
+    // las cards `.ae-locator-item` activas y generamos las opciones, así
+    // mantenemos una sola fuente de verdad (los <li> en el HTML).
+    var mobileSelect = document.getElementById('aeLocatorMobileSelect');
+    if (mobileSelect) {
+      items.forEach(function (it) {
+        if (!it.dataset.pin) return;
+        var h3 = it.querySelector('h3');
+        var addr = it.querySelector('.ae-locator-addr');
+        var addrText = addr ? addr.textContent.replace(/\s+/g, ' ').trim() : '';
+        var label = (h3 ? h3.textContent.trim() : it.dataset.pin) +
+                    (addrText ? ' — ' + addrText : '');
+        var opt = document.createElement('option');
+        opt.value = it.dataset.pin;
+        opt.textContent = label;
+        if (it.classList.contains('is-active')) opt.selected = true;
+        mobileSelect.appendChild(opt);
+      });
+      mobileSelect.addEventListener('change', function () {
+        if (mobileSelect.value) selectPlace(mobileSelect.value);
+      });
+      // Marca inicial del <li> activo para que el CSS mobile lo muestre
+      // sin esperar a un primer click.
+      items.forEach(function (it) {
+        if (it.classList.contains('is-active')) {
+          var li = it.closest('li');
+          if (li) li.classList.add('is-active-li');
+        }
+      });
+    }
 
     // Montar el proveedor (no bloqueante)
     if (mountEl && providerName !== 'placeholder') {

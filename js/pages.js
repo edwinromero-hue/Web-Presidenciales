@@ -95,10 +95,50 @@
     }
   }
 
+  // ── Canales: FAQ scroll-end detector ──
+  // Cuando el usuario llega al final del .faq-group, marcamos el
+  // contenedor padre .ae-contact-faq con .is-faq-bottom — el CSS oculta
+  // el badge "↓ Hay más preguntas". Si vuelve a subir, el badge regresa.
+  function initFaqScrollHint() {
+    var faqs = document.querySelectorAll('.ae-contact-faq');
+    if (!faqs.length) return;
+    faqs.forEach(function (faq) {
+      var group = faq.querySelector('.faq-group');
+      if (!group) return;
+      function check() {
+        var atBottom = group.scrollTop + group.clientHeight >= group.scrollHeight - 4;
+        var fits = group.scrollHeight <= group.clientHeight + 1;
+        // Si todo cabe → no hay scroll → ocultar badge.
+        // Si llegó al final → ocultar badge.
+        faq.classList.toggle('is-faq-bottom', atBottom || fits);
+      }
+      var raf = null;
+      group.addEventListener('scroll', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(check);
+      }, { passive: true });
+      // Re-evaluar cuando se abren/cierran acordeones (cambian la altura)
+      faq.querySelectorAll('.ae-faq-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          // Esperar a que termine la transición max-height (300ms)
+          setTimeout(check, 320);
+        });
+      });
+      // Re-evaluar al redimensionar la ventana
+      window.addEventListener('resize', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(check);
+      });
+      // Init
+      requestAnimationFrame(check);
+    });
+  }
+
   // ── Init all page-specific modules ──
   document.addEventListener('DOMContentLoaded', function () {
     initChatWidget();
     initPrensaTabs();
     initCalendar();
+    initFaqScrollHint();
   });
 })();
