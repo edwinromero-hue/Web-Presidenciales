@@ -5652,22 +5652,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   position: relative;
   z-index: 2;
 }
-.ae-banner-compact-crumb {
-  font-size: 13px;
-  color: var(--ae-ink-2);
-  margin-bottom: 14px;
-}
-.ae-banner-compact-crumb a {
-  color: var(--ae-ink-2);
-  text-decoration: none;
-  transition: color 180ms ease;
-}
-.ae-banner-compact-crumb a:hover { color: var(--ae-blue); }
-.ae-banner-compact-crumb span[aria-current] {
-  color: var(--ae-blue);
-  font-weight: 700;
-}
-.ae-banner-compact-crumb span[aria-hidden] { margin: 0 8px; color: var(--ae-muted); }
+/* Banner compact crumb hereda del breadcrumb unificado — ver más abajo */
 .ae-banner-compact-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -6556,10 +6541,83 @@ em, i, cite, dfn, var, address,
 .dl-card .dl-size { font-size: 12px; color: var(--ae-muted); font-weight: 600; }
 
 /* ============================================================
-   SHARED BREADCRUMB (detail sub-pages)
+   BREADCRUMB UNIFICADO — todas las páginas (desktop + mobile)
+   - Una sola apariencia para .breadcrumb, .crumb y .ae-banner-compact-crumb
+   - Flex con wrap: nunca tapa nada, nunca se desborda
+   - Tamaños y espaciados responsive 320 → 1440+
    ============================================================ */
-.breadcrumb { color: var(--ae-muted); font-size: 13px; margin-bottom: 16px; font-weight: 600; letter-spacing: .04em; }
-.breadcrumb a { color: var(--ae-blue); }
+.breadcrumb,
+.crumb,
+.ae-banner-compact-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 6px;
+  row-gap: 2px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ae-ink-2);
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0 0 16px;
+  padding: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.breadcrumb a,
+.crumb a,
+.ae-banner-compact-crumb a {
+  color: var(--ae-ink-2);
+  text-decoration: none;
+  transition: color 180ms ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.breadcrumb a:hover,
+.crumb a:hover,
+.ae-banner-compact-crumb a:hover { color: var(--ae-blue); }
+.breadcrumb a:focus-visible,
+.crumb a:focus-visible,
+.ae-banner-compact-crumb a:focus-visible {
+  outline: 2px solid var(--ae-blue);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.breadcrumb span[aria-current],
+.crumb span[aria-current],
+.ae-banner-compact-crumb span[aria-current] {
+  color: var(--ae-blue);
+  font-weight: 700;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.breadcrumb span[aria-hidden],
+.crumb span[aria-hidden],
+.ae-banner-compact-crumb span[aria-hidden] {
+  color: var(--ae-muted);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Mobile (≤ 480px): tipo más compacto, gap más cerrado, margen reducido */
+@media (max-width: 480px) {
+  .breadcrumb,
+  .crumb,
+  .ae-banner-compact-crumb {
+    font-size: 12px;
+    column-gap: 4px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Tipografía mínima (≤ 360px): que nunca se rompa */
+@media (max-width: 360px) {
+  .breadcrumb,
+  .crumb,
+  .ae-banner-compact-crumb { font-size: 11.5px; }
+}
 
 /* ============================================================
    REGIONES — DESKTOP: ocultar el dropdown mobile
