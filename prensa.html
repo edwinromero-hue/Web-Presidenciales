@@ -58,91 +58,155 @@
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
 
   <main id="mainContent">
-    <!-- Page Hero -->
-    <section class="ph">
-      <div class="ph-deco" data-parallax="0.2"></div>
-      <div class="wrap ae-z2">
-        <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Sala de prensa</span></nav>
-        <div class="eyebrow">Sala de prensa</div>
-        <h1 data-enter style="margin-top:18px">Comunicados, noticias<br>y <span style="color:#1e3a8a">kit de prensa.</span></h1>
-        <p class="kicker" data-enter data-delay="1">Información oficial actualizada sobre el proceso electoral 2026. Descarga recursos para medios.</p>
-        <!-- Tab bar (role=group + aria-pressed; no existen paneles 1:1 distintos por tab, así que modelamos como toggles agrupados en lugar de tablist) -->
-        <div role="group" aria-label="Categorías de contenido" style="display:flex;gap:6px;margin-top:32px;border-bottom:2px solid #e2e8f0">
-          <button type="button" class="prensa-tab" aria-pressed="true" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#1e3a8a;border-bottom:3px solid #1e3a8a;margin-bottom:-2px;cursor:pointer;font-family:inherit">Comunicados</button>
-          <button type="button" class="prensa-tab" aria-pressed="false" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#475569;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;font-family:inherit">Noticias</button>
-          <button type="button" class="prensa-tab" aria-pressed="false" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#475569;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;font-family:inherit">Kit de prensa</button>
+    <!-- ═══ Banner compacto ═══ -->
+    <section class="ae-banner-compact" aria-label="Sala de prensa" style="padding:32px 0">
+      <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
+      <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
+      <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
+      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true" decoding="async">
+
+      <div class="wrap ae-banner-compact-inner">
+        <nav aria-label="Breadcrumb" class="ae-banner-compact-crumb">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Sala de prensa</span>
+        </nav>
+        <div class="eyebrow ae-banner-compact-eyebrow">
+          <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+          Información oficial 2026
+        </div>
+        <h1 class="ae-banner-compact-title">Comunicados, noticias y <em>kit de prensa</em></h1>
+      </div>
+    </section>
+
+    <!-- ═══ Tabs ═══ -->
+    <section style="padding:24px 0 0;border-bottom:2px solid #e2e8f0">
+      <div class="wrap">
+        <div role="group" aria-label="Categorías de contenido" style="display:flex;gap:6px;margin-bottom:-2px;flex-wrap:wrap">
+          <button type="button" class="prensa-tab" data-tab="comunicados" aria-pressed="true" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#1e3a8a;border-bottom:3px solid #1e3a8a;cursor:pointer;font-family:inherit">Comunicados</button>
+          <button type="button" class="prensa-tab" data-tab="noticias" aria-pressed="false" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#475569;border-bottom:3px solid transparent;cursor:pointer;font-family:inherit">Noticias</button>
+          <button type="button" class="prensa-tab" data-tab="kit" aria-pressed="false" style="padding:14px 22px;border:0;background:transparent;font-size:15px;font-weight:700;color:#475569;border-bottom:3px solid transparent;cursor:pointer;font-family:inherit">Kit de prensa</button>
         </div>
       </div>
     </section>
 
-    <!-- Featured Story -->
-    <section class="pad-sm">
+    <!-- ═══ Contacto de prensa (solo en Comunicados) ═══ -->
+    <section class="ae-press-card-section" data-press-contact style="padding:24px 0">
       <div class="wrap">
-        <a data-enter class="news-card" href="#" style="display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch;padding:0;overflow:hidden">
-          <div style="aspect-ratio:16/10;position:relative;overflow:hidden">
-            <img src="assets/img/4.jpeg" alt="CNE entrega credenciales" loading="lazy" decoding="async" class="ae-img-cover">
-            <img src="assets/img/Degrade_bandera.svg" alt="" aria-hidden="true" loading="lazy" decoding="async"
-                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:color;opacity:.65;pointer-events:none">
-          </div>
-          <div style="padding:48px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
-            <img src="assets/img/Malla_Rojo.svg" alt="" aria-hidden="true" loading="lazy" decoding="async"
-                 style="position:absolute;top:-40px;right:-40px;width:180px;opacity:.12;pointer-events:none">
-            <div style="display:inline-flex;gap:6px;margin-bottom:16px;width:fit-content">
-              <span style="background:#e11d48;color:#fff;font-size:11px;padding:4px 10px;border-radius:999px;font-weight:800;letter-spacing:.1em">DESTACADO</span>
-              <span style="font-size:12px;color:#475569;font-weight:700;align-self:center">15 abr 2026</span>
+        <article class="ae-press-card ae-press-card-slim" aria-label="Contacto de prensa">
+          <div class="ae-press-card-portrait" aria-hidden="true">
+            <div class="ae-press-card-window">
+              <span class="ae-press-card-dots"><i></i><i></i><i></i></span>
+              <img src="assets/img/13.jpeg" alt="" loading="lazy" decoding="async">
             </div>
-            <h2 style="font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:#1e3a8a">CNE entrega credenciales a los siete representantes a la Cámara del Atlántico para el período 2026-2030.</h2>
-            <p style="font-size:15px;color:#334155;margin-top:16px;line-height:1.6">La Sala Electoral del CNE procedió con la acreditación oficial de los nuevos representantes, garantizando el debido proceso y la representatividad democrática de la región.</p>
-            <div style="margin-top:24px;display:flex;gap:12px">
-              <span class="btn">Leer nota completa →</span>
-              <span class="btn outline">Enlace externo</span>
+            <span class="ae-press-card-shape ae-press-card-shape-hex" aria-hidden="true"></span>
+          </div>
+          <div class="ae-press-card-body">
+            <div class="eyebrow ae-press-card-eyebrow">
+              <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+              Contacto de prensa
+            </div>
+            <h2 class="ae-press-card-title">Para relacionamiento público <em>escríbenos</em>.</h2>
+            <div class="ae-press-card-pills">
+              <a href="mailto:angela.arboleda@actoreselectorales.com" class="ae-press-pill">
+                <span class="ae-press-pill-icon" aria-hidden="true">✉</span>
+                <span class="ae-press-pill-text">
+                  <b>Directora de Comunicaciones:</b> Ángela Arboleda
+                  <span class="ae-press-pill-mail">angela.arboleda@actoreselectorales.com</span>
+                </span>
+              </a>
+              <a href="mailto:jeisson.canon@actoreselectorales.com" class="ae-press-pill">
+                <span class="ae-press-pill-icon" aria-hidden="true">✉</span>
+                <span class="ae-press-pill-text">
+                  <b>Subdirección Regiones:</b> Jeisson Cañón
+                  <span class="ae-press-pill-mail">jeisson.canon@actoreselectorales.com</span>
+                </span>
+              </a>
             </div>
           </div>
-        </a>
+        </article>
       </div>
     </section>
 
-    <!-- Media Quotes -->
-    <section style="background:#0f172a;color:#fff;padding:56px 0">
+    <!-- ═══ Kit de prensa (solo en Kit de prensa) ═══ -->
+    <section class="ae-press-card-section" data-press-kit style="padding:24px 0" hidden>
       <div class="wrap">
-        <div style="text-align:center;margin-bottom:32px">
-          <div style="color:#ffc627;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:800">Lo que hablan los medios</div>
-        </div>
-        <div class="g2" style="gap:40px">
-          <div data-enter data-delay="1">
-            <div style="font-size:28px;color:#ffc627;line-height:1;margin-bottom:14px;font-weight:800" aria-hidden="true">"</div>
-            <p style="font-size:17px;line-height:1.5;color:#cbd5e1">El simulacro se realizó con éxito, reforzando las garantías para el registro de los testigos electorales.</p>
-            <div style="font-size:18px;font-weight:800;color:#f43f5e;margin-top:20px;letter-spacing:.04em">— SEMANA</div>
+        <article class="ae-press-kit-card" aria-label="Kit de prensa descargable">
+
+          <!-- Panel izquierdo: ícono / placeholder visual -->
+          <div class="ae-press-kit-visual" aria-hidden="true">
+            <div class="ae-press-kit-stack">
+              <span class="ae-press-kit-sheet ae-press-kit-sheet-3"></span>
+              <span class="ae-press-kit-sheet ae-press-kit-sheet-2"></span>
+              <span class="ae-press-kit-sheet ae-press-kit-sheet-1">
+                <span class="ae-press-kit-doc-bar" style="width:60%"></span>
+                <span class="ae-press-kit-doc-bar" style="width:80%"></span>
+                <span class="ae-press-kit-doc-bar" style="width:45%"></span>
+                <span class="ae-press-kit-doc-img"></span>
+              </span>
+            </div>
+            <span class="ae-press-card-shape ae-press-card-shape-hex"></span>
           </div>
-          <div data-enter data-delay="2">
-            <div style="font-size:28px;color:#ffc627;line-height:1;margin-bottom:14px;font-weight:800" aria-hidden="true">"</div>
-            <p style="font-size:17px;line-height:1.5;color:#cbd5e1">El aplicativo facilitará la vigilancia en los más de 127.000 puestos de votación distribuidos en todo el territorio nacional y en el exterior.</p>
-            <div style="font-size:18px;font-weight:800;color:#f43f5e;margin-top:20px;letter-spacing:.04em">— EL TIEMPO</div>
+
+          <!-- Panel derecho: info + descarga -->
+          <div class="ae-press-kit-body">
+            <div class="eyebrow ae-press-card-eyebrow">
+              <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+              Kit de prensa
+            </div>
+            <h2 class="ae-press-card-title">Recursos oficiales para <em>medios</em>.</h2>
+            <p class="ae-press-kit-desc">Paquete con logotipos, fotografías oficiales y fondos del Consejo Nacional Electoral 2026, listos para uso editorial.</p>
+
+            <ul class="ae-press-kit-tags">
+              <li><span aria-hidden="true">🖼️</span> Imágenes</li>
+              <li><span aria-hidden="true">🎨</span> Fondos</li>
+              <li><span aria-hidden="true">📐</span> Logotipos</li>
+            </ul>
+
+            <div class="ae-press-kit-actions">
+              <a href="#" class="btn ae-press-kit-btn" download>
+                <span aria-hidden="true">⬇</span> Descargar kit (.zip)
+              </a>
+              <span class="ae-press-kit-meta">ZIP · ~24 MB · Actualizado abr 2026</span>
+            </div>
           </div>
-        </div>
+
+        </article>
       </div>
     </section>
 
-    <!-- Filter + Grid -->
-    <section class="pad">
+    <!-- ═══ Listado de notas ═══ -->
+    <section class="pad" data-news-list>
       <div class="wrap">
-        <div role="group" aria-label="Filtros por tipo" style="display:flex;gap:10px;margin-bottom:32px;flex-wrap:wrap;align-items:center">
-          <span id="filtrosLabel" style="font-size:13px;color:#475569;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-right:8px">Filtros:</span>
-          <button type="button" class="filter-btn" aria-pressed="true" style="padding:8px 16px;border-radius:999px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Todos</button>
-          <button type="button" class="filter-btn" aria-pressed="false" style="padding:8px 16px;border-radius:999px;border:1.5px solid #e2e8f0;background:transparent;color:#475569;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Comunicados</button>
-          <button type="button" class="filter-btn" aria-pressed="false" style="padding:8px 16px;border-radius:999px;border:1.5px solid #e2e8f0;background:transparent;color:#475569;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Noticias</button>
-          <button type="button" class="filter-btn" aria-pressed="false" style="padding:8px 16px;border-radius:999px;border:1.5px solid #e2e8f0;background:transparent;color:#475569;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Kit</button>
+        <div style="margin-bottom:32px" data-enter>
+          <div class="eyebrow">Repositorio</div>
+          <h2 class="ae-h2">Últimas publicaciones.</h2>
+          <p style="font-size:15px;color:#475569;margin-top:10px;max-width:680px;line-height:1.6">Encuentra en un solo lugar los comunicados oficiales del CNE 2026 más estratégicos, creados para guiar y actualizar a actores electorales y ciudadanos en cada paso del calendario electoral.</p>
         </div>
         <div class="g3">
-          <article class="news-card" data-enter data-delay="1"><div class="im"><img src="assets/img/4.jpeg" alt="CNE credenciales" loading="lazy" decoding="async"></div><div class="body"><div class="m">15 abr 2026 · comunicado</div><h4>CNE entrega credenciales a los siete representantes a la Cámara del Atlántico</h4><p>La sala plena del Consejo Nacional Electoral entregó las credenciales...</p><span class="readmore">Leer más →</span></div></article>
-          <article class="news-card" data-enter data-delay="2"><div class="im"><img src="assets/img/16.jpg" alt="CNE entrega" loading="lazy" decoding="async"></div><div class="body"><div class="m">14 abr 2026 · noticia</div><h4>Consejo Nacional Electoral entrega...</h4><p>Nuevas acciones para garantizar la transparencia del proceso.</p><span class="readmore">Leer más →</span></div></article>
-          <article class="news-card" data-enter data-delay="3"><div class="im"><img src="assets/img/17.jpg" alt="Transparencia electoral" loading="lazy" decoding="async"></div><div class="body"><div class="m">12 abr 2026 · comunicado</div><h4>Se destaca transparencia en el proceso electoral 2026</h4><p>El Consejo Nacional Electoral resalta el trabajo mancomunado...</p><span class="readmore">Leer más →</span></div></article>
-          <article class="news-card" data-enter data-delay="1"><div class="im"><img src="assets/img/22.jpg" alt="Credenciales representantes" loading="lazy" decoding="async"></div><div class="body"><div class="m">10 abr 2026 · noticia</div><h4>CNE entrega credenciales a los 17 nuevos representantes</h4><p>Testigos electorales fueron reconocidos en ceremonia oficial.</p><span class="readmore">Leer más →</span></div></article>
-          <article class="news-card" data-enter data-delay="2"><div class="im"><img src="assets/img/18.jpg" alt="Representantes" loading="lazy" decoding="async"></div><div class="body"><div class="m">8 abr 2026 · kit</div><h4>Días con los nuevos 17 representantes</h4><p>Reporte detallado del seguimiento al proceso de acreditación.</p><span class="readmore">Leer más →</span></div></article>
-          <article class="news-card" data-enter data-delay="3"><div class="im"><img src="assets/img/9.jpeg" alt="Simulacro electoral" loading="lazy" decoding="async"></div><div class="body"><div class="m">5 abr 2026 · noticia</div><h4>Simulacro electoral refuerza garantías</h4><p>Se realizó exitosamente el segundo simulacro nacional.</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="1"><div class="im"><img src="assets/img/4.jpeg" alt="Auditores de sistemas" loading="lazy" decoding="async"></div><div class="body"><div class="m">29 abr 2026 · Comunicado</div><h4>Campañas presidenciales: es momento de acreditar a sus auditores de sistemas para fortalecer la vigilancia electoral</h4><p>Bogotá D.C., 29 de abril de 2026 (@CNE_COLOMBIA). – Con el propósito de fortalecer...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="2"><div class="im"><img src="assets/img/16.jpg" alt="Bernie Moreno observador" loading="lazy" decoding="async"></div><div class="body"><div class="m">27 abr 2026 · Noticia</div><h4>Bernie Moreno se suma como observador internacional a las elecciones presidenciales de Colombia</h4><p>Bogotá D.C., 27 de abril de 2026 (@CNE_COLOMBIA). El senador republicano Bernie Moreno...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="3"><div class="im"><img src="assets/img/17.jpg" alt="Postulación de auditores" loading="lazy" decoding="async"></div><div class="body"><div class="m">23 abr 2026 · Comunicado</div><h4>CNE insta a campañas a postular auditores y advierte: la vigilancia electoral ya está en marcha</h4><p>Bogotá D.C., 23 de abril de 2026 (@CNE_COLOMBIA). – El Consejo Nacional Electoral (CNE) hace...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="1"><div class="im"><img src="assets/img/9.jpeg" alt="Simulacro nacional" loading="lazy" decoding="async"></div><div class="body"><div class="m">20 abr 2026 · Comunicado</div><h4>Simulacro nacional del CNE ratifica la efectividad de la Plataforma Única de Postulación y Acreditación de Actores Electorales</h4><p>Bogotá D.C., 20 de abril de 2026 (@CNE_COLOMBIA). – Con el propósito de garantizar la...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="2"><div class="im"><img src="assets/img/4.jpeg" alt="Estrategia CNE Corferias" loading="lazy" decoding="async"></div><div class="body"><div class="m">15 abr 2026 · Noticia</div><h4>Colombia unida en democracia: el CNE presentó su estrategia para las elecciones presidenciales del 31 de mayo</h4><p>Bogotá D.C., 15 de abril de 2026 (@CNE_COLOMBIA). – Este miércoles, en Corferias, el Consejo...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="3"><div class="im"><img src="assets/img/22.jpg" alt="Cámara circunscripción internacional" loading="lazy" decoding="async"></div><div class="body"><div class="m">15 abr 2026 · Comunicado</div><h4>CNE declara la elección de Representante a la Cámara por la circunscripción internacional</h4><p>Bogotá D.C., 15 de abril de 2026 (@CNE_COLOMBIA). – Luego de surtir el debido proceso...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="1"><div class="im"><img src="assets/img/11.jpeg" alt="Sitionuevo y Concepción" loading="lazy" decoding="async"></div><div class="body"><div class="m">14 abr 2026 · Comunicado</div><h4>Garantías plenas en elecciones atípicas de Sitionuevo, Magdalena, y Concepción, Santander</h4><p>Bogotá D.C., 14 de abril de 2026 (@CNE_COLOMBIA). – El Consejo Nacional Electoral (CNE) informa...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="2"><div class="im"><img src="assets/img/18.jpg" alt="Escrutinio nacional Senado" loading="lazy" decoding="async"></div><div class="body"><div class="m">6 abr 2026 · Comunicado</div><h4>El CNE instalará mañana jueves, 9 de abril, el proceso de escrutinio nacional de las elecciones de Senado</h4><p>Al finalizar esta jornada, la autoridad electoral oficializará la elección de los 102 integrantes...</p><span class="readmore">Leer más →</span></div></article>
+          <article class="news-card" data-enter data-delay="3"><div class="im"><img src="assets/img/7.jpeg" alt="Kit de prensa" loading="lazy" decoding="async"></div><div class="body"><div class="m">1 abr 2026 · Kit de prensa</div><h4>Recursos para medios — logos, fotografías y ficha técnica del CNE 2026</h4><p>Descarga el paquete oficial con logotipos, infografías y datos clave del proceso electoral...</p><span class="readmore">Descargar →</span></div></article>
         </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Paginación" style="display:flex;justify-content:center;gap:8px;margin-top:48px;flex-wrap:wrap">
+          <button type="button" aria-current="page" style="min-width:40px;height:40px;padding:0 12px;border-radius:8px;border:1px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit">1</button>
+          <button type="button" style="min-width:40px;height:40px;padding:0 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;color:#1e3a8a;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit">2</button>
+          <button type="button" style="min-width:40px;height:40px;padding:0 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;color:#1e3a8a;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit">3</button>
+          <span style="display:grid;place-items:center;min-width:40px;height:40px;color:#94a3b8;font-weight:700">…</span>
+          <button type="button" style="min-width:40px;height:40px;padding:0 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;color:#1e3a8a;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit">8</button>
+          <button type="button" aria-label="Página siguiente" style="min-width:40px;height:40px;padding:0 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;color:#1e3a8a;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit">→</button>
+        </nav>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->

@@ -28,6 +28,9 @@
   function initPrensaTabs() {
     var tabs = document.querySelectorAll('.prensa-tab');
     if (!tabs.length) return;
+    var pressContact = document.querySelector('[data-press-contact]');
+    var pressKit = document.querySelector('[data-press-kit]');
+    var newsList = document.querySelector('[data-news-list]');
     tabs.forEach(function (btn) {
       btn.addEventListener('click', function () {
         tabs.forEach(function (b) {
@@ -38,6 +41,10 @@
         btn.style.color = '#1e3a8a';
         btn.style.borderBottom = '3px solid #1e3a8a';
         btn.setAttribute('aria-pressed', 'true');
+        var current = btn.dataset.tab;
+        if (pressContact) pressContact.hidden = current !== 'comunicados';
+        if (pressKit) pressKit.hidden = current !== 'kit';
+        if (newsList) newsList.hidden = current === 'kit';
       });
     });
 
