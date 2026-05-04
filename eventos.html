@@ -58,111 +58,24 @@
   <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
 
   <main id="mainContent">
-    <!-- Page Hero -->
-    <section class="ph">
-      <div class="ph-deco" data-parallax="0.2"></div>
-      <div class="wrap ae-z2">
-        <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Eventos</span></nav>
-        <div class="eyebrow">Calendario 2026</div>
-        <h1 data-enter style="margin-top:18px">Eventos del <span style="color:#1e3a8a">proceso electoral.</span></h1>
-        <p class="kicker" data-enter data-delay="1">Inscríbete a eventos, sigue la campaña presidencial y consulta el repositorio completo.</p>
-      </div>
-    </section>
+    <!-- ═══ Banner compacto ═══ -->
+    <section class="ae-banner-compact" aria-label="Eventos">
+      <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
+      <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
+      <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
+      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true" decoding="async">
 
-    <!-- Hero Inscription -->
-    <section class="pad-sm">
-      <div class="wrap">
-        <div data-enter style="background:linear-gradient(120deg,#1e3a8a 0%,#2b4aa3 100%);color:#fff;border-radius:20px;padding:56px 48px;overflow:hidden;position:relative">
-          <div class="hex-deco" aria-hidden="true" style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;background:#ffc627;opacity:0.3"></div>
-          <div class="ae-split" style="position:relative;z-index:2;align-items:center">
-            <div>
-              <div class="ae-kicker-y">Próximo evento</div>
-              <h2 style="font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-0.025em;color:#fff;line-height:1">Inscríbete a los eventos.</h2>
-              <p style="font-size:17px;color:rgba(255,255,255,0.85);margin-top:14px;max-width:560px;line-height:1.55">El próximo simulacro de escrutinio es el <b style="color:#ffc627">24 de abril</b>. Cupos limitados para testigos electorales acreditados.</p>
-              <button type="button" class="btn yellow" style="margin-top:28px">Inscribirme ahora →</button>
-            </div>
-            <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:14px;padding:24px;backdrop-filter:blur(10px)">
-              <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#ffc627;margin-bottom:10px">Evento más cercano</div>
-              <h4 style="font-size:20px;font-weight:800;color:#fff;line-height:1.25">Simulacro nacional de escrutinio</h4>
-              <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;font-size:14px">
-                <div>24 de febrero, 2026</div>
-                <div>8:00 a.m. – 11:00 a.m.</div>
-                <div>Bogotá D.C., Colombia</div>
-              </div>
-            </div>
-          </div>
+      <div class="wrap ae-banner-compact-inner">
+        <nav aria-label="Breadcrumb" class="ae-banner-compact-crumb">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Eventos</span>
+        </nav>
+        <div class="eyebrow ae-banner-compact-eyebrow">
+          <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+          Calendario 2026
         </div>
-      </div>
-    </section>
-
-    <!-- 3 Event Cards -->
-    <section class="pad-sm">
-      <div class="wrap">
-        <div class="g3">
-          <div data-enter data-delay="1" style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 26px;border-left:6px solid #e11d48;display:flex;flex-direction:column;gap:10px">
-            <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#be123c">Próximo</div>
-            <h4 style="font-size:17px;font-weight:800;line-height:1.3">Campaña presidencial · Primera vuelta</h4>
-            <div style="font-size:13px;color:#475569;font-weight:600">15 mar – 30 may 2026</div>
-            <a href="#" style="font-size:13px;font-weight:800;color:#1e3a8a;margin-top:auto">Ver detalle →</a>
-          </div>
-          <div data-enter data-delay="2" style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 26px;border-left:6px solid #1e3a8a;display:flex;flex-direction:column;gap:10px">
-            <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#1e3a8a">Próximo</div>
-            <h4 style="font-size:17px;font-weight:800;line-height:1.3">Debates presidenciales</h4>
-            <div style="font-size:13px;color:#475569;font-weight:600">Abril – Mayo 2026</div>
-            <a href="#" style="font-size:13px;font-weight:800;color:#1e3a8a;margin-top:auto">Ver detalle →</a>
-          </div>
-          <div data-enter data-delay="3" style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 26px;border-left:6px solid #ffc627;display:flex;flex-direction:column;gap:10px">
-            <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#ffc627">Próximo</div>
-            <h4 style="font-size:17px;font-weight:800;line-height:1.3">Capacitación nacional de testigos</h4>
-            <div style="font-size:13px;color:#475569;font-weight:600">20 abr 2026</div>
-            <a href="#" style="font-size:13px;font-weight:800;color:#1e3a8a;margin-top:auto">Ver detalle →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Calendar + Detail -->
-    <section class="pad">
-      <div class="wrap">
-        <div class="ae-split" style="align-items:start">
-          <div data-enter>
-            <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:20px">
-              <h3 style="font-size:28px;font-weight:800;letter-spacing:-0.02em">Abril 2026</h3>
-              <div style="display:flex;gap:6px">
-                <button type="button" style="width:36px;height:36px;border:1px solid #e2e8f0;background:#fff;border-radius:8px;cursor:pointer" aria-label="Mes anterior">←</button>
-                <button type="button" style="width:36px;height:36px;border:1px solid #1e3a8a;background:#1e3a8a;color:#fff;border-radius:8px;cursor:pointer" aria-label="Mes siguiente">→</button>
-              </div>
-            </div>
-            <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden">
-              <div style="display:grid;grid-template-columns:repeat(7,1fr);background:#f8fafc;border-bottom:1px solid #e2e8f0">
-                <div class="ae-cal-dow">LUN</div>
-                <div class="ae-cal-dow">MAR</div>
-                <div class="ae-cal-dow">MIÉ</div>
-                <div class="ae-cal-dow">JUE</div>
-                <div class="ae-cal-dow">VIE</div>
-                <div class="ae-cal-dow">SÁB</div>
-                <div class="ae-cal-dow">DOM</div>
-              </div>
-              <div id="calGrid" style="display:grid;grid-template-columns:repeat(7,1fr)"></div>
-            </div>
-          </div>
-          <div data-enter="right">
-            <div class="eyebrow">Detalle del evento</div>
-            <h3 style="font-size:22px;font-weight:800;margin-top:14px;line-height:1.3;color:#1e3a8a">El CNE presenta en Quito plataforma para participación y vigilancia electoral de colombianos en el exterior.</h3>
-            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;margin-top:20px;position:relative">
-              <img src="assets/img/1.jpeg" alt="Evento CNE" loading="lazy" decoding="async" class="ae-img-cover">
-              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.7),rgba(15,23,42,0.2))"></div>
-              <div style="position:absolute;top:20px;left:20px;right:20px;color:#fff">
-                <div style="font-size:12px;font-weight:700">Bogotá D.C., 24 de febrero de 2026</div>
-                <div style="font-size:12px;opacity:0.8;margin-top:4px">(@CNE_COLOMBIA) — El Consejo Nacional Electoral presenta su innovadora plataforma de postulación.</div>
-              </div>
-              <div style="position:absolute;bottom:20px;left:20px;color:#fff;font-size:12px;display:flex;flex-direction:column;gap:6px">
-                <div>24 de febrero de 2026</div><div>8:00 a.m. – 11:00 a.m.</div><div>Bogotá D.C., Colombia</div>
-              </div>
-            </div>
-            <p style="font-size:13px;color:#334155;margin-top:18px;line-height:1.65;border-left:3px solid #ffc627;padding-left:14px">La Plataforma de Postulación y Acreditación de Actores Electorales digitaliza completamente este proceso mediante la eliminación de trámites físicos.</p>
-          </div>
-        </div>
+        <h1 class="ae-banner-compact-title">Eventos del <em>proceso electoral</em></h1>
       </div>
     </section>
 

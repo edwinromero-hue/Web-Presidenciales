@@ -59,42 +59,6 @@
     });
   }
 
-  // ── Eventos: Calendar grid generator ──
-  function initCalendar() {
-    var grid = document.getElementById('calGrid');
-    if (!grid) return;
-    var eventDays = [8, 15, 17, 22, 24];
-
-    // Event delegation: 1 listener on the grid instead of 30.
-    grid.addEventListener('click', function (e) {
-      var btn = e.target.closest('.cal-day');
-      if (!btn || !grid.contains(btn)) return;
-      grid.querySelectorAll('.cal-day').forEach(function (b) {
-        b.style.background = '#fff';
-      });
-      btn.style.background = '#ffc627';
-    });
-
-    for (var i = 1; i <= 30; i++) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'cal-day';
-      btn.setAttribute('aria-label', 'Día ' + i);
-      btn.style.cssText = 'aspect-ratio:1/1;border:0.5px solid #f1f5f9;background:' + (i === 15 ? '#ffc627' : '#fff') + ';cursor:pointer;padding:8px;display:flex;flex-direction:column;align-items:flex-start;font-family:inherit';
-      var num = document.createElement('div');
-      num.style.cssText = 'font-size:13px;font-weight:800;color:#0f172a';
-      num.textContent = i;
-      btn.appendChild(num);
-      if (eventDays.indexOf(i) !== -1) {
-        var lbl = document.createElement('div');
-        lbl.style.cssText = 'font-size:9px;margin-top:4px;padding:2px 4px;background:' + (i === 15 ? '#1e3a8a' : '#eaf1ff') + ';color:' + (i === 15 ? '#fff' : '#1e3a8a') + ';border-radius:4px;font-weight:700;line-height:1.2;text-align:left';
-        lbl.textContent = 'Campaña pres...';
-        btn.appendChild(lbl);
-      }
-      grid.appendChild(btn);
-    }
-  }
-
   // ── Canales: FAQ scroll-end detector ──
   // Cuando el usuario llega al final del .faq-group, marcamos el
   // contenedor padre .ae-contact-faq con .is-faq-bottom — el CSS oculta
@@ -138,7 +102,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     initChatWidget();
     initPrensaTabs();
-    initCalendar();
     initFaqScrollHint();
   });
 })();
