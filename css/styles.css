@@ -5592,7 +5592,453 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   .ae-diag-stat.is-animating .ae-diag-stat-num { animation: none; }
 }
 
+/* ============================================================
+   PLATAFORMA — Layout 3 columnas (texto · video · galería scroll)
+   - Reutiliza primitivas existentes:
+     · .ae-diag (gradient bg + meshes)
+     · .ae-diag-h / em accent
+     · .ae-diag-p, .eyebrow, .ae-banner-flag
+     · .ae-banner-shape (hexágono decorativo)
+   - Mobile: stack vertical · Desktop ≥900px: 3 columnas
+   ============================================================ */
+.ae-info {
+  display: block;
+  min-height: 0;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 56px) clamp(48px, 6vw, 80px);
+}
 
+.ae-info-layout {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+@media (min-width: 900px) {
+  .ae-info-layout {
+    grid-template-columns: 0.9fr 1.6fr 0.7fr;
+    gap: 28px;
+  }
+}
+@media (min-width: 1200px) {
+  .ae-info-layout { gap: 36px; grid-template-columns: 1fr 1.6fr 0.75fr; }
+}
+
+/* ── Columna 1: texto ── */
+.ae-info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.ae-info-text .ae-diag-h { margin: 0; }
+.ae-info-text .ae-diag-p { margin: 4px 0 0; max-width: 36ch; }
+
+/* ── Columna 2: video ── */
+.ae-info-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1e3a8a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.18);
+  isolation: isolate;
+}
+/* Imagen/video de fondo (poster) */
+.ae-info-video-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  display: block;
+}
+/* Overlay tricolor + tinte oscuro para legibilidad del play y del label */
+.ae-info-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.55) 100%),
+    radial-gradient(circle at 20% 20%, rgba(255, 198, 39, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(225, 29, 72, 0.16) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ae-info-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 0;
+  background: #ffc627;
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+  font-family: inherit;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.32), 0 0 0 8px rgba(255, 198, 39, 0.18);
+  transition: transform 280ms var(--ease), box-shadow 280ms var(--ease);
+}
+.ae-info-video-play:hover,
+.ae-info-video-play:focus-visible {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.42), 0 0 0 14px rgba(255, 198, 39, 0.22);
+  outline: 0;
+}
+.ae-info-video-play svg { margin-left: 4px; }
+
+.ae-info-video-label {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.ae-info-video-hex.ae-banner-shape {
+  position: absolute !important;
+  width: 90px;
+  height: 100px;
+  top: -22px;
+  right: -22px;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+/* ── Columna 3: galería con scroll vertical ── */
+/* Wrapper toma la altura de la fila (ajustada al video) */
+.ae-info-stack-wrap {
+  position: relative;
+  min-height: 280px;
+}
+@media (min-width: 900px) {
+  .ae-info-stack-wrap {
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+.ae-info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 460px;
+  overflow-y: auto;
+  padding: 4px 6px 4px 0;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Fades en bordes superior/inferior para indicar más contenido */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+}
+
+/* Scrollbar personalizada (sutil, brand colors) */
+.ae-info-stack::-webkit-scrollbar { width: 6px; }
+.ae-info-stack::-webkit-scrollbar-track { background: transparent; }
+.ae-info-stack::-webkit-scrollbar-thumb {
+  background: rgba(30, 58, 138, 0.25);
+  border-radius: 999px;
+}
+.ae-info-stack::-webkit-scrollbar-thumb:hover { background: rgba(30, 58, 138, 0.5); }
+.ae-info-stack {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 58, 138, 0.3) transparent;
+}
+
+.ae-info-stack-item {
+  position: relative;
+  margin: 0;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--ae-line);
+  background: var(--ae-paper-3);
+  aspect-ratio: 16 / 11;
+  isolation: isolate;
+  transition: transform 320ms var(--ease), border-color 320ms var(--ease), box-shadow 320ms var(--ease);
+}
+.ae-info-stack-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--ae-paper-3);
+  transition: transform 600ms var(--ease);
+}
+/* Capa oscura sutil para legibilidad del play button y caption */
+.ae-info-stack-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 320ms var(--ease);
+}
+
+/* Botón play (sobre el video) */
+.ae-info-stack-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: #ffc627;
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 3;
+  font-family: inherit;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.32), 0 0 0 6px rgba(255, 198, 39, 0.18);
+  transition: transform 280ms var(--ease), box-shadow 280ms var(--ease);
+}
+.ae-info-stack-play svg { margin-left: 2px; }
+.ae-info-stack-item:hover .ae-info-stack-play,
+.ae-info-stack-play:focus-visible {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.42), 0 0 0 10px rgba(255, 198, 39, 0.22);
+  outline: 0;
+}
+
+/* Caption (título · duración) */
+.ae-info-stack-cap {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  z-index: 2;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.55);
+}
+
+.ae-info-stack-item:hover {
+  border-color: var(--ae-blue);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.10);
+}
+.ae-info-stack-item:hover .ae-info-stack-media {
+  transform: scale(1.05);
+}
+
+.ae-info-stack:focus-visible {
+  outline: 3px solid var(--ae-blue);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+/* Desktop: stack en posición absoluta dentro del wrapper, llena la altura del video */
+@media (min-width: 900px) {
+  .ae-info-stack {
+    position: absolute;
+    inset: 0;
+    max-height: none;
+    height: auto;
+  }
+}
+
+/* Mobile: el stack en horizontal (snap horizontal) para no robar mucho alto */
+@media (max-width: 899px) {
+  .ae-info-stack {
+    flex-direction: row;
+    max-height: none;
+    overflow-y: visible;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+  }
+  .ae-info-stack-item {
+    flex: 0 0 70%;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-info-stack { scroll-behavior: auto; }
+  .ae-info-stack-item img,
+  .ae-info-stack-item,
+  .ae-info-video-play { transition: none; }
+}
+
+/* ============================================================
+   PLATAFORMA — Scrolly (grid pinned + 4 videos con slide-in)
+   - GSAP ScrollTrigger pinea el .ae-scrolly-grid mientras el usuario
+     scrolea. Las 4 cards apiladas se animan desde fuera del viewport
+     (izquierda) hasta su posición en el frame.
+   ============================================================ */
+/* Wrapper con fondo continuo: el gradient cubre AMBAS secciones scrolly */
+.ae-scrolly-wrap {
+  position: relative;
+  background: linear-gradient(180deg, #f4f7fc 0%, #eef0fb 50%, #fbf2f4 100%);
+  isolation: isolate;
+}
+
+.ae-scrolly {
+  position: relative;
+  background: transparent;
+  padding: 0 clamp(20px, 5vw, 56px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ae-scrolly-grid {
+  position: relative;
+  z-index: 1; /* sobre las decoraciones de fondo */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 48px) 0;
+}
+@media (min-width: 900px) {
+  .ae-scrolly-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  /* Variante: texto izquierda · video derecha (la columna del video sigue siendo la mayor) */
+  .ae-scrolly[data-from="right"] .ae-scrolly-grid {
+    grid-template-columns: 1fr 1.05fr;
+  }
+}
+
+.ae-scrolly-media-stage,
+.ae-scrolly-text-stage {
+  position: relative;
+}
+
+/* Frame del video (define el slot; overflow visible para que las cards
+   puedan venir desde fuera del viewport durante la animación) */
+.ae-scrolly-media-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  overflow: visible;
+  background: var(--ae-paper-3);
+}
+
+.ae-scrolly-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1e3a8a;
+  isolation: isolate;
+  will-change: transform;
+}
+.ae-scrolly-card[data-scene="1"] { z-index: 1; }
+.ae-scrolly-card[data-scene="2"] { z-index: 2; }
+.ae-scrolly-card[data-scene="3"] { z-index: 3; }
+.ae-scrolly-card[data-scene="4"] { z-index: 4; }
+.ae-scrolly-card[data-scene="5"] { z-index: 5; }
+
+.ae-scrolly-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+.ae-scrolly-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.10) 0%, rgba(15, 23, 42, 0.45) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ae-scrolly-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 0;
+  background: #ffc627;
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 3;
+  font-family: inherit;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.32), 0 0 0 8px rgba(255, 198, 39, 0.18);
+  transition: transform 280ms var(--ease), box-shadow 280ms var(--ease);
+}
+.ae-scrolly-play svg { margin-left: 3px; }
+.ae-scrolly-play:hover,
+.ae-scrolly-play:focus-visible {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.42), 0 0 0 12px rgba(255, 198, 39, 0.22);
+  outline: 0;
+}
+.ae-scrolly-hex.ae-banner-shape {
+  position: absolute !important;
+  width: 90px;
+  height: 100px;
+  top: -18px;
+  right: -18px;
+  z-index: 2;
+  opacity: 0.55;
+}
+
+/* Texto fijo a la derecha */
+.ae-scrolly-text-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 540px;
+}
+.ae-scrolly-text-panel .ae-diag-h { margin: 6px 0 0; }
+.ae-scrolly-text-panel .ae-diag-p { margin: 0; }
+
+/* Mobile: muestra solo la primera card; las demás ocultas */
+@media (max-width: 899px) {
+  .ae-scrolly { min-height: 0; }
+  .ae-scrolly-card { transform: none !important; }
+  .ae-scrolly-card[data-scene="2"],
+  .ae-scrolly-card[data-scene="3"],
+  .ae-scrolly-card[data-scene="4"],
+  .ae-scrolly-card[data-scene="5"] { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-scrolly-card { transform: none !important; transition: none; }
+  .ae-scrolly-play { transition: none; }
+}
 
 /* ============================================================
    CANALES DE ATENCIÓN — Banner compacto + Form/Info 2-col + FAQ

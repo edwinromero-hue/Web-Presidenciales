@@ -60,12 +60,177 @@
 
   <main id="mainContent" class="ae-construction-flow">
 
-    <!-- ═══ Placeholder · Página en construcción ═══ -->
-    <section class="ae-construction" aria-label="Página en construcción">
-      <div class="ae-construction-inner">
-        <img class="ae-construction-img" src="assets/img/pagina-construccion.svg" alt="Página en construcción" loading="eager" decoding="async">
+    <!-- ═══ Banner compacto ═══ -->
+    <section class="ae-banner-compact" aria-label="Plataforma">
+      <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
+      <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
+      <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
+      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true" decoding="async">
+
+      <div class="wrap ae-banner-compact-inner">
+        <nav aria-label="Breadcrumb" class="ae-banner-compact-crumb">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Plataforma</span>
+        </nav>
+        <div class="eyebrow ae-banner-compact-eyebrow">
+          <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
+          Postulación y acreditación
+        </div>
+        <h1 class="ae-banner-compact-title">Postula <em>aquí</em></h1>
+        <a href="#" class="btn ae-banner-compact-cta" style="margin-top:18px">Plataforma de postulación →</a>
       </div>
     </section>
+
+
+    <!-- ═══ Wrapper con fondo continuo para ambas secciones scrolly ═══ -->
+    <div class="ae-scrolly-wrap">
+
+    <!-- ═══ SCROLLY · texto fijo + 4 videos que entran al hacer scroll ═══ -->
+    <section class="ae-scrolly" data-from="left" aria-labelledby="plat-scrolly-title">
+      <h2 id="plat-scrolly-title" class="sr-only">Postulación digital</h2>
+
+      <!-- Decoraciones de fondo (mismas que .ae-diag.ae-info) -->
+      <img src="assets/img/Malla_Azul.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-1">
+      <img src="assets/img/Malla_Amarillo.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-2">
+      <img src="assets/img/Malla_Rojo.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-3">
+      <img src="assets/img/vector_01.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-4">
+      <img src="assets/img/vector_03.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-5">
+
+      <div class="ae-scrolly-grid">
+
+        <!-- ── Stage del video (sticky, 4 cards apiladas) ── -->
+        <div class="ae-scrolly-media-stage">
+          <div class="ae-scrolly-media-frame">
+
+            <div class="ae-scrolly-card" data-scene="1">
+              <video class="ae-scrolly-video" poster="assets/img/13.jpeg" preload="metadata" playsinline muted aria-label="Video 1: Postulación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="2">
+              <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted aria-label="Video 2: Postulación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 2">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="3">
+              <video class="ae-scrolly-video" poster="assets/img/18.jpg" preload="metadata" playsinline muted aria-label="Video 3: Postulación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 3">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="4">
+              <video class="ae-scrolly-video" poster="assets/img/9.jpeg" preload="metadata" playsinline muted aria-label="Video 4: Postulación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 4">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Texto fijo (sticky) ── -->
+        <div class="ae-scrolly-text-stage">
+          <article class="ae-scrolly-text-panel">
+            <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Capítulo 01</div>
+            <h3 class="ae-diag-h"><em>Postulación</em> digital</h3>
+            <p class="ae-diag-p">Las agrupaciones políticas registran a sus actores electorales sin trámites físicos, en un solo flujo digital con cargue masivo de datos.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ SCROLLY 2 · texto izquierda + 4 videos que entran desde la derecha ═══ -->
+    <section class="ae-scrolly" data-from="right" aria-labelledby="plat-scrolly-title-2">
+      <h2 id="plat-scrolly-title-2" class="sr-only">Acreditación verificable</h2>
+
+      <!-- Decoraciones de fondo -->
+      <img src="assets/img/Malla_Azul.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-1">
+      <img src="assets/img/Malla_Amarillo.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-2">
+      <img src="assets/img/Malla_Rojo.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-3">
+      <img src="assets/img/vector_01.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-4">
+      <img src="assets/img/vector_03.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-5">
+
+      <div class="ae-scrolly-grid">
+
+        <!-- ── Texto fijo (izquierda) ── -->
+        <div class="ae-scrolly-text-stage">
+          <article class="ae-scrolly-text-panel">
+            <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Capítulo 02</div>
+            <h3 class="ae-diag-h"><em>Acreditación</em> verificable</h3>
+            <p class="ae-diag-p">Cada actor recibe credenciales digitales únicas con código QR validable en tiempo real por la Fuerza Pública. Cero falsificación, cero papel.</p>
+          </article>
+        </div>
+
+        <!-- ── Stage del video (derecha, 4 cards apiladas) ── -->
+        <div class="ae-scrolly-media-stage">
+          <div class="ae-scrolly-media-frame">
+
+            <div class="ae-scrolly-card" data-scene="1">
+              <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted aria-label="Video 1: Acreditación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="2">
+              <video class="ae-scrolly-video" poster="assets/img/18.jpg" preload="metadata" playsinline muted aria-label="Video 2: Acreditación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 2">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="3">
+              <video class="ae-scrolly-video" poster="assets/img/9.jpeg" preload="metadata" playsinline muted aria-label="Video 3: Acreditación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 3">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+            <div class="ae-scrolly-card" data-scene="4">
+              <video class="ae-scrolly-video" poster="assets/img/4.jpeg" preload="metadata" playsinline muted aria-label="Video 4: Acreditación">
+                <!-- <source src="" type="video/mp4"> -->
+              </video>
+              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video 4">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    </div><!-- /.ae-scrolly-wrap -->
 
   </main>
 
@@ -118,5 +283,64 @@
 
   <script src="js/shell.js"></script>
   <script src="js/scrolly.js"></script>
+  <script>
+    // Scrolly: cada sección queda pinned mientras sus 4 cards entran desde
+    // fuera del viewport (izquierda o derecha según data-from).
+    (function () {
+      var sections = document.querySelectorAll('.ae-scrolly');
+      if (!sections.length || !window.gsap || !window.ScrollTrigger) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.matchMedia({
+        '(min-width: 900px)': function () {
+          sections.forEach(function (section) {
+            var cards = section.querySelectorAll('.ae-scrolly-card');
+            var frame = section.querySelector('.ae-scrolly-media-frame');
+            var grid  = section.querySelector('.ae-scrolly-grid');
+            if (cards.length < 2 || !frame || !grid) return;
+
+            var fromDir = section.getAttribute('data-from') === 'right' ? 'right' : 'left';
+
+            // Posición de inicio fuera del viewport (izquierda o derecha).
+            function startXOffscreen() {
+              var rect = frame.getBoundingClientRect();
+              if (fromDir === 'right') {
+                // Desde el borde derecho del viewport
+                return (window.innerWidth - rect.left) + 20;
+              }
+              // Desde el borde izquierdo
+              return -(rect.left + rect.width + 20);
+            }
+            function applyInitial() {
+              var x = startXOffscreen();
+              for (var i = 1; i < cards.length; i++) {
+                gsap.set(cards[i], { x: x });
+              }
+            }
+            applyInitial();
+
+            var transitions = cards.length - 1;
+            var tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: grid,
+                start: 'center center',
+                end: '+=' + (transitions * 70) + '%',
+                pin: grid,
+                pinSpacing: true,
+                scrub: 0.6,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+                onRefresh: applyInitial,
+              }
+            });
+
+            for (var i = 1; i < cards.length; i++) {
+              tl.to(cards[i], { x: 0, ease: 'power2.out', duration: 1 }, i === 1 ? '>' : '>+=0.1');
+            }
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
