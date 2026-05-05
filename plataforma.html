@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
   <meta charset="UTF-8">
   <title>Actores Electorales 2026 — Plataforma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1e3a8a">
-  <meta name="description" content="Plataforma oficial de postulación y acreditación de actores electorales del CNE para las elecciones presidenciales Colombia 2026.">
+  <meta name="description"
+    content="Plataforma oficial de postulación y acreditación de actores electorales del CNE para las elecciones presidenciales Colombia 2026.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+    integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+    integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
 </head>
+
 <body data-page="plataforma">
   <!-- @partial:header -->
-<a href="#mainContent" class="skip-link">Saltar al contenido</a>
+  <a href="#mainContent" class="skip-link">Saltar al contenido</a>
 
-<header class="hdr-wrap" role="banner">
-  <div class="hdr-inner">
-    <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
-      <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
-    </a>
-    <nav class="hdr-nav" aria-label="Navegación principal">
+  <header class="hdr-wrap" role="banner">
+    <div class="hdr-inner">
+      <a class="hdr-logo" href="index.html" aria-label="Actores Electorales 2026 — Inicio">
+        <img src="assets/logo.svg" alt="Actores Electorales 2026" class="hdr-logo-img">
+      </a>
+      <nav class="hdr-nav" aria-label="Navegación principal">
+        <a href="index.html" data-nav="inicio">Inicio</a>
+        <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
+        <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
+        <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
+        <a href="regiones.html" data-nav="regiones">Regiones</a>
+        <a href="canales.html" data-nav="canales">Canales de atención</a>
+        <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
+        <a href="eventos.html" data-nav="eventos">Eventos</a>
+      </nav>
+      <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="aeMobileNav">
+        <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div class="flag-rule" aria-hidden="true">
+      <div style="background:#ffc627"></div>
+      <div style="background:#1e3a8a"></div>
+      <div style="background:#e11d48"></div>
+    </div>
+    <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
+      <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
       <a href="index.html" data-nav="inicio">Inicio</a>
       <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
       <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
@@ -34,29 +64,13 @@
       <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
       <a href="eventos.html" data-nav="eventos">Eventos</a>
     </nav>
-    <button type="button" class="hdr-mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="aeMobileNav">
-      <span class="hdr-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-    </button>
-  </div>
-  <div class="flag-rule" aria-hidden="true">
-    <div style="background:#ffc627"></div><div style="background:#1e3a8a"></div><div style="background:#e11d48"></div>
-  </div>
-  <nav class="hdr-mobile-nav" id="aeMobileNav" aria-label="Navegación móvil" aria-hidden="true">
-    <button type="button" class="mnav-close" aria-label="Cerrar menú">✕</button>
-    <a href="index.html" data-nav="inicio">Inicio</a>
-    <a href="quienes-somos.html" data-nav="quienes-somos">Quiénes somos</a>
-    <a href="plataforma.html" data-nav="plataforma">Plataforma</a>
-    <a href="entrenamiento.html" data-nav="entrenamiento">Entrenamiento</a>
-    <a href="regiones.html" data-nav="regiones">Regiones</a>
-    <a href="canales.html" data-nav="canales">Canales de atención</a>
-    <a href="prensa.html" data-nav="prensa">Sala de prensa</a>
-    <a href="eventos.html" data-nav="eventos">Eventos</a>
-  </nav>
-</header>
-<!-- @end-partial:header -->
+  </header>
+  <!-- @end-partial:header -->
 
   <!-- Progress Rail -->
-  <div class="progress-rail" aria-hidden="true"><div id="pfill" class="fill"></div></div>
+  <div class="progress-rail" aria-hidden="true">
+    <div id="pfill" class="fill"></div>
+  </div>
 
   <main id="mainContent" class="ae-construction-flow">
 
@@ -65,7 +79,8 @@
       <img class="ae-banner-mesh" src="assets/img/Malla_03.svg" alt="" aria-hidden="true" decoding="async">
       <span class="ae-banner-shape shape-hex-yellow shape-tl" aria-hidden="true"></span>
       <span class="ae-banner-shape shape-hex-blue shape-br" aria-hidden="true"></span>
-      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true" decoding="async">
+      <img class="ae-banner-deco ae-banner-compact-zigzag" src="assets/img/vector_02.svg" alt="" aria-hidden="true"
+        decoding="async">
 
       <div class="wrap ae-banner-compact-inner">
         <nav aria-label="Breadcrumb" class="ae-banner-compact-crumb">
@@ -91,186 +106,220 @@
       <img src="assets/img/vector_01.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-4">
       <img src="assets/img/vector_03.svg" aria-hidden="true" class="ae-diag-bg ae-diag-bg-5">
 
-    <!-- ═══ FASE 01 · Postulación · 3 videos (Testigos / Observadores / Auditores) ═══ -->
-    <section class="ae-scrolly" data-from="left" aria-labelledby="plat-scrolly-title">
-      <h2 id="plat-scrolly-title" class="sr-only">Fase 1: Postulación</h2>
+      <!-- ═══ FASE 01 · Postulación · 3 videos (Testigos / Observadores / Auditores) ═══ -->
+      <section class="ae-scrolly" data-from="left" aria-labelledby="plat-scrolly-title">
+        <h2 id="plat-scrolly-title" class="sr-only">Fase 1: Postulación</h2>
 
-      <!-- Intro / título de página dentro del primer scrolly -->
-      <div class="ae-plat-intro" aria-labelledby="plat-intro-title">
-        <div class="ae-plat-intro-grid">
-          <h1 id="plat-intro-title" class="ae-plat-intro-title">
-            Actores electorales: una <em>postulación organizada</em> al servicio de la democracia en Colombia
-          </h1>
-          <p class="ae-plat-intro-lede">
-            Conoce el paso a paso para realizar postulaciones ágiles, seguras y trazables de actores electorales, fortaleciendo la transparencia y la democracia en Colombia desde cada organización política.
-          </p>
-          <a href="#" class="btn ae-banner-compact-cta">Plataforma de postulación →</a>
-        </div>
-      </div>
-
-      <div class="ae-scrolly-grid">
-
-        <!-- ── Stage del video (3 cards apiladas) ── -->
-        <div class="ae-scrolly-media-stage">
-          <div class="ae-scrolly-media-frame">
-
-            <figure class="ae-scrolly-card" data-scene="1">
-              <video class="ae-scrolly-video" poster="assets/img/13.jpeg" preload="metadata" playsinline muted aria-label="Video: Postulación de Testigos Electorales">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Postulación de Testigos Electorales">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
-            <figure class="ae-scrolly-card" data-scene="2">
-              <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted aria-label="Video: Postulación de Observadores Electorales">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Postulación de Observadores Electorales">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
-            <figure class="ae-scrolly-card" data-scene="3">
-              <video class="ae-scrolly-video" poster="assets/img/9.jpeg" preload="metadata" playsinline muted aria-label="Video: Postulación de Auditores de Sistemas">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Postulación de Auditores de Sistemas">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
-          </div>
-          <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
-            <span class="ae-scrolly-dot" data-scene="1"></span>
-            <span class="ae-scrolly-dot" data-scene="2"></span>
-            <span class="ae-scrolly-dot" data-scene="3"></span>
+        <!-- Intro / título de página dentro del primer scrolly -->
+        <div class="ae-plat-intro" aria-labelledby="plat-intro-title">
+          <div class="ae-plat-intro-grid">
+            <h1 id="plat-intro-title" class="ae-plat-intro-title">
+              Actores electorales: una <em>postulación organizada</em> al servicio de la democracia en Colombia
+            </h1>
+            <p class="ae-plat-intro-lede">
+              Conoce el paso a paso para realizar postulaciones ágiles, seguras y trazables de actores electorales,
+              fortaleciendo la transparencia y la democracia en Colombia desde cada organización política.
+            </p>
+            <a href="#" class="btn ae-banner-compact-cta">Ir a plataforma</a>
           </div>
         </div>
 
-        <!-- ── Texto fijo (sticky) — cambia según el scene activo ── -->
-        <div class="ae-scrolly-text-stage">
-          <article class="ae-scrolly-text-panel">
-            <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 01 Postulación</div>
-            <div class="ae-scrolly-scenes" data-active-scene="1">
-              <div class="ae-scrolly-scene" data-scene="1">
-                <h3 class="ae-diag-h">Postulación de <em>Testigos Electorales</em></h3>
-                <p class="ae-diag-p">Aprende en el video el paso a paso para postular Testigos Electorales de forma ágil, segura y trazable dentro de la plataforma.</p>
-              </div>
-              <div class="ae-scrolly-scene" data-scene="2">
-                <h3 class="ae-diag-h">Postulación de <em>Observadores Electorales</em></h3>
-                <p class="ae-diag-p">En este video encontrarás una guía clara para realizar la postulación de Observadores Electorales nacionales e internacionales dentro de la plataforma.</p>
-              </div>
-              <div class="ae-scrolly-scene" data-scene="3">
-                <h3 class="ae-diag-h">Postulación de <em>Auditores de Sistemas</em></h3>
-                <p class="ae-diag-p">Consulta el video y conoce las indicaciones necesarias para postular Auditores de Sistemas de manera sencilla, ordenada y segura.</p>
-              </div>
+        <div class="ae-scrolly-grid">
+
+          <!-- ── Stage del video (3 cards apiladas) ── -->
+          <div class="ae-scrolly-media-stage">
+            <div class="ae-scrolly-media-frame">
+
+              <figure class="ae-scrolly-card" data-scene="1">
+                <video class="ae-scrolly-video" poster="assets/img/13.jpeg" preload="metadata" playsinline muted
+                  aria-label="Video: Postulación de Testigos Electorales">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Postulación de Testigos Electorales">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
+              <figure class="ae-scrolly-card" data-scene="2">
+                <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted
+                  aria-label="Video: Postulación de Observadores Electorales">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Postulación de Observadores Electorales">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
+              <figure class="ae-scrolly-card" data-scene="3">
+                <video class="ae-scrolly-video" poster="assets/img/9.jpeg" preload="metadata" playsinline muted
+                  aria-label="Video: Postulación de Auditores de Sistemas">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Postulación de Auditores de Sistemas">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
             </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══ FASE 02 · Documentación · 1 video (Testigos) ═══ -->
-    <section class="ae-scrolly" data-from="right" aria-labelledby="plat-scrolly-title-2">
-      <h2 id="plat-scrolly-title-2" class="sr-only">Fase 2: Documentación</h2>
-
-      <div class="ae-scrolly-grid">
-
-        <!-- ── Texto fijo (izquierda) — único scene en esta fase ── -->
-        <div class="ae-scrolly-text-stage">
-          <article class="ae-scrolly-text-panel">
-            <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 02 Documentación</div>
-            <div class="ae-scrolly-scenes" data-active-scene="1">
-              <div class="ae-scrolly-scene" data-scene="1">
-                <h3 class="ae-diag-h">Consulta de Documentación de <em>Testigos Electorales</em></h3>
-                <p class="ae-diag-p">Revisa en el video cómo consultar de forma rápida y sencilla las credenciales de acreditación de los Testigos Electorales postulados.</p>
-              </div>
+            <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
+              <span class="ae-scrolly-dot" data-scene="1"></span>
+              <span class="ae-scrolly-dot" data-scene="2"></span>
+              <span class="ae-scrolly-dot" data-scene="3"></span>
             </div>
-          </article>
-        </div>
-
-        <!-- ── Stage del video (derecha, 1 card) ── -->
-        <div class="ae-scrolly-media-stage">
-          <div class="ae-scrolly-media-frame">
-
-            <figure class="ae-scrolly-card" data-scene="1">
-              <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted aria-label="Video: Consulta de Documentación de Testigos Electorales">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Consulta de Documentación de Testigos Electorales">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
           </div>
-        </div>
 
-      </div>
-    </section>
-
-    <!-- ═══ FASE 03 · Jornada electoral · 2 videos (E-14 / Asistencia) ═══ -->
-    <section class="ae-scrolly" data-from="left" aria-labelledby="plat-scrolly-title-3">
-      <h2 id="plat-scrolly-title-3" class="sr-only">Fase 3: Jornada electoral</h2>
-
-      <div class="ae-scrolly-grid">
-
-        <!-- ── Stage del video (izquierda, 2 cards apiladas) ── -->
-        <div class="ae-scrolly-media-stage">
-          <div class="ae-scrolly-media-frame">
-
-            <figure class="ae-scrolly-card" data-scene="1">
-              <video class="ae-scrolly-video" poster="assets/img/18.jpg" preload="metadata" playsinline muted aria-label="Video: Consulta de evidencia del Formulario E-14">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Consulta de evidencia del Formulario E-14">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
-            <figure class="ae-scrolly-card" data-scene="2">
-              <video class="ae-scrolly-video" poster="assets/img/11.jpeg" preload="metadata" playsinline muted aria-label="Video: Consulta de asistencia de actores electorales">
-                <!-- <source src="" type="video/mp4"> -->
-              </video>
-              <button type="button" class="ae-scrolly-play" aria-label="Reproducir video: Consulta de asistencia de actores electorales">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
-            </figure>
-
-          </div>
-          <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
-            <span class="ae-scrolly-dot" data-scene="1"></span>
-            <span class="ae-scrolly-dot" data-scene="2"></span>
-          </div>
-        </div>
-
-        <!-- ── Texto fijo (derecha) — cambia según el scene activo ── -->
-        <div class="ae-scrolly-text-stage">
-          <article class="ae-scrolly-text-panel">
-            <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 03 Jornada electoral</div>
-            <div class="ae-scrolly-scenes" data-active-scene="1">
-              <div class="ae-scrolly-scene" data-scene="1">
-                <h3 class="ae-diag-h">Consulta de evidencia del <em>Formulario E-14</em></h3>
-                <p class="ae-diag-p">Con este video podrás conocer cómo consultar la evidencia fotográfica de los Formularios E-14 tomada por los Testigos Electorales.</p>
+          <!-- ── Texto fijo (sticky) — cambia según el scene activo ── -->
+          <div class="ae-scrolly-text-stage">
+            <article class="ae-scrolly-text-panel">
+              <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 01
+                Postulación</div>
+              <div class="ae-scrolly-scenes" data-active-scene="1">
+                <div class="ae-scrolly-scene" data-scene="1">
+                  <h3 class="ae-diag-h">Postulación de <em>Testigos Electorales</em></h3>
+                  <p class="ae-diag-p">Aprende en el video el paso a paso para postular Testigos Electorales de forma
+                    ágil, segura y trazable dentro de la plataforma.</p>
+                </div>
+                <div class="ae-scrolly-scene" data-scene="2">
+                  <h3 class="ae-diag-h">Postulación de <em>Observadores Electorales</em></h3>
+                  <p class="ae-diag-p">En este video encontrarás una guía clara para realizar la postulación de
+                    Observadores Electorales nacionales e internacionales dentro de la plataforma.</p>
+                </div>
+                <div class="ae-scrolly-scene" data-scene="3">
+                  <h3 class="ae-diag-h">Postulación de <em>Auditores de Sistemas</em></h3>
+                  <p class="ae-diag-p">Consulta el video y conoce las indicaciones necesarias para postular Auditores de
+                    Sistemas de manera sencilla, ordenada y segura.</p>
+                </div>
               </div>
-              <div class="ae-scrolly-scene" data-scene="2">
-                <h3 class="ae-diag-h">Consulta de <em>asistencia</em> de actores electorales</h3>
-                <p class="ae-diag-p">Verifica en tiempo real el registro de asistencia de los actores electorales acreditados durante la jornada.</p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ FASE 02 · Documentación · 1 video (Testigos) ═══ -->
+      <section class="ae-scrolly" data-from="right" aria-labelledby="plat-scrolly-title-2">
+        <h2 id="plat-scrolly-title-2" class="sr-only">Fase 2: Documentación</h2>
+
+        <div class="ae-scrolly-grid">
+
+          <!-- ── Texto fijo (izquierda) — único scene en esta fase ── -->
+          <div class="ae-scrolly-text-stage">
+            <article class="ae-scrolly-text-panel">
+              <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 02
+                Documentación</div>
+              <div class="ae-scrolly-scenes" data-active-scene="1">
+                <div class="ae-scrolly-scene" data-scene="1">
+                  <h3 class="ae-diag-h">Consulta de Documentación de <em>Testigos Electorales</em></h3>
+                  <p class="ae-diag-p">Revisa en el video cómo consultar de forma rápida y sencilla las credenciales de
+                    acreditación de los Testigos Electorales postulados.</p>
+                </div>
               </div>
+            </article>
+          </div>
+
+          <!-- ── Stage del video (derecha, 1 card) ── -->
+          <div class="ae-scrolly-media-stage">
+            <div class="ae-scrolly-media-frame">
+
+              <figure class="ae-scrolly-card" data-scene="1">
+                <video class="ae-scrolly-video" poster="assets/img/17.jpg" preload="metadata" playsinline muted
+                  aria-label="Video: Consulta de Documentación de Testigos Electorales">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Consulta de Documentación de Testigos Electorales">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
             </div>
-          </article>
-        </div>
+          </div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+
+      <!-- ═══ FASE 03 · Jornada electoral · 2 videos (E-14 / Asistencia) ═══ -->
+      <section class="ae-scrolly" data-from="left" aria-labelledby="plat-scrolly-title-3">
+        <h2 id="plat-scrolly-title-3" class="sr-only">Fase 3: Jornada electoral</h2>
+
+        <div class="ae-scrolly-grid">
+
+          <!-- ── Stage del video (izquierda, 2 cards apiladas) ── -->
+          <div class="ae-scrolly-media-stage">
+            <div class="ae-scrolly-media-frame">
+
+              <figure class="ae-scrolly-card" data-scene="1">
+                <video class="ae-scrolly-video" poster="assets/img/18.jpg" preload="metadata" playsinline muted
+                  aria-label="Video: Consulta de evidencia del Formulario E-14">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Consulta de evidencia del Formulario E-14">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
+              <figure class="ae-scrolly-card" data-scene="2">
+                <video class="ae-scrolly-video" poster="assets/img/11.jpeg" preload="metadata" playsinline muted
+                  aria-label="Video: Consulta de asistencia de actores electorales">
+                  <!-- <source src="" type="video/mp4"> -->
+                </video>
+                <button type="button" class="ae-scrolly-play"
+                  aria-label="Reproducir video: Consulta de asistencia de actores electorales">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="ae-banner-shape shape-hex-blue ae-scrolly-hex" aria-hidden="true"></span>
+              </figure>
+
+            </div>
+            <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
+              <span class="ae-scrolly-dot" data-scene="1"></span>
+              <span class="ae-scrolly-dot" data-scene="2"></span>
+            </div>
+          </div>
+
+          <!-- ── Texto fijo (derecha) — cambia según el scene activo ── -->
+          <div class="ae-scrolly-text-stage">
+            <article class="ae-scrolly-text-panel">
+              <div class="eyebrow"><span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span> Fase 03
+                Jornada electoral</div>
+              <div class="ae-scrolly-scenes" data-active-scene="1">
+                <div class="ae-scrolly-scene" data-scene="1">
+                  <h3 class="ae-diag-h">Consulta de evidencia del <em>Formulario E-14</em></h3>
+                  <p class="ae-diag-p">Con este video podrás conocer cómo consultar la evidencia fotográfica de los
+                    Formularios E-14 tomada por los Testigos Electorales.</p>
+                </div>
+                <div class="ae-scrolly-scene" data-scene="2">
+                  <h3 class="ae-diag-h">Consulta de <em>asistencia</em> de actores electorales</h3>
+                  <p class="ae-diag-p">Verifica en tiempo real el registro de asistencia de los actores electorales
+                    acreditados durante la jornada.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
 
     </div><!-- /.ae-scrolly-wrap -->
 
@@ -282,10 +331,12 @@
       <div class="footer-top">
         <div>
           <div class="ae-brand-row">
-            <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
+            <span class="ae-dots" aria-hidden="true"><span class="ae-dot ae-dot-yellow"></span><span
+                class="ae-dot ae-dot-blue"></span><span class="ae-dot ae-dot-red"></span></span>
             <span class="ae-brand-mono">ACTORES <span style="color:#f43f5e">| 2026</span></span>
           </div>
-          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
+          <p class="ae-footer-claim">Plataforma oficial de Actores Electorales del Consejo Nacional Electoral para las
+            elecciones presidenciales Colombia 2026. Un solo equipo. Un solo país.</p>
         </div>
         <div class="footer-col" data-open="false">
           <h5><button class="footer-col-btn" type="button">Plataforma</button></h5>
@@ -310,7 +361,8 @@
           <div class="footer-col-body">
             <a href="mailto:contacto.mesa@actoreselectorales.com">contacto.mesa@actoreselectorales.com</a>
             <a href="tel:+576017702692">(601) 770 2692</a>
-            <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911 0489</a>
+            <a href="https://wa.me/573009110489" target="_blank" rel="noopener noreferrer">WhatsApp (+57) 300 911
+              0489</a>
           </div>
         </div>
       </div>
@@ -341,9 +393,9 @@
         sections.forEach(function (section) {
           var cards = section.querySelectorAll('.ae-scrolly-card');
           var frame = section.querySelector('.ae-scrolly-media-frame');
-          var grid  = section.querySelector('.ae-scrolly-grid');
+          var grid = section.querySelector('.ae-scrolly-grid');
           var scenesEl = section.querySelector('.ae-scrolly-scenes');
-          var dotsEl   = section.querySelector('.ae-scrolly-dots');
+          var dotsEl = section.querySelector('.ae-scrolly-dots');
           if (cards.length < 2 || !frame || !grid) return;
 
           var fromDir = section.getAttribute('data-from') === 'right' ? 'right' : 'left';
@@ -425,4 +477,5 @@
     })();
   </script>
 </body>
+
 </html>
