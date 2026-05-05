@@ -5938,7 +5938,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 32px);
+  padding: 0;
 }
 
 .ae-scrolly-media-stage,
@@ -6171,7 +6171,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
     grid-template-columns: 1fr 1fr;
     gap: clamp(40px, 5vw, 64px);
     align-items: center;
-    padding: clamp(32px, 5vw, 48px) clamp(16px, 4vw, 32px);
+    padding: clamp(32px, 5vw, 48px) 0;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -6344,23 +6344,23 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   max-width: 1280px;
   margin: 0 auto;
 }
-/* Grid: título + lede apilados y centrados */
+/* Grid: título + lede apilados y alineados a la izquierda */
 .ae-plat-intro-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(20px, 3vw, 32px);
-  align-items: center;
-  justify-items: center;
-  text-align: center;
+  align-items: start;
+  justify-items: start;
+  text-align: left;
 }
 .ae-plat-intro-title {
   font-family: 'Manrope', var(--font-impact, 'Outfit'), sans-serif;
-  font-size: clamp(28px, 4.8vw, 56px);
-  line-height: 1.1;
+  font-size: clamp(32px, 4.5vw, 56px); /* mismo que .ae-h2 / ae-train-stages-title */
+  line-height: 1.05;
   letter-spacing: -0.025em;
   font-weight: 800; /* ExtraBold base */
   color: var(--ae-ink, #0f172a);
-  margin: 0 auto;
+  margin: 0;
   max-width: 28ch;
   text-wrap: balance;
   word-break: normal;
@@ -6377,7 +6377,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   font-size: clamp(15px, 1.25vw, 18px);
   line-height: 1.65;
   color: #334155;
-  margin: 0 auto;
+  margin: 0;
   max-width: 64ch;
 }
 
@@ -6390,11 +6390,6 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
     grid-template-columns: 1fr;
     gap: clamp(20px, 2.4vw, 32px);
     align-items: start;
-  }
-  .ae-plat-intro-title {
-    font-size: 56px;
-    line-height: 1.06;
-    max-width: 28ch;
   }
   .ae-plat-intro-title em { letter-spacing: -0.012em; }
 }
@@ -7112,6 +7107,199 @@ em, i, cite, dfn, var, address,
 
 /* ── Reduce-motion (sin cambios sobre lo ya existente): sigue activado para
       banners, scenes, layer-cards, hz-track, quote-slides. ── */
+
+
+/* ============================================================
+   ENTRENAMIENTO — Página de capacitación para testigos
+   Header (H1 + lede) + grid de 4 cards de etapas con CTA.
+   ============================================================ */
+/* ── Guía del proceso: header + grid de 4 cards con CTA ── */
+.ae-train-stages-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px clamp(16px, 4vw, 32px) clamp(64px, 8vw, 112px);
+}
+.ae-train-stages-head {
+  text-align: left;
+  max-width: 920px;
+  margin: 0 0 clamp(32px, 4.5vw, 56px);
+}
+.ae-train-stages-head .eyebrow {
+  margin-bottom: clamp(14px, 1.6vw, 18px);
+}
+/* Hereda el tamaño/peso de .ae-h2 (mismo que "Eventos pasados." en eventos.html
+   y otras secciones del sitio). max-width 22ch para wrap balanceado. */
+.ae-train-stages-title {
+  margin: 0;
+  max-width: 22ch;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.ae-train-stages-title em {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ae-blue);
+}
+.ae-train-stages-lede {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: clamp(14.5px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: var(--ae-ink-2);
+  max-width: 56ch;
+}
+.ae-train-stages-lede strong {
+  color: var(--ae-ink);
+  font-weight: 700;
+}
+
+.ae-train-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 2.5vw, 28px);
+}
+@media (min-width: 640px) {
+  .ae-train-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .ae-train-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Card de etapa */
+.ae-train-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--ae-line);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  isolation: isolate;
+}
+.ae-train-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ae-train-accent, var(--ae-blue));
+  z-index: 2;
+}
+.ae-train-card-visual {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--ae-paper-3);
+}
+.ae-train-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ae-train-card-mark {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  font-family: var(--font-impact, 'Outfit'), 'Manrope', sans-serif;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ae-train-accent, var(--ae-blue));
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.22);
+}
+.ae-train-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.ae-train-card-body p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ae-ink-2);
+  margin: 0;
+  flex: 1;
+}
+.ae-train-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ae-train-accent-text, var(--ae-blue));
+  text-decoration: none;
+  align-self: flex-start;
+  transition: gap 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ae-train-card-cta svg {
+  flex: 0 0 auto;
+  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Variantes de color */
+.ae-train-card--yellow {
+  --ae-train-accent: var(--ae-yellow);
+  --ae-train-accent-text: #b8860b;
+}
+.ae-train-card--yellow .ae-train-card-mark {
+  background: var(--ae-yellow);
+  color: var(--ae-ink);
+  box-shadow: 0 6px 14px rgba(184, 134, 11, 0.28);
+}
+.ae-train-card--red {
+  --ae-train-accent: var(--ae-red);
+  --ae-train-accent-text: var(--ae-red);
+}
+.ae-train-card--blue {
+  --ae-train-accent: var(--ae-blue);
+  --ae-train-accent-text: var(--ae-blue);
+}
+.ae-train-card--cyan {
+  --ae-train-accent: var(--ae-cyan);
+  --ae-train-accent-text: #1690b3;
+}
+
+/* Hover (microinteracciones) */
+@media (hover: hover) {
+  .ae-train-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+    border-color: var(--ae-train-accent, var(--ae-blue));
+  }
+  .ae-train-card:hover .ae-train-card-visual img {
+    transform: scale(1.06);
+  }
+  .ae-train-card-cta:hover { gap: 12px; }
+  .ae-train-card-cta:hover svg { transform: translateX(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-train-card,
+  .ae-train-card-visual img,
+  .ae-train-card-cta,
+  .ae-train-card-cta svg { transition: none; }
+}
+
 
 
 /* ============================================================
