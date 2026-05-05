@@ -6051,6 +6051,35 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   opacity: 0.55;
 }
 
+/* Bullets indicadores: cuántas cards/videos hay y cuál es la activa */
+.ae-scrolly-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 0;
+}
+.ae-scrolly-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.22);
+  transition: width 320ms var(--ease, ease), background 320ms var(--ease, ease);
+  flex: 0 0 auto;
+}
+.ae-scrolly-dots[data-active-scene="1"] .ae-scrolly-dot[data-scene="1"],
+.ae-scrolly-dots[data-active-scene="2"] .ae-scrolly-dot[data-scene="2"],
+.ae-scrolly-dots[data-active-scene="3"] .ae-scrolly-dot[data-scene="3"],
+.ae-scrolly-dots[data-active-scene="4"] .ae-scrolly-dot[data-scene="4"],
+.ae-scrolly-dots[data-active-scene="5"] .ae-scrolly-dot[data-scene="5"] {
+  background: var(--ae-blue, #1e3a8a);
+  width: 24px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ae-scrolly-dot { transition: none; }
+}
+
 /* Scenes en el text panel: cambian de título y descripción según el scene activo */
 .ae-scrolly-scenes {
   position: relative;

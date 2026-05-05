@@ -77,8 +77,6 @@
           <span class="ae-banner-flag" aria-hidden="true"><i></i><i></i><i></i></span>
           Postulación, documentación y jornada electoral
         </div>
-        <p class="ae-banner-compact-title" role="doc-subtitle">Postula <em>aquí</em></p>
-        <a href="#" class="btn ae-banner-compact-cta" style="margin-top:18px">Plataforma de postulación →</a>
       </div>
     </section>
 
@@ -106,6 +104,7 @@
           <p class="ae-plat-intro-lede">
             Conoce el paso a paso para realizar postulaciones ágiles, seguras y trazables de actores electorales, fortaleciendo la transparencia y la democracia en Colombia desde cada organización política.
           </p>
+          <a href="#" class="btn ae-banner-compact-cta">Plataforma de postulación →</a>
         </div>
       </div>
 
@@ -145,6 +144,11 @@
               <span class="ae-banner-shape shape-hex-yellow ae-scrolly-hex" aria-hidden="true"></span>
             </figure>
 
+          </div>
+          <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
+            <span class="ae-scrolly-dot" data-scene="1"></span>
+            <span class="ae-scrolly-dot" data-scene="2"></span>
+            <span class="ae-scrolly-dot" data-scene="3"></span>
           </div>
         </div>
 
@@ -242,6 +246,10 @@
             </figure>
 
           </div>
+          <div class="ae-scrolly-dots" data-active-scene="1" aria-hidden="true">
+            <span class="ae-scrolly-dot" data-scene="1"></span>
+            <span class="ae-scrolly-dot" data-scene="2"></span>
+          </div>
         </div>
 
         <!-- ── Texto fijo (derecha) — cambia según el scene activo ── -->
@@ -335,6 +343,7 @@
           var frame = section.querySelector('.ae-scrolly-media-frame');
           var grid  = section.querySelector('.ae-scrolly-grid');
           var scenesEl = section.querySelector('.ae-scrolly-scenes');
+          var dotsEl   = section.querySelector('.ae-scrolly-dots');
           if (cards.length < 2 || !frame || !grid) return;
 
           var fromDir = section.getAttribute('data-from') === 'right' ? 'right' : 'left';
@@ -367,11 +376,14 @@
               invalidateOnRefresh: true,
               onRefresh: applyInitial,
               onUpdate: function (self) {
-                if (!scenesEl) return;
                 var n = cards.length;
                 var idx = Math.min(Math.round(self.progress * (n - 1)) + 1, n);
-                if (scenesEl.dataset.activeScene !== String(idx)) {
-                  scenesEl.dataset.activeScene = idx;
+                var idxStr = String(idx);
+                if (scenesEl && scenesEl.dataset.activeScene !== idxStr) {
+                  scenesEl.dataset.activeScene = idxStr;
+                }
+                if (dotsEl && dotsEl.dataset.activeScene !== idxStr) {
+                  dotsEl.dataset.activeScene = idxStr;
                 }
               }
             }
@@ -381,6 +393,34 @@
             tl.to(cards[i], { x: 0, ease: 'power2.out', duration: 1 }, i === 1 ? '>' : '>+=0.1');
           }
         });
+      });
+
+      // Mobile: sincroniza los bullets con el carrusel horizontal vía IntersectionObserver
+      mm.add('(max-width: 899.98px)', function () {
+        if (!('IntersectionObserver' in window)) return;
+        var observers = [];
+        sections.forEach(function (section) {
+          var cards = section.querySelectorAll('.ae-scrolly-card');
+          var frame = section.querySelector('.ae-scrolly-media-frame');
+          var dotsEl = section.querySelector('.ae-scrolly-dots');
+          if (cards.length < 2 || !frame || !dotsEl) return;
+
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+                var sc = entry.target.getAttribute('data-scene');
+                if (sc && dotsEl.dataset.activeScene !== sc) {
+                  dotsEl.dataset.activeScene = sc;
+                }
+              }
+            });
+          }, { root: frame, threshold: [0.55, 0.8] });
+          cards.forEach(function (c) { io.observe(c); });
+          observers.push(io);
+        });
+        return function cleanup() {
+          observers.forEach(function (io) { io.disconnect(); });
+        };
       });
     })();
   </script>
