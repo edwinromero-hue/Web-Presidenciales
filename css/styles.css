@@ -5984,13 +5984,17 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   background: #1e3a8a;
   isolation: isolate;
   scroll-snap-align: start;
-  /* Reset cualquier transform residual que GSAP pueda haber dejado al cambiar
-     de breakpoint (desktop → mobile). En mobile la card NO se anima. */
-  transform: none !important;
-  display: block !important;
 }
 @media (max-width: 480px) {
   .ae-scrolly-card { width: 92%; min-width: 92%; max-width: 92%; }
+}
+/* Mobile only: garantiza que las cards no estén ocultas por transforms
+   residuales de GSAP cuando el usuario pasa de desktop a mobile. */
+@media (max-width: 899px) {
+  .ae-scrolly-card {
+    transform: none !important;
+    display: block !important;
+  }
 }
 
 .ae-scrolly-video {
@@ -6087,11 +6091,14 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
     -webkit-overflow-scrolling: auto;
   }
 
-  /* Cards apiladas absolutas */
+  /* Cards apiladas absolutas (resetea el carrusel de mobile) */
   .ae-scrolly-card {
     position: absolute;
     inset: 0;
     flex: initial;
+    width: auto;
+    min-width: 0;
+    max-width: none;
     aspect-ratio: auto;
     border-radius: 20px;
     scroll-snap-align: none;
