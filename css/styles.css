@@ -5532,11 +5532,14 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-diag-stat-num {
   font-family: var(--font-impact, 'Outfit'), sans-serif;
   font-weight: 900;
-  font-size: clamp(28px, 3.6vw, 38px);
+  font-size: clamp(20px, 2.4vw, 26px);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
   color: var(--ae-yellow);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  max-width: 100%;
+  display: block;
 }
 .ae-diag-stat-lbl {
   font-family: var(--font-impact, 'Outfit'), sans-serif;
@@ -5560,7 +5563,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 
   .ae-diag-stats { gap: 8px; }
   .ae-diag-stat { padding: 14px 10px; }
-  .ae-diag-stat-num { font-size: 26px; }
+  .ae-diag-stat-num { font-size: 18px; letter-spacing: -0.045em; }
   .ae-diag-stat-lbl { font-size: 10.5px; }
 }
 @media (max-width: 380px) {
@@ -5921,7 +5924,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-scrolly {
   position: relative;
   background: transparent;
-  padding: 32px 16px;
+  padding: 32px 0;
   overflow: hidden;
   isolation: isolate;
 }
@@ -5932,15 +5935,18 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   display: flex;
   flex-direction: column;
   gap: 22px;
-  max-width: 1180px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
 }
 
 .ae-scrolly-media-stage,
 .ae-scrolly-text-stage {
   position: relative;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 /* Mobile: orden consistente — texto siempre arriba */
 .ae-scrolly-text-stage  { order: 0; }
@@ -5960,13 +5966,14 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-scrolly-media-frame {
   position: relative;
   display: flex;
-  gap: 12px;
+  width: 100%;
+  gap: 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 4px 4px 12px;
-  margin: 0 -4px;
+  padding: 0;
+  margin: 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(30, 58, 138, 0.3) transparent;
 }
@@ -5977,18 +5984,15 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .ae-scrolly-card {
   position: relative;
   flex: 0 0 auto;
-  width: 88%;
-  min-width: 88%;
-  max-width: 88%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   overflow: hidden;
-  background: #1e3a8a;
+  background: transparent;
   isolation: isolate;
   scroll-snap-align: start;
-}
-@media (max-width: 480px) {
-  .ae-scrolly-card { width: 92%; min-width: 92%; max-width: 92%; }
 }
 /* Mobile only: garantiza que las cards no estén ocultas por transforms
    residuales de GSAP cuando el usuario pasa de desktop a mobile. */
@@ -6008,14 +6012,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   display: block;
   z-index: 0;
 }
-.ae-scrolly-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.10) 0%, rgba(15, 23, 42, 0.45) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
+/* Overlay oscuro removido — los captions ahora viven en el text panel */
 
 .ae-scrolly-play {
   position: absolute;
@@ -6054,6 +6051,47 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   opacity: 0.55;
 }
 
+/* Scenes en el text panel: cambian de título y descripción según el scene activo */
+.ae-scrolly-scenes {
+  position: relative;
+  display: grid;
+  margin-top: 14px;
+}
+.ae-scrolly-scene {
+  grid-area: 1 / 1; /* todos los scenes ocupan la misma celda y se apilan */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 360ms var(--ease, ease), transform 360ms var(--ease, ease);
+  pointer-events: none;
+}
+.ae-scrolly-scene > :first-child { margin-top: 0; }
+.ae-scrolly-scene > :last-child { margin-bottom: 0; }
+.ae-scrolly-scenes[data-active-scene="1"] .ae-scrolly-scene[data-scene="1"],
+.ae-scrolly-scenes[data-active-scene="2"] .ae-scrolly-scene[data-scene="2"],
+.ae-scrolly-scenes[data-active-scene="3"] .ae-scrolly-scene[data-scene="3"],
+.ae-scrolly-scenes[data-active-scene="4"] .ae-scrolly-scene[data-scene="4"],
+.ae-scrolly-scenes[data-active-scene="5"] .ae-scrolly-scene[data-scene="5"] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* En mobile (sin scrolly pin) muestra todos los scenes apilados verticalmente */
+@media (max-width: 899.98px) {
+  .ae-scrolly-scenes { display: block; }
+  .ae-scrolly-scene {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    margin-bottom: 24px;
+  }
+  .ae-scrolly-scene:last-child { margin-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-scrolly-scene { transition: none; }
+}
+
 /* ───────────────────────────────────────────────────────────
    DESKTOP (≥ 900px):
    - Pinned grid + cards apiladas con animación slide-in
@@ -6061,7 +6099,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
    ─────────────────────────────────────────────────────────── */
 @media (min-width: 900px) {
   .ae-scrolly {
-    padding: 0 clamp(20px, 5vw, 56px);
+    padding: 0;
   }
 
   .ae-scrolly-grid {
@@ -6069,8 +6107,10 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
     grid-template-columns: 1fr 1fr;
     gap: clamp(40px, 5vw, 64px);
     align-items: center;
-    padding: clamp(32px, 5vw, 48px) 0;
+    padding: clamp(32px, 5vw, 48px) clamp(16px, 4vw, 32px);
     max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
   }
   /* Variante: texto izquierda · video derecha (mismo balance) */
   .ae-scrolly[data-from="right"] .ae-scrolly-grid {
@@ -6086,7 +6126,7 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
     aspect-ratio: 16 / 10;
     border-radius: 20px;
     overflow: visible;
-    background: var(--ae-paper-3);
+    background: transparent;
     gap: 0;
     padding: 0;
     margin: 0;
@@ -6229,6 +6269,74 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   .ae-banner-compact-zigzag { display: none; }
   .ae-banner-compact .shape-hex-yellow.shape-tl { width: 40px; height: 46px; top: 6%; }
   .ae-banner-compact .shape-hex-blue.shape-br { width: 36px; height: 42px; bottom: 6%; }
+}
+
+/* ── Intro plataforma: composición editorial dentro del primer .ae-scrolly ── */
+.ae-plat-intro {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 32px) clamp(24px, 3.5vw, 40px);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* Grid: título + lede apilados y centrados */
+.ae-plat-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.ae-plat-intro-title {
+  font-family: 'Manrope', var(--font-impact, 'Outfit'), sans-serif;
+  font-size: clamp(28px, 4.8vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 800; /* ExtraBold base */
+  color: var(--ae-ink, #0f172a);
+  margin: 0 auto;
+  max-width: 28ch;
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+.ae-plat-intro-title em {
+  font-style: normal;
+  font-weight: 400; /* Regular en contraste con el ExtraBold */
+  letter-spacing: -0.015em;
+  color: var(--ae-blue, #1e3a8a);
+}
+.ae-plat-intro-lede {
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.65;
+  color: #334155;
+  margin: 0 auto;
+  max-width: 64ch;
+}
+
+@media (min-width: 900px) {
+  .ae-plat-intro {
+    padding-left: clamp(16px, 4vw, 32px);
+    padding-right: clamp(16px, 4vw, 32px);
+  }
+  .ae-plat-intro-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 2.4vw, 32px);
+    align-items: start;
+  }
+  .ae-plat-intro-title {
+    font-size: 56px;
+    line-height: 1.06;
+    max-width: 28ch;
+  }
+  .ae-plat-intro-title em { letter-spacing: -0.012em; }
+}
+@media (max-width: 699.98px) {
+  .ae-plat-intro { padding: 28px clamp(16px, 4vw, 32px) 18px; }
+  .ae-plat-intro-title { max-width: none; }
 }
 
 /* ── Banner + locator: encajar en un solo viewport sin scroll ──
