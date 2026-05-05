@@ -117,10 +117,34 @@
     marquee.appendChild(clone);
   }
 
+  // ── Counter ticker: cuenta regresiva al 31 mayo 2026 ──
+  function initCounterTicker() {
+    var target = new Date('2026-05-31T07:00:00-05:00').getTime(); // 7am COT = apertura
+    var pills = document.querySelectorAll('[data-counter]');
+    if (!pills.length) return;
+
+    function tick() {
+      var now = Date.now();
+      var diff = Math.max(0, target - now);
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      pills.forEach(function (el) {
+        var k = el.dataset.counter;
+        var v = k === 'd' ? d : k === 'h' ? h : k === 'm' ? m : s;
+        el.textContent = String(v).padStart(2, '0');
+      });
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initBannerDots();
     initMobileBannerObserver();
     initVideo();
     initPressMarquee();
+    initCounterTicker();
   });
 })();

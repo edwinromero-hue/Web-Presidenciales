@@ -46,6 +46,7 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bot: env(safe-area-inset-bottom, 0px);
   --hdr-h: 64px;
+  --counter-h: 43px;
   --font-display: 'ClashDisplay', serif;
   --font-impact: 'Outfit', sans-serif;
 }
@@ -137,6 +138,7 @@ section { position: relative; }
 .pad { padding: clamp(56px, 10vw, 96px) 0; overflow: hidden; }
 .pad-sm { padding: clamp(40px, 8vw, 64px) 0; overflow: hidden; }
 main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
+[data-page="inicio"] main { padding-top: calc(var(--hdr-h) + var(--safe-top) + var(--counter-h)); }
 
 /* Footer */
 .footer { background: var(--ae-ink); color: #cbd5e1; padding: clamp(48px, 8vw, 80px) 0 calc(32px + var(--safe-bot)); }
@@ -8075,4 +8077,78 @@ em, i, cite, dfn, var, address,
   .ae-press-kit-visual { padding: 24px; min-height: 180px; }
   .ae-press-kit-stack { width: 100px; height: 100px; }
   .ae-press-kit-body { padding: 24px 22px; }
+}
+
+/* ═══ Counter Ticker Bar ═══ */
+.ae-counter-bar {
+  position: fixed;
+  top: calc(var(--hdr-h) + 3px);
+  left: 0;
+  width: 100%;
+  background: var(--ae-yellow);
+  overflow: hidden;
+  z-index: 90;
+}
+.ae-counter-track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  white-space: nowrap;
+  animation: counterScroll 20s linear infinite;
+  width: max-content;
+}
+.ae-counter-bar:hover .ae-counter-track {
+  animation-play-state: paused;
+}
+.ae-counter-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.ae-counter-label {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.68px;
+  color: var(--ae-ink);
+  text-transform: uppercase;
+}
+.ae-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--ae-blue);
+  color: var(--ae-yellow);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.68px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+.ae-counter-dot {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--ae-ink);
+}
+.ae-counter-sep {
+  display: inline-block;
+  width: 23px;
+  height: 1px;
+  background: var(--ae-ink);
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+@keyframes counterScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@media (max-width: 600px) {
+  .ae-counter-track { animation-duration: 12s; }
+  .ae-counter-label, .ae-counter-pill, .ae-counter-dot { font-size: 10px; }
 }
