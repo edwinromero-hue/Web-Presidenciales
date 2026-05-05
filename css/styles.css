@@ -5893,73 +5893,105 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
      scrolea. Las 4 cards apiladas se animan desde fuera del viewport
      (izquierda) hasta su posición en el frame.
    ============================================================ */
-/* Wrapper con fondo continuo: el gradient cubre AMBAS secciones scrolly */
+/* Wrapper: gradiente ÚNICO que cubre las 3 secciones de forma continua. */
 .ae-scrolly-wrap {
   position: relative;
   background: linear-gradient(180deg, #f4f7fc 0%, #eef0fb 50%, #fbf2f4 100%);
   isolation: isolate;
+  overflow: hidden;
 }
 
+/* Decoraciones del wrap: tamaños reducidos en mobile para no saturar */
+@media (max-width: 720px) {
+  .ae-scrolly-wrap > .ae-diag-bg-1 { width: 200px; top: -30px; left: -60px; }
+  .ae-scrolly-wrap > .ae-diag-bg-2 { width: 180px; right: -40px; }
+  .ae-scrolly-wrap > .ae-diag-bg-3 { width: 180px; bottom: -20px; }
+  .ae-scrolly-wrap > .ae-diag-bg-4 { width: 40px; }
+  .ae-scrolly-wrap > .ae-diag-bg-5 { width: 36px; }
+}
+
+/* ───────────────────────────────────────────────────────────
+   MOBILE-FIRST (default, < 900px):
+   - Sección con padding ajustado a mobile
+   - Grid en columna: texto arriba (order:0), media abajo (order:1)
+   - Frame es un carrusel HORIZONTAL con scroll-snap (4 videos visibles)
+   ─────────────────────────────────────────────────────────── */
 .ae-scrolly {
   position: relative;
   background: transparent;
-  padding: 0 clamp(20px, 5vw, 56px);
+  padding: 32px 16px;
   overflow: hidden;
   isolation: isolate;
 }
 
 .ae-scrolly-grid {
   position: relative;
-  z-index: 1; /* sobre las decoraciones de fondo */
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(32px, 5vw, 48px) 0;
-}
-@media (min-width: 900px) {
-  .ae-scrolly-grid {
-    grid-template-columns: 1.05fr 1fr;
-    gap: clamp(40px, 6vw, 80px);
-    align-items: center;
-  }
-  /* Variante: texto izquierda · video derecha (la columna del video sigue siendo la mayor) */
-  .ae-scrolly[data-from="right"] .ae-scrolly-grid {
-    grid-template-columns: 1fr 1.05fr;
-  }
 }
 
 .ae-scrolly-media-stage,
 .ae-scrolly-text-stage {
   position: relative;
+  width: 100%;
 }
+/* Mobile: orden consistente — texto siempre arriba */
+.ae-scrolly-text-stage  { order: 0; }
+.ae-scrolly-media-stage { order: 1; }
 
-/* Frame del video (define el slot; overflow visible para que las cards
-   puedan venir desde fuera del viewport durante la animación) */
+/* Texto */
+.ae-scrolly-text-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+}
+.ae-scrolly-text-panel .ae-diag-h { margin: 4px 0 0; font-size: clamp(28px, 7vw, 36px); }
+.ae-scrolly-text-panel .ae-diag-p { margin: 0; font-size: 15px; line-height: 1.55; }
+
+/* Frame del video como carrusel horizontal en mobile */
 .ae-scrolly-media-frame {
   position: relative;
-  aspect-ratio: 16 / 10;
-  border-radius: 20px;
-  overflow: visible;
-  background: var(--ae-paper-3);
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 4px 12px;
+  margin: 0 -4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 58, 138, 0.3) transparent;
 }
+.ae-scrolly-media-frame::-webkit-scrollbar { height: 6px; }
+.ae-scrolly-media-frame::-webkit-scrollbar-track { background: transparent; }
+.ae-scrolly-media-frame::-webkit-scrollbar-thumb { background: rgba(30, 58, 138, 0.3); border-radius: 999px; }
 
 .ae-scrolly-card {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 88%;
+  min-width: 88%;
+  max-width: 88%;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
   overflow: hidden;
   background: #1e3a8a;
   isolation: isolate;
-  will-change: transform;
+  scroll-snap-align: start;
+  /* Reset cualquier transform residual que GSAP pueda haber dejado al cambiar
+     de breakpoint (desktop → mobile). En mobile la card NO se anima. */
+  transform: none !important;
+  display: block !important;
 }
-.ae-scrolly-card[data-scene="1"] { z-index: 1; }
-.ae-scrolly-card[data-scene="2"] { z-index: 2; }
-.ae-scrolly-card[data-scene="3"] { z-index: 3; }
-.ae-scrolly-card[data-scene="4"] { z-index: 4; }
-.ae-scrolly-card[data-scene="5"] { z-index: 5; }
+@media (max-width: 480px) {
+  .ae-scrolly-card { width: 92%; min-width: 92%; max-width: 92%; }
+}
 
 .ae-scrolly-video {
   position: absolute;
@@ -5984,8 +6016,8 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 0;
   background: #ffc627;
@@ -5995,49 +6027,111 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   cursor: pointer;
   z-index: 3;
   font-family: inherit;
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.32), 0 0 0 8px rgba(255, 198, 39, 0.18);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.28), 0 0 0 6px rgba(255, 198, 39, 0.18);
   transition: transform 280ms var(--ease), box-shadow 280ms var(--ease);
 }
-.ae-scrolly-play svg { margin-left: 3px; }
+.ae-scrolly-play svg { margin-left: 2px; width: 20px; height: 20px; }
 .ae-scrolly-play:hover,
 .ae-scrolly-play:focus-visible {
   transform: translate(-50%, -50%) scale(1.08);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.42), 0 0 0 12px rgba(255, 198, 39, 0.22);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.38), 0 0 0 10px rgba(255, 198, 39, 0.22);
   outline: 0;
 }
+
 .ae-scrolly-hex.ae-banner-shape {
   position: absolute !important;
-  width: 90px;
-  height: 100px;
-  top: -18px;
-  right: -18px;
+  width: 64px;
+  height: 72px;
+  top: -10px;
+  right: -10px;
   z-index: 2;
   opacity: 0.55;
 }
 
-/* Texto fijo a la derecha */
-.ae-scrolly-text-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 540px;
-}
-.ae-scrolly-text-panel .ae-diag-h { margin: 6px 0 0; }
-.ae-scrolly-text-panel .ae-diag-p { margin: 0; }
+/* ───────────────────────────────────────────────────────────
+   DESKTOP (≥ 900px):
+   - Pinned grid + cards apiladas con animación slide-in
+   - Activa el patrón original (overrides del mobile-first)
+   ─────────────────────────────────────────────────────────── */
+@media (min-width: 900px) {
+  .ae-scrolly {
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
 
-/* Mobile: muestra solo la primera card; las demás ocultas */
-@media (max-width: 899px) {
-  .ae-scrolly { min-height: 0; }
-  .ae-scrolly-card { transform: none !important; }
-  .ae-scrolly-card[data-scene="2"],
-  .ae-scrolly-card[data-scene="3"],
-  .ae-scrolly-card[data-scene="4"],
-  .ae-scrolly-card[data-scene="5"] { display: none; }
+  .ae-scrolly-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    padding: clamp(32px, 5vw, 48px) 0;
+  }
+  /* Variante: texto izquierda · video derecha */
+  .ae-scrolly[data-from="right"] .ae-scrolly-grid {
+    grid-template-columns: 1fr 1.05fr;
+  }
+  /* Reset del order mobile — vuelve a orden DOM */
+  .ae-scrolly-text-stage,
+  .ae-scrolly-media-stage { order: initial; }
+
+  /* Frame: contenedor del slot, overflow visible para slide-in */
+  .ae-scrolly-media-frame {
+    display: block;
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+    overflow: visible;
+    background: var(--ae-paper-3);
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  /* Cards apiladas absolutas */
+  .ae-scrolly-card {
+    position: absolute;
+    inset: 0;
+    flex: initial;
+    aspect-ratio: auto;
+    border-radius: 20px;
+    scroll-snap-align: none;
+    will-change: transform;
+  }
+  .ae-scrolly-card[data-scene="1"] { z-index: 1; }
+  .ae-scrolly-card[data-scene="2"] { z-index: 2; }
+  .ae-scrolly-card[data-scene="3"] { z-index: 3; }
+  .ae-scrolly-card[data-scene="4"] { z-index: 4; }
+  .ae-scrolly-card[data-scene="5"] { z-index: 5; }
+
+  /* Texto en desktop: max-width controlado */
+  .ae-scrolly-text-panel {
+    gap: 14px;
+    max-width: 540px;
+  }
+  .ae-scrolly-text-panel .ae-diag-h { font-size: clamp(36px, 4vw, 48px); }
+  .ae-scrolly-text-panel .ae-diag-p { font-size: 16px; line-height: 1.6; }
+
+  /* Botón play en desktop */
+  .ae-scrolly-play {
+    width: 64px;
+    height: 64px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.32), 0 0 0 8px rgba(255, 198, 39, 0.18);
+  }
+  .ae-scrolly-play svg { width: 22px; height: 22px; margin-left: 3px; }
+
+  /* Hexágono más grande en desktop */
+  .ae-scrolly-hex.ae-banner-shape {
+    width: 90px;
+    height: 100px;
+    top: -18px;
+    right: -18px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ae-scrolly-card { transform: none !important; transition: none; }
   .ae-scrolly-play { transition: none; }
+  .ae-scrolly-media-frame { scroll-behavior: auto; }
 }
 
 /* ============================================================
