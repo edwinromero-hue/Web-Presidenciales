@@ -6064,14 +6064,15 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 
   .ae-scrolly-grid {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: clamp(40px, 6vw, 80px);
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 5vw, 64px);
     align-items: center;
     padding: clamp(32px, 5vw, 48px) 0;
+    max-width: 1280px;
   }
-  /* Variante: texto izquierda · video derecha */
+  /* Variante: texto izquierda · video derecha (mismo balance) */
   .ae-scrolly[data-from="right"] .ae-scrolly-grid {
-    grid-template-columns: 1fr 1.05fr;
+    grid-template-columns: 1fr 1fr;
   }
   /* Reset del order mobile — vuelve a orden DOM */
   .ae-scrolly-text-stage,
@@ -6110,13 +6111,14 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   .ae-scrolly-card[data-scene="4"] { z-index: 4; }
   .ae-scrolly-card[data-scene="5"] { z-index: 5; }
 
-  /* Texto en desktop: max-width controlado */
+  /* Texto en desktop: ocupa todo el ancho de su columna (sin huecos a la derecha) */
   .ae-scrolly-text-panel {
-    gap: 14px;
-    max-width: 540px;
+    gap: 16px;
+    max-width: none;
+    width: 100%;
   }
-  .ae-scrolly-text-panel .ae-diag-h { font-size: clamp(36px, 4vw, 48px); }
-  .ae-scrolly-text-panel .ae-diag-p { font-size: 16px; line-height: 1.6; }
+  .ae-scrolly-text-panel .ae-diag-h { font-size: clamp(40px, 4.5vw, 56px); line-height: 1.05; }
+  .ae-scrolly-text-panel .ae-diag-p { font-size: 17px; line-height: 1.6; max-width: 56ch; }
 
   /* Botón play en desktop */
   .ae-scrolly-play {
