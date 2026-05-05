@@ -6105,16 +6105,51 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   pointer-events: auto;
 }
 
-/* En mobile (sin scrolly pin) muestra todos los scenes apilados verticalmente */
+/* En mobile aplanamos la jerarquía para emparejar cada card con su scene.
+   `display: contents` hace que media-stage/frame/text-stage/text-panel/scenes
+   "desaparezcan" del layout y sus hijos suban como flex items del grid. Luego
+   con `order` ponemos: eyebrow → card1 → scene1 → card2 → scene2 → card3 → scene3 */
 @media (max-width: 899.98px) {
-  .ae-scrolly-scenes { display: block; }
+  .ae-scrolly-media-stage,
+  .ae-scrolly-media-frame,
+  .ae-scrolly-text-stage,
+  .ae-scrolly-text-panel,
+  .ae-scrolly-scenes {
+    display: contents;
+  }
+  .ae-scrolly-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .ae-scrolly-text-panel > .eyebrow { order: 0; margin: 0; align-self: flex-start; }
+  .ae-scrolly-card {
+    width: 100% !important;
+    align-self: stretch;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ae-scrolly-card[data-scene="1"]  { order: 1; }
+  .ae-scrolly-scene[data-scene="1"] { order: 2; }
+  .ae-scrolly-card[data-scene="2"]  { order: 3; margin-top: 12px; }
+  .ae-scrolly-scene[data-scene="2"] { order: 4; }
+  .ae-scrolly-card[data-scene="3"]  { order: 5; margin-top: 12px; }
+  .ae-scrolly-scene[data-scene="3"] { order: 6; }
+  .ae-scrolly-scene { align-self: stretch; }
   .ae-scrolly-scene {
     opacity: 1;
     transform: none;
     pointer-events: auto;
-    margin-bottom: 24px;
+    margin: 0;
+    padding: 0;
   }
-  .ae-scrolly-scene:last-child { margin-bottom: 0; }
+  /* El último scene de cada sección lleva un poco más de aire para separar fases */
+  .ae-scrolly-scene:last-of-type {
+    margin-bottom: 12px;
+  }
+  /* Dots no aplican: cada card tiene su texto al lado, no hay carrusel */
+  .ae-scrolly-dots { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6363,8 +6398,14 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   }
   .ae-plat-intro-title em { letter-spacing: -0.012em; }
 }
+@media (max-width: 899.98px) {
+  .ae-plat-intro {
+    padding-top: 16px;
+    margin-bottom: clamp(28px, 5vw, 44px);
+  }
+}
 @media (max-width: 699.98px) {
-  .ae-plat-intro { padding: 40px clamp(16px, 4vw, 32px) 18px; }
+  .ae-plat-intro { padding: 16px clamp(16px, 4vw, 32px) 18px; }
   .ae-plat-intro-title { max-width: none; }
 }
 
