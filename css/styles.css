@@ -7815,6 +7815,8 @@ em, i, cite, dfn, var, address,
 
 /* Artículo */
 .ae-event-article { min-width: 0; }
+
+/* Hero — carrusel (también soporta caso de 1 sola imagen) */
 .ae-event-hero {
   margin: 0 0 28px;
   border-radius: 16px;
@@ -7822,12 +7824,46 @@ em, i, cite, dfn, var, address,
   position: relative;
   background: var(--ae-paper-3);
 }
+.ae-event-hero-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+.ae-event-hero-track::-webkit-scrollbar { display: none; }
+.ae-event-hero-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+.ae-event-hero-slide img,
 .ae-event-hero img {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
+}
+.ae-event-hero-caption {
+  position: absolute;
+  left: clamp(12px, 2vw, 18px);
+  bottom: clamp(48px, 5vw, 56px);
+  padding: 6px 12px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+  max-width: calc(100% - 110px);
+  pointer-events: none;
 }
 .ae-event-hero figcaption {
   position: absolute;
@@ -7841,6 +7877,107 @@ em, i, cite, dfn, var, address,
   letter-spacing: .03em;
   border-radius: 999px;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.ae-event-hero-counter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.7);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 2;
+  letter-spacing: .03em;
+}
+.ae-event-hero-nav {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.94);
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 3;
+  transform: translateY(-50%);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+  transition: background 200ms var(--ease, ease), transform 200ms var(--ease, ease), opacity 200ms var(--ease, ease);
+  font-family: inherit;
+  padding: 0;
+}
+.ae-event-hero-nav.prev { left: 12px; }
+.ae-event-hero-nav.next { right: 12px; }
+.ae-event-hero-nav:hover,
+.ae-event-hero-nav:focus-visible {
+  background: #fff;
+  transform: translateY(-50%) scale(1.06);
+  outline: 0;
+}
+.ae-event-hero-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+.ae-event-hero-nav svg { width: 20px; height: 20px; }
+.ae-event-hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  padding: 6px 12px;
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.ae-event-hero-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 0;
+  cursor: pointer;
+  transition: width 220ms var(--ease, ease), background 220ms var(--ease, ease);
+  font-family: inherit;
+}
+.ae-event-hero-dots button[aria-selected="true"] {
+  width: 22px;
+  background: #fff;
+  border-radius: 999px;
+}
+.ae-event-hero-dots button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Caso single-image: ocultar controles si sólo hay 1 slide */
+.ae-event-hero[data-slides="1"] .ae-event-hero-nav,
+.ae-event-hero[data-slides="1"] .ae-event-hero-dots,
+.ae-event-hero[data-slides="1"] .ae-event-hero-counter { display: none; }
+
+/* Mobile: nav buttons un poco más pequeños y caption ajustado */
+@media (max-width: 600px) {
+  .ae-event-hero-nav { width: 36px; height: 36px; }
+  .ae-event-hero-nav.prev { left: 8px; }
+  .ae-event-hero-nav.next { right: 8px; }
+  .ae-event-hero-caption { font-size: 11px; max-width: calc(100% - 90px); bottom: clamp(44px, 5vw, 52px); }
+  .ae-event-hero-counter { font-size: 11px; top: 10px; right: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-event-hero-track { scroll-behavior: auto; }
+  .ae-event-hero-nav,
+  .ae-event-hero-dots button { transition: none; }
 }
 
 .ae-event-lead {

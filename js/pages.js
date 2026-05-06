@@ -105,10 +105,105 @@
     });
   }
 
+  // ── Detalle (evento / comunicado): carrusel hero ──
+  // Estructura mínima esperada:
+  //   .ae-event-hero[data-hero-carousel]
+  //     .ae-event-hero-track (scroll-snap-x)
+  //       .ae-event-hero-slide × N (img + opcional data-caption)
+  //     .ae-event-hero-caption (texto del slide activo)
+  //     .ae-event-hero-counter (1 / N)
+  //     .ae-event-hero-nav.prev / .next
+  //     .ae-event-hero-dots > button[data-hero-go]
+  function initHeroCarousels() {
+    var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var roots = document.querySelectorAll('[data-hero-carousel]');
+    if (!roots.length) return;
+
+    roots.forEach(function (root) {
+      var track = root.querySelector('.ae-event-hero-track');
+      if (!track) return;
+      var slides = track.querySelectorAll('.ae-event-hero-slide');
+      var total = slides.length;
+      root.setAttribute('data-slides', String(total));
+      if (total <= 1) return;
+
+      var prev = root.querySelector('.ae-event-hero-nav.prev');
+      var next = root.querySelector('.ae-event-hero-nav.next');
+      var dots = root.querySelectorAll('.ae-event-hero-dots [data-hero-go]');
+      var caption = root.querySelector('.ae-event-hero-caption');
+      var counter = root.querySelector('.ae-event-hero-counter');
+
+      function step() {
+        if (total < 2) return track.clientWidth;
+        return slides[1].offsetLeft - slides[0].offsetLeft;
+      }
+      function activeIndex() {
+        var w = step();
+        if (!w) return 0;
+        return Math.max(0, Math.min(total - 1, Math.round(track.scrollLeft / w)));
+      }
+      function goTo(i) {
+        var w = step();
+        var clamped = Math.max(0, Math.min(total - 1, i));
+        try {
+          track.scrollTo({ left: clamped * w, behavior: REDUCED ? 'auto' : 'smooth' });
+        } catch (_) {
+          track.scrollLeft = clamped * w;
+        }
+      }
+      function sync() {
+        var i = activeIndex();
+        dots.forEach(function (d, idx) {
+          d.setAttribute('aria-selected', idx === i ? 'true' : 'false');
+        });
+        if (prev) prev.disabled = i <= 0;
+        if (next) next.disabled = i >= total - 1;
+        if (counter) counter.textContent = (i + 1) + ' / ' + total;
+        if (caption) {
+          var cap = slides[i].getAttribute('data-caption') || '';
+          caption.textContent = cap;
+          caption.style.display = cap ? '' : 'none';
+        }
+      }
+
+      if (prev) prev.addEventListener('click', function () { goTo(activeIndex() - 1); });
+      if (next) next.addEventListener('click', function () { goTo(activeIndex() + 1); });
+      dots.forEach(function (d) {
+        d.addEventListener('click', function () {
+          var i = parseInt(d.getAttribute('data-hero-go'), 10);
+          if (!isNaN(i)) goTo(i);
+        });
+      });
+
+      // Teclado (←/→/Home/End) cuando el carrusel tiene foco
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(activeIndex() - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); goTo(activeIndex() + 1); }
+        else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+        else if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+      });
+
+      var raf = null;
+      track.addEventListener('scroll', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(sync);
+      }, { passive: true });
+
+      window.addEventListener('resize', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(sync);
+      });
+
+      // Init
+      requestAnimationFrame(sync);
+    });
+  }
+
   // ── Init all page-specific modules ──
   document.addEventListener('DOMContentLoaded', function () {
     initChatWidget();
     initPrensaTabs();
     initFaqScrollHint();
+    initHeroCarousels();
   });
 })();
