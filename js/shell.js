@@ -255,6 +255,9 @@
     });
   }
 
+  // Nota: el banner de consentimiento de cookies vive en su propio
+  // componente (js/cookie-consent.js) y se auto-inicializa.
+
   // ── Init all ──
   document.addEventListener('DOMContentLoaded', function() {
     initHeaderActive();
