@@ -152,9 +152,16 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
 .footer a:hover, .footer a:focus-visible { color: #fff; text-decoration-color: #fff; }
 
 /* Brand row arriba */
-.footer-brand { margin: 0 0 clamp(28px, 4vw, 40px); }
+.footer-brand { margin: 0 0 clamp(28px, 4vw, 40px); max-width: 480px; }
 .footer-brand-logo { display: inline-flex; align-items: center; }
-.footer-brand-logo img { height: clamp(48px, 6vw, 64px); width: auto; display: block; }
+.footer-brand-logo img { height: clamp(44px, 5vw, 56px); width: auto; display: block; }
+.footer-brand-claim {
+  margin: clamp(14px, 1.6vw, 18px) 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 460px;
+}
 
 /* Grid de columnas */
 .footer-top { display:grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: clamp(24px, 4vw, 36px); }
@@ -6880,6 +6887,69 @@ main { padding-top: calc(var(--hdr-h) + var(--safe-top)); }
   .ae-contact-channel { padding: 10px 12px; }
   .ae-contact-channel-icon { inline-size: 32px; block-size: 32px; }
   .ae-contact-channel-value { font-size: 13px; }
+}
+
+/* ── Redes sociales dentro del card de Mesa de ayuda ── */
+.ae-contact-socials {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ae-contact-socials-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+.ae-contact-socials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ae-contact-socials-list a {
+  display: grid;
+  place-items: center;
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 220ms ease, transform 220ms cubic-bezier(.34,1.56,.64,1), border-color 220ms ease, color 220ms ease;
+  touch-action: manipulation;
+}
+.ae-contact-socials-list a svg {
+  inline-size: 18px;
+  block-size: 18px;
+  display: block;
+}
+.ae-contact-socials-list a:hover,
+.ae-contact-socials-list a:focus-visible {
+  background: var(--ae-yellow);
+  color: var(--ae-blue);
+  border-color: var(--ae-yellow);
+  transform: translateY(-2px) scale(1.06);
+  outline: 0;
+}
+.ae-contact-socials-list a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 198, 39, 0.4);
+}
+
+@media (max-width: 599.98px) {
+  .ae-contact-socials-list a { inline-size: 38px; block-size: 38px; }
+  .ae-contact-socials-list a svg { inline-size: 16px; block-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ae-contact-socials-list a { transition: none; }
 }
 
 /* ── FAQ section (debajo de form/info) ── */
